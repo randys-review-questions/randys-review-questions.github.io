@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Randy's Review Questions</title>
+        <link rel="stylesheet" href="../../css/style.css" type="text/css" />
+    </head>
+    <body>
+        <h1>Randy's Review Questions</h1>
+        <h2>Pokemon Geography</h2>
+        <p>
+            Based on the geography of the regions in Pokemon games. This quiz 
+            only covers games from generations 1-6.
+        </p>
+
+        <hr />
+
+        <p class="question">
+            1. Which of the following cities are in the Unova region?
+        </p>
+        <ul class="answers">
+            <input type="radio" name="q1" value="1" />
+                Celadon City
+            <br />
+            <input type="radio" name="q1" value="2" />
+                Virbank City
+            <br />
+            <input type="radio" name="q1" value="3" />
+                Cyllage City
+            <br />
+            <input type="radio" name="q1" value="4" />
+                Goldenrod City
+            <br />
+        </ul>
+        <p id="q1correct" style="color:green;display:none;">
+            Correct!
+        </p>
+        <p id="q1incorrect" style="display:none;">
+            <span style="color:purple;">Incorrect.</span>
+            The correct answer was: Virbank City
+        </p>
+
+        <p id="score" style="color:blue;display:none;"></p>
+
+        <input type="button" onclick="checkquizans()" value="Check Answers" /> <br />
+
+        <hr />
+        <a href="../../index.html">Return to Home</a>
+
+        <script src="../../scripts/checkans.js"></script>
+        <script>
+            function checkquizans() {
+                answerKey = ["2"]
+                checkans(answerKey)
+            }
+        </script>
+        <noscript>
+            <p>Looks like JavaScript is disabled! The answer checker will not work without JavaScript enabled.</p>
+        </noscript>
+    </body>
+</html>
