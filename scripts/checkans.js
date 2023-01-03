@@ -18,14 +18,6 @@ function checkans(answerKey) {
     document.querySelector("#score").innerHTML = "Score: " + score + "/" + answerKey.length;
     document.querySelector("#score").style.display = "block";
 
-    const fs = require('fs');
-    const content = 'Some content';
-    fs.writeFile('responses.csv', content, err => {
-        if (err) {
-            console.error(err);
-        }
-    });
-
     // This code copied from Stack Overflow: 
     // https://stackoverflow.com/questions/15722765/saving-a-text-file-on-server-using-javascript
     var data = new FormData();
