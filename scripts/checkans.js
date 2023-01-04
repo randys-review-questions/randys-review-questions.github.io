@@ -17,12 +17,4 @@ function checkans(answerKey) {
 
     document.querySelector("#score").innerHTML = "Score: " + score + "/" + answerKey.length;
     document.querySelector("#score").style.display = "block";
-
-    // This code copied from Stack Overflow: 
-    // https://stackoverflow.com/questions/15722765/saving-a-text-file-on-server-using-javascript
-    var data = new FormData();
-    data.append("data" , "the_text_you_want_to_save");
-    var xhr = (window.XMLHttpRequest) ? new XMLHttpRequest() : new activeXObject("Microsoft.XMLHTTP");
-    xhr.open('post', '../../scripts/response_handler.php', true );
-    xhr.send(data);
 }
