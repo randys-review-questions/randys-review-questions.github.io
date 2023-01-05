@@ -1,0 +1,22 @@
+Id,Question,Type,Image,Option 1,Image 1,Option 2,Image 2,Option 3,Image 3,Option 4,Image 4,Option 5,Image 5,Option 6,Image 6,Option 7,Image 7,Option 8,Image 8,Option 9,Image 9,Option 10,Image 10,Option 11,Image 11,Option 12,Image 12,Option 13,Image 13,Option 14,Image 14,Option 15,Image 15,Correct Answer
+1,You want to use ONLY 1 lunch meal swipe. The total cost of the items in your cart should not exceed...,MC,,$6.85 ,,$11.25 ,,$11.35 ,,$13.25 ,,,,,,,,,,,,,,,,,,,,,,,,3
+2,You're out of meal swipes and are feeling especially narcissistic. Where can you easily steal someone else's order?,MC,,Hotung Cafe,,Pax et Lox,,Kindlevan Cafe,,Mugar Cafe,,,,,,,,,,,,,,,,,,,,,,,,4
+3,Which of the following is/are (a) sushi option(s) served at Tufts? Select all that apply.,Checkboxes,,California Roll,,Jumbo Roll,,Vegetable Roll,,Tuna and Salmon Combo Roll,,None of these,,,,,,,,,,,,,,,,,,,,,,"1,2,3,4"
+4,You vaguely remember that there is a Cafe inside Tisch Library that hasn't been open for almost an entire year at this point. What was it called again?,MC,,Tower Cafe,,Stacy's Cafe,,Starbucks Coffee,,The Sink,,,,,,,,,,,,,,,,,,,,,,,,1
+5,You've heard decent things about breakfast food from Commons. When is it open for breakfast?,MC,,Weekdays 8am-10:30am,,Weekdays 9am-11am,,Weekends 10am-11am,,Every Day 10am-11am,,,,,,,,,,,,,,,,,,,,,,,,3
+6,What is the platform where most virtual Tufts classes are held?,MC,,Zoom,,Microsoft Teams,,Twitch,,Google Meet,,,,,,,,,,,,,,,,,,,,,,,,1
+7,An exception to the residency requirement was established for students who studied at Tufts in Fall of 2020. Students who completed the Fall 2020 semester at Tufts now only have to complete _____ full time semesters to be eligible for graduation.,MC,,four,,five,,six,,seven,,,,,,,,,,,,,,,,,,,,,,,,3
+8,A grade of an A+ corresponds to what GPA?,MC,,4.333,,4.33,,4.3,,4,,,,,,,,,,,,,,,,,,,,,,,,4
+9,Which of the following is/are (an) exam time(s) according to the Tufts Exam Block schedule? Select all that apply.,Checkboxes,,8:30 AM - 10:30 AM,,12:30 PM - 2:30 PM,,3:30 PM - 5:30 PM,,7:30 PM - 9:30 PM,,None of these,,,,,,,,,,,,,,,,,,,,,,"1,3"
+10,All of the following are dates this semester that we did not have classes EXCEPT...,MC,,15-Feb,,14-Mar,,2-Apr,,19-Apr,,,,,,,,,,,,,,,,,,,,,,,,3
+11,Which of the following is located the closest to the Gantcher Center?,MC,,Anderson Hall,,Dowling Hall,,Halligan Hall,,Metcalf Hall,,,,,,,,,,,,,,,,,,,,,,,,3
+12,The Pearson Chemistry building is located _____; Bromfield-Pearson is located _____.,MC,,"uphill, uphill",,"uphill, downhill",,"downhill, uphill",,"downhill, downhill",,,,,,,,,,,,,,,,,,,,,,,,4
+13,Each bike that is part of the Tufts Bike Share is stored in one of two bike racks. One of them is outside Tisch Library. Where is the other one?,MC,,Outside the SEC (Science & Engineering Complex),,Outside the Mayer Campus Center,,Outside the track,,Outside Dowling Hall,,,,,,,,,,,,,,,,,,,,,,,,2
+14,Select all of the following that are true statements.,Checkboxes,,The Jumbo statue is east of the cannon.,,West Hall is east of East Hall.,,None of these,,,,,,,,,,,,,,,,,,,,,,,,,,3
+15,"What is on the other side of the street of the announcements board shown in the picture below? 
+In other words, if you look at this board from this angle, then turn your head 180 degrees, what would you be looking at now?",MC,board.jpg,The Bookstore,,Dewick-Macphie Dining Hall,,Tisch Library,,Olin Center,,,,,,,,,,,,,,,,,,,,,,,,1
+16,The COVID-19 test used at Tufts involves swabbing the inside of one's...,MC,,nose.,,mouth.,,ears.,,armpits.,,,,,,,,,,,,,,,,,,,,,,,,1
+17,The Mods are temporary buildings built over...,MC,,the basketball courts.,,the tennis courts.,,the baseball field.,,the track & football field.,,,,,,,,,,,,,,,,,,,,,,,,2
+18,"If one is in need of more masks and/or sanitizing wipes during the semester, where is one to go to pick it up?",MC,,The Mailroom,,Gantcher Center,,Aldekman Arts Center,,Mayer Campus Center,,,,,,,,,,,,,,,,,,,,,,,,4
+19,Wearing a face mask is required in which of the following scenarios? Select all that apply.,Checkboxes,,When actively eating or drinking,,When running around campus,,When in one's own room with only their roommate(s),,When brushing one's teeth,,None of these,,,,,,,,,,,,,,,,,,,,,,2
+20,"If you test positive for COVID-19, the period of isolation is...",MC,,7 days,,10 days,,12 days,,14 days,,,,,,,,,,,,,,,,,,,,,,,,2

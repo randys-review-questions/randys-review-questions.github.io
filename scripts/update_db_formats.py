@@ -23,7 +23,7 @@ def get_all_paths(filename):
     result = list()
     for path, dirnames, filenames in os.walk('../'):
         if 'templates' not in path and filename in filenames:
-            result.append(path + '/' + filename)
+            result.append(f'{path}/{filename}')
     return result 
 
 # Return dictionary containing elements of inputted list as keys 
@@ -35,7 +35,7 @@ def populate_dict(keys):
 
 def main():
     dbName = sys.argv[1]
-    columns = pd.read_csv('../templates/' + dbName).columns 
+    columns = pd.read_csv(f'../templates/{dbName}').columns 
     
     paths = get_all_paths(dbName)
     for path in paths:

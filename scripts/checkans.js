@@ -1,11 +1,16 @@
 function checkans(answerKey) {
     score = 0;
 
-    email = true;
-
     for (var i = 0; i < answerKey.length; i++) {
-        selected = document.querySelector("input[name=q" + (i + 1) + "]:checked");
-        if (selected && selected.value == answerKey[i]) {
+        // Extract options that the user selected 
+        selected = document.querySelectorAll("input[name=q" + (i + 1) + "]:checked");
+        values = [];
+        for (const currSelected of selected) {
+            values.push(currSelected.value)
+        }
+        
+        // Check if user options match answer key 
+        if (JSON.stringify(values) == JSON.stringify(answerKey[i])) {
             document.querySelector("#q" + (i + 1) + "correct").style.display = "block";
             document.querySelector("#q" + (i + 1) + "incorrect").style.display = "none";
             score++;
