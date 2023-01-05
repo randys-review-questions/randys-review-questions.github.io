@@ -17,3 +17,13 @@ table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
 }
+input[type='radio'] {
+    transform: scale(1.25)
+}
+input[type='checkbox'] {
+    transform: scale(1.25)
+}
+input[type='button'] {
+    height: 30px;
+    width: 150px;
+}
