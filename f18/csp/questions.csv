@@ -1,0 +1,11 @@
+Id,Question,Type,Image,Option 1,Image 1,Option 2,Image 2,Option 3,Image 3,Option 4,Image 4,Option 5,Image 5,Option 6,Image 6,Option 7,Image 7,Option 8,Image 8,Option 9,Image 9,Option 10,Image 10,Option 11,Image 11,Option 12,Image 12,Option 13,Image 13,Option 14,Image 14,Option 15,Image 15,Correct Answer
+1,What is the minimum number of bits required to represent a letter of the alphabet?,MC,,2,,3,,4,,5,,6,,,,,,,,,,,,,,,,,,,,,,4
+2,Which of the following are protocols involved in the process of sending packets over the internet? Select two options.,Checkboxes,,TCP,,TLS,,IP,,HTML,,,,,,,,,,,,,,,,,,,,,,,,"1,3"
+3,What is one disadvantage to lossy compression?,MC,,The quality of the image/sound file/video is noticeably lower,,It does not save that much space,,The original file cannot be completely recovered,,It has a low reliability,,It deletes the file's IP address,,,,,,,,,,,,,,,,,,,,,,3
+4,All of the following are forms of abstraction EXCEPT...,MC,,Programming Languages,,Binary Code,,Functions,,Parameters,,Hexadecimal Numbers,,,,,,,,,,,,,,,,,,,,,,2
+5,How many possible ways are there to encrypt a message using the Caesar Cipher?,MC,,13,,25,,26,,27,,52,,,,,,,,,,,,,,,,,,,,,,2
+6,<code>A AND B = FALSE.</code> Which of the following are possible values for A and B? Check all that apply.,Checkboxes,,"<code>A = TRUE, B = TRUE</code>",,"<code>A = TRUE, B = FALSE</code>",,"<code>A = FALSE, B = TRUE</code>",,"<code>A = FALSE, B = FALSE</code>",,,,,,,,,,,,,,,,,,,,,,,,"2,3,4"
+7,Conditional statements are a form of...,MC,,Iteration,,Sequencing,,Selection,,Encryption,,Decryption,,,,,,,,,,,,,,,,,,,,,,3
+8,Which of the following correctly displays a for loop using JavaScript?,MC,,<code>for (i = 0; i<3; i+) {}</code>,,"<code>for (var i = 0, i<3, i++) {}</code>",,"<code>for (var i = 0, i<3, i+) {}</code>",,"<code>for (i = 0, i<3, i++) {}</code>",,<code>for (var i = 0; i<3; i++) {}</code>,,,,,,,,,,,,,,,,,,,,,,5
+9,"In the Explore Performance Task, at least __ source(s) has/have to be within the last academic year.",MC,,1,,2,,3,,4,,5,,,,,,,,,,,,,,,,,,,,,,2
+10,"In the Create Performance Task, the algorithm should be marked with a(n)...",MC,,Oval,,Circle,,Triangle,,Rectangle,,Square,,,,,,,,,,,,,,,,,,,,,,1
