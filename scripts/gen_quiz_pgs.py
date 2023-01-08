@@ -62,6 +62,12 @@ def write_html(path):
             else:
                 body += htmlwriter.double_tag('p', f'{q_idx + 1}. {q_line}', {'class':'question'})
             first_line = False
+        
+        # Add preformatted text (e.g. code sample) if provided 
+        pre_text = question_data['Preformatted'][q_idx] 
+        if is_nonempty(pre_text):
+            body += htmlwriter.double_tag('pre', pre_text)
+
         img_src = question_data['Image'][q_idx] # Add image if a source image provided 
         if is_nonempty(img_src):
             body += htmlwriter.single_tag('img', {'src':img_src, 'alt':img_src})
@@ -121,6 +127,7 @@ def write_html(path):
 def main():
     paths = get_all_paths('questions.csv', 'page_data.csv')
     for path in paths:
+        print('Generating HTML in:', f'{path}index.html')
         write_html(path)
 
 if __name__ == '__main__':

@@ -13,8 +13,6 @@ def double_tag(tag, content, pairs=dict()):
     for pair in pairs:
         result += f' {pair}=\"{pairs[pair]}\"'
     result += f'>{content}</{tag}>'
-    if '<pre>' in content:
-        result = '\n'.join(content.split(' \linebreak '))
     return result
 
 def single_tag(tag, pairs=dict()):

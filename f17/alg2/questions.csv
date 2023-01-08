@@ -1,11 +1,11 @@
-Id,Question,Type,Image,Option 1,Image 1,Option 2,Image 2,Option 3,Image 3,Option 4,Image 4,Option 5,Image 5,Option 6,Image 6,Option 7,Image 7,Option 8,Image 8,Option 9,Image 9,Option 10,Image 10,Option 11,Image 11,Option 12,Image 12,Option 13,Image 13,Option 14,Image 14,Option 15,Image 15,Correct Answer
-1,"When graphing a system of inequalities, when a line is not included, it is drawn as...",MC,,A ray,,A line segment,,A solid line,,A dotted line,,,,,,,,,,,,,,,,,,,,,,,,4
-2,In a function...,MC,,Each input is paired with one output,,Each output is paired with one input,,Each input is paired with exactly one output,,Each output is paired with exactly one input,,,,,,,,,,,,,,,,,,,,,,,,3
-3,Factor: \(x^2-y^2\),MC,,\((x-y)^2\),,\((x+y)^2\),,\((x-y)(x+y)\),,\(x^2+xy+y^2\),,,,,,,,,,,,,,,,,,,,,,,,3
-4,The vertex of a quadratic function can be determined from which equation?,MC,,\(x = - \frac{b}{a}\),,\(x = - \frac{b}{2a}\),,\(x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\),,APUSH,,,,,,,,,,,,,,,,,,,,,,,,2
-5,"In Mr. Lougee's class, when graphing a quadratic, what critical values besides the vertex must be labelled?",MC,,Endpoints,,Vertical and horizontal asymptotes,,x and y intercepts,,Every point that has integer x and y coordinates,,,,,,,,,,,,,,,,,,,,,,,,3
-6,"For a polynomial, a root with a multiplicity of 2 ____ the x-axis.",MC,,Doesn't intersect,,Goes Through,,Is tangent to,,Wiggles,,,,,,,,,,,,,,,,,,,,,,,,3
-7,"When dividing polynomials (and the remainder is not 0), the numerator of the last term in the answer is the...",MC,,Divided,,Divisor,,Quotient,,Remainder,,,,,,,,,,,,,,,,,,,,,,,,4
-8,"When cancelling out factors in rational expressions, it is always important to add...",MC,,Factorials,,Domain restrictions,,Range restrictions,,Signs,,,,,,,,,,,,,,,,,,,,,,,,2
-9,"When solving radical equations, it is always important to make sure that the answer is not...",MC,,Valid,,Zero,,Extraneous,,Negative,,,,,,,,,,,,,,,,,,,,,,,,3
-10,Which conic section has asymptotes?,MC,,Circle,,Ellipse,,Hyperbola,,Parabola,,,,,,,,,,,,,,,,,,,,,,,,3
+Id,Question,Type,Preformatted,Image,Option 1,Image 1,Option 2,Image 2,Option 3,Image 3,Option 4,Image 4,Option 5,Image 5,Option 6,Image 6,Option 7,Image 7,Option 8,Image 8,Option 9,Image 9,Option 10,Image 10,Option 11,Image 11,Option 12,Image 12,Option 13,Image 13,Option 14,Image 14,Option 15,Image 15,Correct Answer
+1,"When graphing a system of inequalities, when a line is not included, it is drawn as...",MC,,,A ray,,A line segment,,A solid line,,A dotted line,,,,,,,,,,,,,,,,,,,,,,,,4
+2,In a function...,MC,,,Each input is paired with one output,,Each output is paired with one input,,Each input is paired with exactly one output,,Each output is paired with exactly one input,,,,,,,,,,,,,,,,,,,,,,,,3
+3,Factor: \(x^2-y^2\),MC,,,\((x-y)^2\),,\((x+y)^2\),,\((x-y)(x+y)\),,\(x^2+xy+y^2\),,,,,,,,,,,,,,,,,,,,,,,,3
+4,The vertex of a quadratic function can be determined from which equation?,MC,,,\(x = - \frac{b}{a}\),,\(x = - \frac{b}{2a}\),,\(x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\),,APUSH,,,,,,,,,,,,,,,,,,,,,,,,2
+5,"In Mr. Lougee's class, when graphing a quadratic, what critical values besides the vertex must be labelled?",MC,,,Endpoints,,Vertical and horizontal asymptotes,,x and y intercepts,,Every point that has integer x and y coordinates,,,,,,,,,,,,,,,,,,,,,,,,3
+6,"For a polynomial, a root with a multiplicity of 2 ____ the x-axis.",MC,,,Doesn't intersect,,Goes Through,,Is tangent to,,Wiggles,,,,,,,,,,,,,,,,,,,,,,,,3
+7,"When dividing polynomials (and the remainder is not 0), the numerator of the last term in the answer is the...",MC,,,Divided,,Divisor,,Quotient,,Remainder,,,,,,,,,,,,,,,,,,,,,,,,4
+8,"When cancelling out factors in rational expressions, it is always important to add...",MC,,,Factorials,,Domain restrictions,,Range restrictions,,Signs,,,,,,,,,,,,,,,,,,,,,,,,2
+9,"When solving radical equations, it is always important to make sure that the answer is not...",MC,,,Valid,,Zero,,Extraneous,,Negative,,,,,,,,,,,,,,,,,,,,,,,,3
+10,Which conic section has asymptotes?,MC,,,Circle,,Ellipse,,Hyperbola,,Parabola,,,,,,,,,,,,,,,,,,,,,,,,3

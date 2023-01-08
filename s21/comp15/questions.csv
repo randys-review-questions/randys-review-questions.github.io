@@ -1,0 +1,34 @@
+Id,Question,Type,Preformatted,Image,Option 1,Image 1,Option 2,Image 2,Option 3,Image 3,Option 4,Image 4,Option 5,Image 5,Option 6,Image 6,Option 7,Image 7,Option 8,Image 8,Option 9,Image 9,Option 10,Image 10,Option 11,Image 11,Option 12,Image 12,Option 13,Image 13,Option 14,Image 14,Option 15,Image 15,Correct Answer
+1,Consider the following lines of code in C++. Which of the following is a stylistically better alternative?,MC,"if (isBig == true) {
+    return true;
+} else {
+    return false;
+}",,<code>if (isBig == true) return true; else return false;</code>,,<code>return isBig;</code>,,<code>return not isBig;</code>,,There is no way to improve the style of this code.,,,,,,,,,,,,,,,,,,,,,,,,2
+2,Simplify the following RPN (reverse polish notation) expression: <code>1 2 + 3 + 1 *</code>,MC,,,6,,7,,16,,This is an invalid expression.,,,,,,,,,,,,,,,,,,,,,,,,1
+3,What are the steps to expanding the array in the <code>ArrayList</code> class?,MC,,,Simply change the capacity data member,,Create another array of the same capacity and concatenate it to the end of the existing array,,Create another array of a larger size and copy over all elements,,"Create a LinkedList, transfer all contents there, add elements as needed, then create another array and copy everything back.",,,,,,,,,,,,,,,,,,,,,,,,3
+4,"Consider the following line of code in C++. Which of the Big Three runs when this line is executed (<code>prevValue</code> is an existing instance of <code>MyClass</code>)?
+<code>MyClass myValue = prevValue;</code>",MC,,,Destructor,,Copy Constructor,,Assignment Operator Overload,,None of these,,,,,,,,,,,,,,,,,,,,,,,,2
+5,Which of the following is not representative of the <code>LinkedList</code> implementation? Assume that no cycles result in any of these.,MC,,,"Children waiting in a line; teacher keeps track of first child, and each child remembers their name and keeps track of the child behind them.",,"Members of an organization; the president's phone number is kept track of, and each member keeps track of their own phone number and one other member of the organization.",,"Pigs in a barn; the mother pig keeps track of one piglet, and each piglet remembers information pertaining to itself and how to find one other piglet.",,"Books on a bookshelf; books are stored in designated slots on the bookshelf, and a bigger bookshelf is obtained if there's not enough room.",,,,,,,,,,,,,,,,,,,,,,,,4
+6,A queue is useful in all of the following situations EXCEPT...,MC,,,to model people waiting in line at a coffee shop.,,to model task interruption and resumption.,,to store the order that vertices should be checked in a breadth first traversal of a graph.,,to model order fulfillment for a restaurant.,,,,,,,,,,,,,,,,,,,,,,,,2
+7,A stack is a(n) _____ of a list.,MC,,,abstraction,,queue,,interface,,implementation,,,,,,,,,,,,,,,,,,,,,,,,1
+8,Which of the following is NOT a representation invariant (for a correctly formed data structure)?,MC,,,An <code>ArrayList</code>'s capacity stores the number of elements the client is storing in the array.,,The pointer to the front of an empty <code>LinkedList</code> is <code>nullptr</code>.,,"For any Node <code>N</code> in a <code>BinarySearchTree</code>, all Nodes in the left subtree of <code>N</code> have a value less than or equal to that of <code>N</code>.",,All of these are correct representation invariants.,,,,,,,,,,,,,,,,,,,,,,,,1
+9,What is the runtime of the following C++ lines of code?,MC,"for (int i = 0; i < n; i++) {
+    for (int j = 0; j < 15; j++) {
+        cout << ""Boo!"" << endl;
+    }
+}
+
+for (int i = 0; i < n; i++) {
+    cout << ""Hmm..."" << endl;
+}",,\(O(1)\),,\(O(n)\),,\(O(\log n)\),,\(O(n^2)\),,,,,,,,,,,,,,,,,,,,,,,,2
+10,Which of the following is incorrect about binary search?,MC,,,A binary search algorithm assumes that the list is already sorted.,,A binary search algorithm assumes that elements are comparable.,,Binary Search on a Linked List would occur in \(O(\log{n})\) time.,,All of these statements are correct about binary search.,,,,,,,,,,,,,,,,,,,,,,,,3
+11,Which of the following is a recursive data structure?,MC,,,<code>ArrayList</code>,,<code>LinkedList</code>,,<code>Set</code>,,<code>HashTable</code>,,,,,,,,,,,,,,,,,,,,,,,,2
+12,What is the height of an empty tree?,MC,,,-1,,0,,1,,undefined,,,,,,,,,,,,,,,,,,,,,,,,1
+13,Consider the binary tree shown below. A post order traversal would visit the Nodes in what order?,MC,,S2-05.PNG,"4, 2, 6, 5, 1, 3",,"4, 6, 5, 2, 1, 3",,"4, 6, 5, 2, 3, 1",,"6, 4, 5, 2, 3, 1",,,,,,,,,,,,,,,,,,,,,,,,3
+14,"You insert the following elements into an AVL tree in this order: 5, 9, 7. What do you have to do to balance it?",MC,,,Left rotation,,Right rotation,,"Left rotation, then a right rotation",,"Right rotation, then a left rotation",,,,,,,,,,,,,,,,,,,,,,,,4
+15,What is the best possible runtime for a comparison based sorting algorithm?,MC,,,\(O(1)\),,\(O(n)\),,\(O(n \log{n})\),,\(O(n^2)\),,,,,,,,,,,,,,,,,,,,,,,,3
+16,"When all elements are discrete values within a bounded range, and the range is small, which sorting algorithm is best?",MC,,,Insertion Sort,,Quick Sort,,Heap Sort,,Bucket/Counting Sort,,,,,,,,,,,,,,,,,,,,,,,,4
+17,"Suppose that a heap is implemented using an array, and that the root Node is at index \(1\). Let \(i\) be the index representing the location of an arbitrary Node in the heap. At what index is that Node's right child (assuming that a right child exists)?",MC,,,\(\frac{i}{2}\),,\(i+2\),,\(2i\),,\(2i+1\),,,,,,,,,,,,,,,,,,,,,,,,4
+18,What is the runtime of a breadth first search algorithm that traverses through a graph represented with an adjacency list?,MC,,,\(O(|V|)\),,\(O(|V|^2)\),,\(O(|V|+|E|)\),,\(O(|V|*|E|)\),,,,,,,,,,,,,,,,,,,,,,,,3
+19,What is the maximum load factor that open addressing can support (in a hash table)?,MC,,,0.7,,1,,2,,Open addressing can support any load factor.,,,,,,,,,,,,,,,,,,,,,,,,2
+20,Which of the following statements about a trie is INCORRECT?,MC,,,A trie is a binary tree.,,"A trie is a ""prefix tree.""",,"If word length is bounded, there is constant access to each word in the trie.",,"In a trie, we need to mark where words end.",,,,,,,,,,,,,,,,,,,,,,,,1

@@ -1,11 +1,11 @@
-Id,Question,Type,Image,Option 1,Image 1,Option 2,Image 2,Option 3,Image 3,Option 4,Image 4,Option 5,Image 5,Option 6,Image 6,Option 7,Image 7,Option 8,Image 8,Option 9,Image 9,Option 10,Image 10,Option 11,Image 11,Option 12,Image 12,Option 13,Image 13,Option 14,Image 14,Option 15,Image 15,Correct Answer
-1,How many atypical moles would increase your risk for skin cancer?,MC,,1,,10,,30,,50,,,,,,,,,,,,,,,,,,,,,,,,1
-2,STDs can spread through...,MC,,Only sexual intercourse,,Any sexual activity,,Kissing,,Sharing a book,,,,,,,,,,,,,,,,,,,,,,,,2
-3,How many dimensions of wellness are there (excluding financial)?,MC,,1,,4,,6,,9,,,,,,,,,,,,,,,,,,,,,,,,3
-4,The main function of carbohydrates is...,MC,,To cushion against strong impact,,To provide energy,,To build and repair proteins,,To get a sugar high,,,,,,,,,,,,,,,,,,,,,,,,2
-5,"In first aid, hemostatic dressing is only used when...",MC,,There is a papercut,,You are trying to help someone through FaceTime,,A tourniquet cannot be used,,Splinting fails,,,,,,,,,,,,,,,,,,,,,,,,3
-6,"In first aid, which acronym is used to care for a muscle, bone, or joint injury?",MC,,FAST,,SAMPLE,,RICE,,ABCDE,,,,,,,,,,,,,,,,,,,,,,,,3
-7,Drinking 4+ drinks for a female in a __ hour period constitutes as binge drinking.,MC,,\(\frac{1}{2}\),,\(1\),,\(2\),,\(4\),,,,,,,,,,,,,,,,,,,,,,,,3
-8,"To recover from a nicotine addiction, one should...",MC,,Use e-cigarettes,,Use nicotine gum or patches,,Smoke more cigarettes,,Smoke more cigars,,,,,,,,,,,,,,,,,,,,,,,,2
-9,Melanoma is a ____ disease.,MC,,Benign,,Malignant,,,,,,,,,,,,,,,,,,,,,,,,,,,,2
-10,Irresponsible use of prescription medication often leads to...,MC,,an alcohol addiction.,,heroin addiction.,,the use of rohypnol.,,better grades in school.,,,,,,,,,,,,,,,,,,,,,,,,2
+Id,Question,Type,Preformatted,Image,Option 1,Image 1,Option 2,Image 2,Option 3,Image 3,Option 4,Image 4,Option 5,Image 5,Option 6,Image 6,Option 7,Image 7,Option 8,Image 8,Option 9,Image 9,Option 10,Image 10,Option 11,Image 11,Option 12,Image 12,Option 13,Image 13,Option 14,Image 14,Option 15,Image 15,Correct Answer
+1,How many atypical moles would increase your risk for skin cancer?,MC,,,1,,10,,30,,50,,,,,,,,,,,,,,,,,,,,,,,,1
+2,STDs can spread through...,MC,,,Only sexual intercourse,,Any sexual activity,,Kissing,,Sharing a book,,,,,,,,,,,,,,,,,,,,,,,,2
+3,How many dimensions of wellness are there (excluding financial)?,MC,,,1,,4,,6,,9,,,,,,,,,,,,,,,,,,,,,,,,3
+4,The main function of carbohydrates is...,MC,,,To cushion against strong impact,,To provide energy,,To build and repair proteins,,To get a sugar high,,,,,,,,,,,,,,,,,,,,,,,,2
+5,"In first aid, hemostatic dressing is only used when...",MC,,,There is a papercut,,You are trying to help someone through FaceTime,,A tourniquet cannot be used,,Splinting fails,,,,,,,,,,,,,,,,,,,,,,,,3
+6,"In first aid, which acronym is used to care for a muscle, bone, or joint injury?",MC,,,FAST,,SAMPLE,,RICE,,ABCDE,,,,,,,,,,,,,,,,,,,,,,,,3
+7,Drinking 4+ drinks for a female in a __ hour period constitutes as binge drinking.,MC,,,\(\frac{1}{2}\),,\(1\),,\(2\),,\(4\),,,,,,,,,,,,,,,,,,,,,,,,3
+8,"To recover from a nicotine addiction, one should...",MC,,,Use e-cigarettes,,Use nicotine gum or patches,,Smoke more cigarettes,,Smoke more cigars,,,,,,,,,,,,,,,,,,,,,,,,2
+9,Melanoma is a ____ disease.,MC,,,Benign,,Malignant,,,,,,,,,,,,,,,,,,,,,,,,,,,,2
+10,Irresponsible use of prescription medication often leads to...,MC,,,an alcohol addiction.,,heroin addiction.,,the use of rohypnol.,,better grades in school.,,,,,,,,,,,,,,,,,,,,,,,,2

@@ -1,0 +1,46 @@
+Id,Question,Type,Preformatted,Image,Option 1,Image 1,Option 2,Image 2,Option 3,Image 3,Option 4,Image 4,Option 5,Image 5,Option 6,Image 6,Option 7,Image 7,Option 8,Image 8,Option 9,Image 9,Option 10,Image 10,Option 11,Image 11,Option 12,Image 12,Option 13,Image 13,Option 14,Image 14,Option 15,Image 15,Correct Answer
+1,Which of these steps comes first in the 9 step design process?,MC,,,Write the function's contract,,Write the function's unit tests,,Understand the forms of data,,Write the algebraic laws,,,,,,,,,,,,,,,,,,,,,,,,3
+2,"When writing algebraic laws, the left-hand side defines _____, whereas the right-hand side defines _____.",MC,,,"the cases, what to do in each case",,"what to do in each case, the cases",,"looping parameters, what to do in each iteration",,"what to do in each iteration, looping parameters",,,,,,,,,,,,,,,,,,,,,,,,1
+3,What proof system for natural numbers defines a natural number as either \(0\) or the successor of another natural number?,MC,,,Peano,,Binary,,Decimal,,Parity,,,,,,,,,,,,,,,,,,,,,,,,1
+4,"Consider the following lines of Impcore. Which of the following correctly shows the contents of the globals and formals environments (\(\xi\) and \(\rho\), respectively) after the lines are executed?",MC,"(val x 3)
+(set x 4)
+(val y 4)",,"Globals: \(\{ x \to 3, y \to 4 \}\); Formals: \(\{x \to 4\}\)",,"Globals: \(\{ x \to 3, y \to 4 \}\); Formals: \(\{\}\)",,"Globals: \(\{ x \to 4, y \to 4 \}\); Formals: \(\{\}\)",,"Globals: \(\{ x \to 4\}\); Formals: \(\{ x \to 3, y \to 4\}\)",,,,,,,,,,,,,,,,,,,,,,,,3
+5,"Consider the following judgement:
+\(\langle e, \xi, \phi, \rho \rangle \Downarrow \langle v, \xi', \phi, \rho' \rangle\)
+A prime symbol (\('\)) appears next to \(\xi\) and \(\rho\) on the right side but not \(\phi.\) This signifies that the environments represented by \(\xi\) and \(\rho\) _____ during the process of evaluation, whereas the environment represented by \(\phi\) _____.",MC,,,"definitely changed, may have stayed the same",,"definitely changed, definitely stayed the same",,"may have changed, may have stayed the same",,"may have changed, definitely stayed the same",,,,,,,,,,,,,,,,,,,,,,,,4
+6,"The inference rule for \(LITERAL\) (Impcore) has the following judgement as its conclusion:
+\(\langle LITERAL(v), \xi, \phi, \rho \rangle \Downarrow \langle v, \xi, \phi, \rho \rangle\)
+What premise(s) is/are necessary to arrive at that conclusion?",MC,,,\(v\) is in the domain of \(\xi\).,,\(v\) is in the domain of \(\rho\) AND \(v\) is not in the domain of \(\xi\).,,Either of the above suffices.,,No premises are necessary.,,,,,,,,,,,,,,,,,,,,,,,,4
+7,Consider the following lines of Impcore. What literal is the variable <code>x</code> mapped to after execution?,MC,"(val x 1)
+(define func (x y) (set x 4))
+(func (set x 2) (set x 3))",,1,,2,,3,,4,,,,,,,,,,,,,,,,,,,,,,,,3
+8,Which of the following is equivalent to the list <code>'(1 2)</code> in micro-Scheme?,MC,,,<code>(cons 1 (cons 2 '()))</code>,,<code>(cons 1 '(2))</code>,,<code>(cdr (cons (cons 1 (cons 2 '())) (cons 1 (cons 2 '()))))</code>,,All of the above,,,,,,,,,,,,,,,,,,,,,,,,4
+9,"Consider the following function defined in micro-Scheme. Which of the following successfully returns the sum of 2 and 3?
+<code>(define add (y) (lambda (x) (+ x y)))</code>",MC,,,<code>(add 2 3)</code>,,<code>(add (2 3))</code>,,<code>((add 2) 3)</code>,,<code>(((add) 2) 3)</code>,,,,,,,,,,,,,,,,,,,,,,,,3
+10,Fill in the blank in the following algebraic laws for the list map function (micro-Scheme).,MC,"(map f '())         == '()
+(map f (cons x xs)) == _____",,<code>(cons (f x) (map f xs))</code>,,<code>(map (cons (f x) (f xs)))</code>,,<code>(cons (map f x) (f xs))</code>,,<code>(map (f x) (cons f xs))</code>,,,,,,,,,,,,,,,,,,,,,,,,1
+11,Which of the following describes the use of a higher order function?,MC,,,A function that passes in a function as a parameter,,A function that returns a function as a result,,All of the above,,None of the above,,,,,,,,,,,,,,,,,,,,,,,,3
+12,What is a continuation?,MC,,,A function passed in as a parameter that is applied to all elements of a list.,,A function passed in as a parameter that defines what happens next after some computation occurs.,,A function returned by a function that awaits further input.,,A list traversal function,,,,,,,,,,,,,,,,,,,,,,,,2
+13,A backtracking algorithm is essentially a(n) _____ in the space of possible solutions.,MC,,,breadth first search,,depth first search,,topological sort,,single source shortest path search,,,,,,,,,,,,,,,,,,,,,,,,2
+14,What is the type of the following function in ML?,MC,"fun func w (x, y) []        = w + x + y
+  | func w (x, y) (z :: zs) = z + func w (x, y) zs",,"<code>fn : 'a ('b, 'c) ('d list) -> int</code>",,"<code>fn : int (int, int) (int list) -> int</code>",,<code>fn : 'a -> 'b * 'c -> 'd list -> int</code>,,<code>fn : int -> int * int -> int list -> int</code>,,,,,,,,,,,,,,,,,,,,,,,,4
+15,"Consider the following datatype definition in ML:
+<code>datatype int_tree = EMPTY | INSERT of int_tree * int * int_tree</code>
+Which of the following is the type constructor?",MC,,,<code>int_tree</code>,,<code>INSERT</code>,,<code>int_tree * int * int_tree</code>,,<code>EMPTY | INSERT of int_tree * int * int_tree</code>,,,,,,,,,,,,,,,,,,,,,,,,1
+16,Suppose that we are defining a type <code>env</code> that stores the mapping from a variable name to some value. An inference rule that specifies how to create new values of type <code>env</code> is referred to as a(n)...,MC,,,formation rule.,,introduction rule.,,admittance rule.,,elimination rule.,,,,,,,,,,,,,,,,,,,,,,,,2
+17,"Consider the following abstract syntax definition of type <code>d</code>:
+\(CONAPP(TYCON(a), [TYCON(b), TYCON(c)])\)
+Which of those types has kind \(*\)?",MC,,,<code>a</code> only,,<code>a</code> and <code>d</code> only,,<code>b</code> and <code>c</code> only,,"<code>b</code>, <code>c</code>, and <code>d</code> only",,,,,,,,,,,,,,,,,,,,,,,,4
+18,"What is the type of <code>'(())</code>, or a one-element list containing the empty list, in typed micro-Scheme?",MC,,,<code>(list (list 'a))</code>,,<code>(list (forall ['a] (list 'a)))</code>,,<code>(forall ['a] (list (list 'a)))</code>,,<code>(forall ['a] (list (forall ['a] (list 'a))))</code>,,,,,,,,,,,,,,,,,,,,,,,,2
+19,"Consider the following line of nano-ML code:
+<code>(lambda (x y z) (if x y z))</code>
+Suppose that <code>x</code> has type <code>'a</code>, <code>y</code> has type <code>'b</code>, and <code>z</code> has type <code>'c</code> (each of which are fresh, distinct type variables). What constraint is present as a consequence of this line of code?",MC,,,<code>'a ~ bool</code>,,<code>'a ~ bool /\ 'b ~ int /\ 'c ~ int</code>,,<code>'a ~ bool /\ 'b ~ 'c</code>,,<code>'a ~ bool /\ 'a ~ 'b /\ 'b ~ 'c</code>,,,,,,,,,,,,,,,,,,,,,,,,3
+20,"What substitution fully satisfies the following constraint?
+<code>'a1 ~ bool /\ 'a2 ~ 'a3 /\ list 'a3 ~ list int</code>",MC,,,<code>'a1 |--> bool o 'a3 |--> int</code>,,<code>'a1 |--> bool o 'a2 |--> int o 'a3 |--> int</code>,,<code>'a1 |--> bool o 'a2 |--> (list int) o 'a3 |--> int</code>,,<code>idsubst</code>,,,,,,,,,,,,,,,,,,,,,,,,2
+21,What does it mean for a substitution to be idempotent?,MC,,,The substitution does not satisfy the constraint.,,The substitution is not the only substitution to satisfy the constraint.,,"If the substitution is applied twice, the result is the same as if it were applied once.",,"If the substitution is applied twice, the result is not the same as if it were applied once.",,,,,,,,,,,,,,,,,,,,,,,,3
+22,"What is the ML equivalent of an interface, holding declarations without their implementations?",MC,,,Signature,,Structure,,Record,,Functor,,,,,,,,,,,,,,,,,,,,,,,,1
+23,"Consider the following declaration in micro-Smalltalk:
+<code>(val y [block (x) x])</code>
+Which of the following correctly utilizes <code>y</code> to return the number <code>2</code>?",MC,,,<code>(y 2)</code>,,<code>(y: 2)</code>,,<code>(y value 2)</code>,,<code>(y value: 2)</code>,,,,,,,,,,,,,,,,,,,,,,,,4
+24,Classes that are meant to be inherited from but not to be instantiated are called...,MC,,,abstract classes.,,concrete classes.,,superclasses.,,subclasses.,,,,,,,,,,,,,,,,,,,,,,,,1
+25,The use of double dispatch helps avoid what kind of structure in code?,MC,,,Conditionals,,Loops,,Recursion,,Dynamic Dispatch,,,,,,,,,,,,,,,,,,,,,,,,1

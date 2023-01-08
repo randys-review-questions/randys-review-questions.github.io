@@ -1,0 +1,40 @@
+Id,Question,Type,Preformatted,Image,Option 1,Image 1,Option 2,Image 2,Option 3,Image 3,Option 4,Image 4,Option 5,Image 5,Option 6,Image 6,Option 7,Image 7,Option 8,Image 8,Option 9,Image 9,Option 10,Image 10,Option 11,Image 11,Option 12,Image 12,Option 13,Image 13,Option 14,Image 14,Option 15,Image 15,Correct Answer
+1,Which of the following pertaining to unboxed/boxed data structures is incorrect?,MC,,,"In a boxed data structure, the user needs to specify the size of each element upon initialization.",,Accessing elements in an unboxed data structure results in better spatial locality.,,A boxed data structure holds void pointers.,,"In an unboxed structure, the implementation handles deallocating elements.",,,,,,,,,,,,,,,,,,,,,,,,1
+2,"A ""magic number"" of <code>P5</code> at the top of an image file indicates that it is a(n)...",MC,,,plain portable bitmap.,,raw portable bitmap.,,plain portable graymap.,,raw portable graymap.,,,,,,,,,,,,,,,,,,,,,,,,4
+3,Consider the following lines of C code. What is printed?,MC,"int x = 256;
+int *int_p = &x;
+void *void_p = int_p;
+char *char_p = void_p;
+printf(""%c\n"", *char_p);",,0,,256,,The null character,,This code does not compile.,,,,,,,,,,,,,,,,,,,,,,,,3
+4,"The <code>apply</code> function inputted into Hanson's <code>Table_map</code> function must take in a <code>void *</code> for the key, a <code>void **</code> for the value, and a <code>void *</code> for the closure. What is the purpose of passing in a double pointer for the value?",MC,,,"This allows an <code>apply</code> function to change the value stored in the table, which is a <code>void *</code>.",,The Hanson table by default stores <code>void *</code> for keys and <code>void **</code> for values.,,"The key and value inputted into the function cannot be the same type, so passing in a <code>void **</code> helps get around that.",,The use of a double pointer allows for a polymorphic table structure.,,,,,,,,,,,,,,,,,,,,,,,,1
+5,How many bits are necessary to represent \(n\) total choices?,MC,,,\(n^2\),,\(2^n\),,\(\sqrt{n}\),,\(\log_2{n}\),,,,,,,,,,,,,,,,,,,,,,,,4
+6,Which of the following converts human-readable assembly code into a relocatable object file?,MC,,,Preprocessor,,Compiler,,Assembler,,Linker,,,,,,,,,,,,,,,,,,,,,,,,3
+7,The table mapping between virtual memory addresses and actual physical memory addresses is stored in the...,MC,,,operating system.,,cache.,,kernel.,,assembly code.,,,,,,,,,,,,,,,,,,,,,,,,1
+8,"Suppose that we have a 4-way set associative cache with a 16 byte blocksize. Suppose there were 64 total lines in the cache. Assuming that we have 32-bit addresses, how many bits would be stored in the tag?",MC,,,24,,26,,27,,28,,,,,,,,,,,,,,,,,,,,,,,,1
+9,A direct mapped cache is the same as...,MC,,,a 1-way set associative cache.,,a set associative cache with 1 set.,,All of the above,,None of the above,,,,,,,,,,,,,,,,,,,,,,,,1
+10,"Consider the following lines of code. Suppose that you have a fully associative cache with a blocksize of 2 bytes, and this cache has 4 lines total. What is the hit rate (assume that <code>i</code> and <code>j</code> are stored in registers)?",MC,"char characters[6][6];
+for (int i = 0; i < 6; i++) {
+    for (int j = 0; j < 6; j++) {
+        characters[j][i] = '\0';
+    }
+}",,0%,,25%,,33.33%,,50%,,,,,,,,,,,,,,,,,,,,,,,,1
+11,How many of the following structs can fit in 64 bytes of memory?,MC,"struct blah {
+    char c;
+    int x;
+    short s;
+};",,4,,5,,6,,8,,,,,,,,,,,,,,,,,,,,,,,,2
+12,What is <code>0x5 & 0xa</code>?,MC,,,<code>0x0</code>,,<code>0x5</code>,,<code>0xa</code>,,<code>0xf</code>,,,,,,,,,,,,,,,,,,,,,,,,1
+13,"Suppose you have a bit vector containing various flags, and you want to turn on the <code>LATE</code> flag. How would you do that?",MC,,,<code>myflags &= LATE;</code>,,<code>myflags &= ~LATE;</code>,,<code>myflags |= LATE;</code>,,<code>myflags |= ~LATE;</code>,,,,,,,,,,,,,,,,,,,,,,,,3
+14,What is the highest possible value for a 3-bit signed integer?,MC,,,3,,4,,7,,8,,,,,,,,,,,,,,,,,,,,,,,,1
+15,How is the number 2.50 represented as a 32-bit floating point number?,MC,,,<code>0 00000001 10100000000000000000000</code>,,<code>0 00000001 01000000000000000000000</code>,,<code>0 10000000 10100000000000000000000</code>,,<code>0 10000000 01000000000000000000000</code>,,,,,,,,,,,,,,,,,,,,,,,,4
+16,How is the hex value <code>0xdeadbeef</code> represented in little endian order (one hex digit represents 4 bits in memory)?,MC,,,<code>deadbeef</code>,,<code>feebdaed</code>,,<code>efbeadde</code>,,<code>f77db57b</code>,,,,,,,,,,,,,,,,,,,,,,,,3
+17,Which of the following would have the highest value memory address in a processes's virtual memory?,MC,,,An uninitialized global variable,,A <code>LinkedList</code> <code>Node</code> that has been allocated on the heap,,The first argument of a function call,,The second argument of a function call,,,,,,,,,,,,,,,,,,,,,,,,4
+18,"Suppose an array is stored at address <code>0xa7491d</code>, and suppose that a loop iterator (designed to visit every element of the array) is stored in register <code>%r8</code>. Consider the following line of assembly code. One can conclude with this information that this array probably stores...
+<code>0xa7491d(, %r8, 2)</code>",MC,,,chars,,shorts,,ints,,pointers,,,,,,,,,,,,,,,,,,,,,,,,2
+19,A conditional jump in assembly code to an address further down in the function is likely indicative of a(n) _____ in C code.,MC,,,conditional,,loop,,recursive call,,None of the above,,,,,,,,,,,,,,,,,,,,,,,,1
+20,"By AMD64 convention, which register holds the return value of a function?",MC,,,<code>%edi</code>,,<code>%esi</code>,,<code>%eax</code>,,<code>%esp</code>,,,,,,,,,,,,,,,,,,,,,,,,3
+21,"The universal machine emulator has the same power as AMD64, as they are both...",MC,,,provably correct and provably efficient.,,machines with equivalent Type II error values.,,Turing complete.,,implemented with segmented memory.,,,,,,,,,,,,,,,,,,,,,,,,3
+22,The number of instructions that a machine can execute in a period of time is referred to as its...,MC,,,performance.,,profile.,,latency.,,throughput.,,,,,,,,,,,,,,,,,,,,,,,,4
+23,Suppose that an implementation of the universal machine spends 40% of its time storing values into a Hanson Sequence. Suppose that replacing a Hanson Sequence with an array caused this hot spot to speed up to 200% of its original speed. What is the overall speedup of the program?,MC,,,5%,,20%,,25%,,200%,,,,,,,,,,,,,,,,,,,,,,,,3
+24,All of the following can negatively affect performance EXCEPT...,MC,,,Excessive use of malloc/free,,Constant folding,,Pointer chasing,,Duplicate function calls,,,,,,,,,,,,,,,,,,,,,,,,2
+25,Which of the following correctly stores the two's complement negative of the value stored in <code>r3</code> into register <code>r1</code> (using UMASM grammar)?,MC,,,<code>r1 := -r3</code>,,<code>r1 := ~r3 + 1</code>,,<code>r1 := (r3 nand r3) + 1</code>,,All of the above,,,,,,,,,,,,,,,,,,,,,,,,4
