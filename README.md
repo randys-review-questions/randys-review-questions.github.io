@@ -8,7 +8,7 @@ https://randys-review-questions.github.io/
 
 Currently, the website is composed of a bunch of static HTML pages, each containing
 the HTML for a practice quiz. Each of these pages corresponds to a directory 
-within the 'pages' directory. Within that directory, there are at least three files:
+within the `pages` directory. Within that directory, there are at least three files:
  * `index.html`: HTML source for the page, generated from `gen_quiz_pgs.py` in the 
  `scripts` directory. Thus, it is not very readable to humans. You can copy and paste 
  the code into a beautifier or find a human-written example in 
