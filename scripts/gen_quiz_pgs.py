@@ -40,7 +40,7 @@ def write_html(path):
 
     # Generate html for head 
     head = htmlwriter.double_tag('title', 'Randy\'s Review Questions')
-    head += htmlwriter.single_tag('link', {'rel':'stylesheet', 'href':'../../css/style.css', 'type':'text/css'})
+    head += htmlwriter.single_tag('link', {'rel':'stylesheet', 'href':'../../../css/style.css', 'type':'text/css'})
     head += htmlwriter.double_tag('script', '', {'src':'https://polyfill.io/v3/polyfill.min.js?features=es6'})
     head += htmlwriter.double_tag('script', '', {'id':'MathJax-script', 'async':'', 'src':'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'})
     head = htmlwriter.double_tag('head', head)
@@ -109,10 +109,10 @@ def write_html(path):
 
     # Page footer 
     body += htmlwriter.single_tag('hr')
-    body += htmlwriter.double_tag('a', 'Return to Home', {'href':'../../index.html'})
+    body += htmlwriter.double_tag('a', 'Return to Home', {'href':'../../../index.html'})
 
     # JS related to checking answers 
-    body += htmlwriter.double_tag('script', '', {'src':'../../scripts/checkans.js'})
+    body += htmlwriter.double_tag('script', '', {'src':'../../../scripts/checkans.js'})
     answerKey = str(answerKey).replace('\'', '"')
     function = f'function checkquizans() {{ answerKey = {answerKey}; checkans(answerKey); }}'
     body += htmlwriter.double_tag('script', function)
