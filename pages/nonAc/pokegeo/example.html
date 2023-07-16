@@ -35,10 +35,15 @@
                 Goldenrod City
             <br />
         </ul>
+        <input type="button" onclick="checkquestionans(0)" id="single_question" class="mybutton" value="Check Answer" /> <br />
         <p id="q1correct" style="color:green;display:none;">
             Correct!
         </p>
         <p id="q1incorrect" style="display:none;">
+            <span style="color:purple;">Incorrect.</span>
+            Try again.
+        </p>
+        <p id="q1incorrectreveal" style="display:none;">
             <span style="color:purple;">Incorrect.</span>
             The correct answer was: Virbank City
         </p>
@@ -58,10 +63,15 @@
                 False <img src="reborn_thumbnail.png" alt="reborn_thumbnail.png" />
             <br />
         </ul>
+        <input type="button" onclick="checkquestionans(1)" id="single_question" class="mybutton" value="Check Answer" /> <br />
         <p id="q2correct" style="color:green;display:none;">
             Correct!
         </p>
         <p id="q2incorrect" style="display:none;">
+            <span style="color:purple;">Incorrect.</span>
+            Try again.
+        </p>
+        <p id="q2incorrectreveal" style="display:none;">
             <span style="color:purple;">Incorrect.</span>
             The correct answer(s) were: True, True
         </p>
@@ -80,17 +90,24 @@
                 \(\int_0^1 0 dt\)
             <br />
         </ul>
+        <input type="button" onclick="checkquestionans(2)" id="single_question" class="mybutton" value="Check Answer" /> <br />
         <p id="q3correct" style="color:green;display:none;">
             Correct!
         </p>
-        <p id="q2incorrect" style="display:none;">
+        <p id="q3incorrect" style="display:none;">
+            <span style="color:purple;">Incorrect.</span>
+            Try again.
+        </p>
+        <p id="q3incorrectreveal" style="display:none;">
             <span style="color:purple;">Incorrect.</span>
             The correct answer was: $\int_0^1 0 dt$
         </p>
 
+        <br id="gapbeforescore" />
+
         <h3 id="score" style="color:blue;display:none;"></h3>
 
-        <input type="button" onclick="checkquizans()" value="Check Answers" /> <br />
+        <input type="button" onclick="checkquizans()" id="full_quiz" class="mybutton" value="Check All Answers and Calculate Score" /> <br />
 
         <hr />
         <a href="../../../index.html">Return to Home</a>
@@ -100,6 +117,11 @@
             function checkquizans() {
                 answerKey = [["2"], ["1", "2"]]
                 checkans(answerKey)
+            }
+
+            function checkquestionans(number) {
+                answerKey = [["2"], ["1", "2"]]
+                checksingleans(number, answerKey, false)
             }
         </script>
         <noscript>

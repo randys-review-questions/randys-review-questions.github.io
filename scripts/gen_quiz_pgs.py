@@ -86,6 +86,10 @@ def write_html(path):
                     answers += htmlwriter.single_tag('img', {'src':answer_img, 'alt':answer_img})
                 answers += htmlwriter.single_tag('br')
         body += htmlwriter.double_tag('ul', answers)
+
+        # Add button for checking answer for this question
+        body += htmlwriter.single_tag('input', {'type':'button', 'onclick':f'checkquestionans({q_idx})', 'id':'single_question', 'class':'mybutton', 'value':'Check Answer'})
+        body += htmlwriter.single_tag('br')
             
         # Extract correct answer(s)
         correct_answer = question_data['Correct Answer'][q_idx]
@@ -99,12 +103,14 @@ def write_html(path):
         # Add hidden 'Correct' and 'Incorrect' displays
         body += htmlwriter.double_tag('p', 'Correct!', {'id':f'q{q_idx+1}correct', 'style':'color:green;display:none;'})
         incorrect_text = htmlwriter.double_tag('span', 'Incorrect.', {'style':'color:purple;'})
+        body += htmlwriter.double_tag('p', f'{incorrect_text} Try again.', {'id':f'q{q_idx+1}incorrect', 'style':'display:none;'})
         correct_reveal = 'answers were' if is_checkbox else 'answer was'
-        body += htmlwriter.double_tag('p', f'{incorrect_text} The correct {correct_reveal}: {correct_text}', {'id':f'q{q_idx+1}incorrect', 'style':'display:none;'})
+        body += htmlwriter.double_tag('p', f'{incorrect_text} The correct {correct_reveal}: {correct_text}', {'id':f'q{q_idx+1}incorrectreveal', 'style':'display:none;'})
     
-    # Add HTML related to checking answers 
+    # Add HTML related to checking all answers and calculating score 
+    body += htmlwriter.single_tag('br', {'id':'gapbeforescore'})
     body += htmlwriter.double_tag('h3', '', {'id':'score', 'style':'color:blue;display:none;'})
-    body += htmlwriter.single_tag('input', {'type':'button', 'onclick':'checkquizans()', 'value':'Check Answers'})
+    body += htmlwriter.single_tag('input', {'type':'button', 'onclick':'checkquizans()', 'id':'full_quiz', 'class':'mybutton', 'value':'Check All Answers and Calculate Score'})
     body += htmlwriter.single_tag('br')
 
     # Page footer 
@@ -114,8 +120,9 @@ def write_html(path):
     # JS related to checking answers 
     body += htmlwriter.double_tag('script', '', {'src':'../../../scripts/checkans.js'})
     answerKey = str(answerKey).replace('\'', '"')
-    function = f'function checkquizans() {{ answerKey = {answerKey}; checkans(answerKey); }}'
-    body += htmlwriter.double_tag('script', function)
+    function1 = f'function checkquizans() {{ answerKey = {answerKey}; checkans(answerKey); }}'
+    function2 = f'function checkquestionans(number) {{ answerKey = {answerKey}; checksingleans(number, answerKey, false); }}'
+    body += htmlwriter.double_tag('script', function1 + ' ' + function2)
     noscript_msg = htmlwriter.double_tag('p', 'Looks like JavaScript is disabled! The answer checker will not work without JavaScript enabled.')
     body += htmlwriter.double_tag('noscript', noscript_msg)
         

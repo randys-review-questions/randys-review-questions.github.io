@@ -23,7 +23,14 @@ input[type='radio'] {
 input[type='checkbox'] {
     transform: scale(1.25)
 }
-input[type='button'] {
+.mybutton {
+    
+}
+#single_question {
+    height: 20px;
+    width: 100px;
+}
+#full_quiz {
     height: 30px;
-    width: 150px;
+    width: 300px;
 }
