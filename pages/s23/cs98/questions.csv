@@ -1,0 +1,24 @@
+Id,Question,Type,Preformatted,Image,Option 1,Image 1,Option 2,Image 2,Option 3,Image 3,Option 4,Image 4,Option 5,Image 5,Option 6,Image 6,Option 7,Image 7,Option 8,Image 8,Option 9,Image 9,Option 10,Image 10,Option 11,Image 11,Option 12,Image 12,Option 13,Image 13,Option 14,Image 14,Option 15,Image 15,Correct Answer
+1,"When working in sprints, during which meetings should team members briefly state which issues are blocking them from progress?",MC,,,Sprint Planning meetings,,Work sessions,,Stand Up meetings,,Sprint Retrospective meetings,,,,,,,,,,,,,,,,,,,,,,,,3
+2,"Ideally, each sprint in a software development project lasts about how long?",MC,,,2 days,,1 week,,2 weeks,,1 month,,,,,,,,,,,,,,,,,,,,,,,,3
+3,"When working on a large software project, there is often a list of criteria that the final product should meet; such criteria may include certain functional, performance, and/or usability requirements. Tests that evaluate whether such criteria are met are considered to be...",MC,,,unit tests.,,integration tests.,,regression tests.,,acceptance tests.,,,,,,,,,,,,,,,,,,,,,,,,4
+4,The items discussed in the Sprint Retrospective meeting should be reported in which deliverable?,MC,,,Executive Summary,,Acceptance Test Results,,Project Poster,,Final Report,,,,,,,,,,,,,,,,,,,,,,,,1
+5,"The Digital Design Studio, where one can get their poster printed for the Poster Session, is located in which building on the Tufts campus?",MC,,,Mayer Campus Center,,Tisch Library,,Joyce Cummings Center,,Dowling Hall,,,,,,,,,,,,,,,,,,,,,,,,2
+6,Which of the following is the correct way to notate a middle C whole note in MusiCode?,MC,,,<code>C1/1</code>,,<code>C1/4</code>,,<code>C4/1</code>,,<code>C4/4</code>,,,,,,,,,,,,,,,,,,,,,,,,3
+7,"Consider the following MusiCode token. The underscore (""_"") character signifies...",MC,C4_G4/4,,a chord.,,a slur between two notes.,,a glissando between two notes.,,a tremolo between two notes.,,,,,,,,,,,,,,,,,,,,,,,,1
+8,"Consider the following partial implementation of ""Mary Had a Little Lamb"" (below is the incomplete MusiCode source and the equivalent PDF). Fill in the blank in the MusiCode source.",MC,"(title ""Mary Had a Little Lamb"")
+(composer ""Sarah Josepha Hale"")
+(part ""Violin""
+  (staff
+    (key DM)
+    _____
+    (barline final)
+  )
+)",Quiz Q1.PNG,<code>(notes F4./4 E4/8 D4/4 E4/4 F4/4 F4/4 F4/2)</code>,,<code>(notes F#4./4 E4/8 D4/4 E4/4 F#4/4 F#4/4 F#4/2)</code>,,<code>(notes F4/4. E4/8 D4/4 E4/4 F4/4 F4/4 F4/2)</code>,,<code>(notes F#4/4. E4/8 D4/4 E4/4 F#4/4 F#4/4 F#4/2)</code>,,,,,,,,,,,,,,,,,,,,,,,,4
+9,What should the MusiCode <code>notes</code> block look like to produce the following beaming pattern?,MC,,Quiz Q2.PNG,<code>(notes [ C4/8 C4/8 ] [ C4/8 C4/8 ])</code>,,<code>(notes C4/8 [ C4/8 ] C4/8 [ C4/8 ])</code>,,<code>(notes C4/8 C4[beamNone]/8 C4/8 C4[beamNone]/8)</code>,,<code>(notes C4[beamBegin]/8 C4[beamEnd]/8 C4[beamBegin]/8 C4[beamEnd]/8)</code>,,,,,,,,,,,,,,,,,,,,,,,,4
+10,"All of the following are defined as ""staff-level events"" in MusiCode EXCEPT...",MC,,,Tuplets,,Multiple Voices Blocks,,"Multiple Endings (first, second, etc.)",,Expression Text,,,,,,,,,,,,,,,,,,,,,,,,1
+11,Which of the following is NOT one of the technologies used in the MusiCode application?,MC,,,GNU LilyPond,,Lark,,Electron,,React,,,,,,,,,,,,,,,,,,,,,,,,3
+12,Translate the following note from MusiCode to LilyPond: <code>Bb3/4</code>,MC,,,<code>bes 4</code>,,<code>bis 4</code>,,"<code>bes, 4</code>",,"<code>bis, 4</code>",,,,,,,,,,,,,,,,,,,,,,,,1
+13,Consider the following line of LilyPond code. Which of the following is the correct PDF equivalent?,MC,"{ \clef bass \time 2/4 c8 \noBeam c8 [ c8 c8 ] \bar ""|."" }",,a,Quiz Q3-1.PNG,b,Quiz Q3-2.PNG,c,Quiz Q3-3.PNG,d,Quiz Q3-4.PNG,,,,,,,,,,,,,,,,,,,,,,,2
+14,The MusiCode application directory (<code>studious-couscous</code>) contains four subdirectories. Which of these subdirectories is in the <code>.gitignore</code> (due to bloat among other reasons)?,MC,,,<code>api</code>,,<code>node_modules</code>,,<code>public</code>,,<code>src</code>,,,,,,,,,,,,,,,,,,,,,,,,2
+15,"In MusiCode, ""modifiers"" are specified for notes by placing keywords in square brackets between the octave and the duration; such ""modifiers"" can include dynamic markings, articulation markings, and/or more. In LilyPond, most such ""modifiers"" are specified via some symbol or token written after the note being modified (in the LilyPond code), but there are a few notable exceptions where the ""modifiers"" are instead specified before the note being modified. Which of these MusiCode modifiers, when transpiled to LilyPond, ends up being specified before the note being modified (as opposed to after)?",MC,,,<code>phrasingSlurBegin</code>,,<code>tremolo8</code>,,<code>decrescEnd</code>,,<code>stemDown</code>,,,,,,,,,,,,,,,,,,,,,,,,4
