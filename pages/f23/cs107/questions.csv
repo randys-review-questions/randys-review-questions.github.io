@@ -1,0 +1,56 @@
+Id,Question,Type,Preformatted,Image,Option 1,Image 1,Option 2,Image 2,Option 3,Image 3,Option 4,Image 4,Option 5,Image 5,Option 6,Image 6,Option 7,Image 7,Option 8,Image 8,Option 9,Image 9,Option 10,Image 10,Option 11,Image 11,Option 12,Image 12,Option 13,Image 13,Option 14,Image 14,Option 15,Image 15,Correct Answer
+1,Which of the following statements regarding working on a team is <strong>incorrect</strong>?,MC,,,Any issues or complaints regarding a team member's conduct should be addressed sooner rather than later.,,Stronger teams result from having more intelligent team members.,,It is important for each team member to contribute in the same proportion as other team members.,,Dictatorships lead to better results than democracies.,,,,,,,,,,,,,,,,,,,,,,,,2
+2,"Which of the following is a necessary characteristic of a compiler?
+<i>""Source program"" refers to the program to compile.</i>",MC,,,It must statically analyze the source program.,,It must transform the source program into machine code.,,It must execute the source program.,,All of the above,,,,,,,,,,,,,,,,,,,,,,,,1
+3,Consider the following OCaml expression. What is returned?,MC,"let foo xs =
+    let bar x y = x <> y in
+    List.fold_left bar true xs
+in
+foo [true; false; true]",,<code>true</code>,,<code>false</code>,,<code>[true; false; true]</code>,,<code>[false; true; false]</code>,,,,,,,,,,,,,,,,,,,,,,,,1
+4,Consider the following OCaml declaration. What is the type of <code>foo</code>?,MC,"let foo p = match p with
+ | (None, None) -> None
+ | (None, Some(y)) -> Some(y)
+ | (Some(x), None) -> Some(x)
+ | (Some(x), Some(y)) -> Some(x + y)",,<code>('a * 'a) option -> int option</code>,,<code>'a option * 'a option -> int option</code>,,<code>(int * int) option -> int option</code>,,<code>int option * int option -> int option</code>,,,,,,,,,,,,,,,,,,,,,,,,4
+5,The scanning step of a compiler takes in _____ as input and produces _____.,MC,,,"a stream of characters, a stream of tokens",,"a stream of characters, an abstract syntax tree",,"a stream of tokens, an abstract syntax tree",,"an abstract syntax tree, the target program",,,,,,,,,,,,,,,,,,,,,,,,1
+6,Which of the following NFAs (nondeterminstic finite automata) correctly accept all strings in the language defined by the regular expression \((012)*\) and reject all other strings?,MC,,,a,Quiz Q1-1.jpg,b,Quiz Q1-2.jpg,c,Quiz Q1-3.jpg,d,Quiz Q1-4.jpg,,,,,,,,,,,,,,,,,,,,,,,3
+7,"Consider the following grammar for a simple example language that works with alphanumeric strings and the following partial implementation of <code>parser.mly</code> (input to the Menhir parser generator). In this language, adding string \(b\) to string \(a\) with the <code>+</code> operator concatenates \(b\) to the end of \(a\), and subtracting string \(b\) from string \(a\) with the <code>-</code> operator removes all the characters in \(b\) from \(a\). For example, the expression <code>abc + 123</code> evalutes to <code>abc123</code>, and the expression <code>abc123 - 2b24</code> evalutes to <code>ac13</code>. Assume that all whitespace is ignored, the <code>+</code> symbol lexes to the <code>PLUS</code> token, the <code>-</code> symbol lexes to the <code>MINUS</code> token, and any sequence of alphanumeric characters lexes to the <code>STRING</code> token. 
+What does <code>abc123 - 123 + cde345 - 345</code> evaluate to?",MC,"// Grammar:
+expr:
+    expr PLUS expr
+  | expr MINUS expr
+  | STRING
+
+// Partial implementation of parser.mly:
+%token PLUS MINUS
+%token &lt;string> STRING
+
+%right MINUS
+%left PLUS",,<code>ab</code>,,<code>ab3</code>,,<code>abc</code>,,<code>abccde</code>,,,,,,,,,,,,,,,,,,,,,,,,2
+8,"Consider the following grammar:
+\(a \to b + b\)
+\(b \to \text{NUMBER} * \text{NUMBER}\)
+\(b \to \text{NUMBER}\)
+
+Which of these options correctly underlines the handle of the following right sentential form?
+\(\text{NUMBER} + \text{NUMBER} * \text{NUMBER}\)",MC,,,\(\underline{\text{NUMBER}} + \text{NUMBER} * \text{NUMBER}\),,\(\text{NUMBER} + \text{NUMBER} * \underline{\text{NUMBER}}\),,\(\underline{\text{NUMBER} + \text{NUMBER}} * \text{NUMBER}\),,\(\text{NUMBER} + \underline{\text{NUMBER} * \text{NUMBER}}\),,,,,,,,,,,,,,,,,,,,,,,,4
+9,"Symbol tables that map user-defined names to information about the ""meaning"" of such names (e.g. their types) are useful in the implementation of which compiler ""pass""?",MC,,,Lexing,,Parsing,,Semantic Analysis,,Code Generation,,,,,,,,,,,,,,,,,,,,,,,,3
+10,"Consider the following lines of 3-Address Code (<em>not</em> in SSA form). On what line does the basic block starting at label <code>L2</code> end?
+<i>Note: the instruction <code>bz L, a</code> means: jump to label <code>L</code> if the value stored in <code>a</code> is true.</i>",MC,"1  L1: a = add 2, 3
+2  L2: b = add 5, a
+3      c = shl b, 3
+4  L3: a = sub a, 1
+5      bz L2, a
+6      jmp L4
+7      c = shr c, 3
+8  L4: ret c",,3,,5,,6,,7,,,,,,,,,,,,,,,,,,,,,,,,2
+11,"When using the OCaml API for LLVM, which object maintains global data?",MC,,,The builder,,The context,,The element,,The module,,,,,,,,,,,,,,,,,,,,,,,,2
+12,The reference counting algorithm for garbage collection works in all of the following scenarios EXCEPT...,MC,,,when there exists a heap object that references another heap object not referenced on the stack or in a register.,,when there exists a heap object that references another heap object which references the first heap object.,,when there exists a heap object referenced on the stack but not referenced in a register.,,All of the above are scenarios where the reference counting algorithm works.,,,,,,,,,,,,,,,,,,,,,,,,2
+13,An object's virtual table (used in the implementation of inheritance) contains which of the following?,MC,,,Pointers to its methods,,Its data members,,Pointers to the data members and methods of its superclass,,Both the first two options <em>and</em> a pointer to its superclass's virtual table,,,,,,,,,,,,,,,,,,,,,,,,1
+14,"Which of the following techniques is not a compiler optimization on its own, but can lead to further optimizations when paired with other techniques?",MC,,,Constant Folding,,Common Sub-Expression Elimination,,Copy Propagation,,Dead Code Removal,,,,,,,,,,,,,,,,,,,,,,,,3
+15,Consider the following lines of 3-Address Code. Which variables are live between the instruction on line 3 and the instruction on line 4?,MC,"1  a = add 2, 3
+2  c = sub a, 1
+3  b = sub a, 2
+4  a = add b, 3
+5  b = sub a, 1
+6  c = add a, 1",,<code>b</code> only,,<code>a</code> and <code>b</code> only,,<code>a</code> and <code>c</code> only,,"<code>a</code>, <code>b</code>, and <code>c</code>",,,,,,,,,,,,,,,,,,,,,,,,1
