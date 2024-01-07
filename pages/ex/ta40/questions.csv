@@ -1,0 +1,77 @@
+Id,Question,Type,Preformatted,Image,Option 1,Image 1,Option 2,Image 2,Option 3,Image 3,Option 4,Image 4,Option 5,Image 5,Option 6,Image 6,Option 7,Image 7,Option 8,Image 8,Option 9,Image 9,Option 10,Image 10,Option 11,Image 11,Option 12,Image 12,Option 13,Image 13,Option 14,Image 14,Option 15,Image 15,Correct Answer
+1,Which of the following lines of C code prints the integer <code>3</code>?,,,,<code>std::cout << 3;</code>,,<code>printf(3);</code>,,"<code>printf(""%d"", 3);</code>",,Both the second option and the third option.,,,,,,,,,,,,,,,,,,,,,,,,3
+2,Consider the following C code which is a client of Hanson's <code>Seq_T</code>. What gets printed?,,"Seq_T seq = Seq_new(10);
+printf(""%ld\n"", sizeof(*seq));",,<code>8</code>,,<code>16</code>,,<code>80</code>,,This code does not compile.,,,,,,,,,,,,,,,,,,,,,,,,4
+3,Any C error message that resulted from attempting to <code>#include</code> a file that does not exist was thrown by the...,,,,preprocessor.,,compiler (proper).,,assembler.,,linker.,,,,,,,,,,,,,,,,,,,,,,,,1
+4,Which of the following would have the lowest value address in a processes's virtual memory?,,,,A globally declared <code>LinkedList</code> <code>Node</code>.,,The <code>main()</code> function.,,A <code>static</code> local array.,,A heap allocated <code>struct</code>.,,,,,,,,,,,,,,,,,,,,,,,,2
+5,"What is the size of the following struct, in bytes?",,"struct Airport_T {
+        char code[3];
+        int gates[12];
+        long num_flights;
+};",,24,,60,,64,,96,,,,,,,,,,,,,,,,,,,,,,,,3
+6,"Consider a direct-mapped cache with a 128-byte blocksize and 4 lines in the cache.
+What is the hit rate of the following access pattern? Assume that constants and loop iterators are stored in registers (so the cache is only used when accessing an element of the <code>airports</code> array).
+<i>Use your answer from the previous question.</i>",,"struct Airport_T airports[8];
+
+for (int i = 0; i < 8; i++) {
+        for (int j = 0; j < 3; j++) {
+                airports[i].code[j] = 'A';
+        }
+        for (int j = 0; j < 6; j++) {
+                airports[i].gates[2 * j] = j;
+        }
+        for (int j = 0; j < 6; j++) {
+                airports[i].gates[2 * j + 1] = 2 * j;
+        }
+        airports[i].num_flights = 0;
+}",,\(\frac{1}{32}\),,\(\frac{1}{2}\),,\(\frac{15}{16}\),,\(\frac{31}{32}\),,,,,,,,,,,,,,,,,,,,,,,,4
+7,"Suppose <code>myflags</code> is a bit vector of various flags that includes the <code>STUDENT</code> flag. Upon graduation, you wish to turn this flag off. How would you do that?",,,,<code>myflags |= STUDENT</code>,,<code>myflags |= ~STUDENT</code>,,<code>myflags &= STUDENT</code>,,<code>myflags &= ~STUDENT</code>,,,,,,,,,,,,,,,,,,,,,,,,4
+8,Consider the following lines of code. What value is stored in <code>b</code> after those two lines get executed?,,"int16_t a = (int16_t)0xfa00;
+uint16_t b = a >> 8;",,<code>0x00fa</code>,,<code>0x0fa0</code>,,<code>0xffa0</code>,,<code>0xfffa</code>,,,,,,,,,,,,,,,,,,,,,,,,4
+9,Consider the following assembly implementation of <code>func()</code>. What would <code>func(0)</code> return?,,"func:
+    addl $4, %edi
+    cmpl $5, %edi
+    cmovge $2, %eax
+    cmpl $5, %edi
+    cmovl $1, %eax
+    shl $2, %eax",,<code>0</code>,,<code>2</code>,,<code>4</code>,,<code>8</code>,,,,,,,,,,,,,,,,,,,,,,,,3
+10,Consider the following line of assembly that accesses the value of an array element. What is stored in <code>%r12</code> during the execution of this instruction?,,"mov $0x404b88(, %r12, 4), %eax",,Pointer to the element being accessed,,The index of the element being accessed,,The value of the element being accessed,,The size of each element in the array,,,,,,,,,,,,,,,,,,,,,,,,2
+11,"Suppose that in a UM (Universal Machine) program, you decide to store the two's complement representation of <code>-2</code> into register 0 and the two's complement representation of <code>-1</code> into register 1. You then execute the UM's division instruction, storing the result of dividing the value in register 0 by the value in register 1 into register 2. At this point, what is the value stored in register 2 interpreted as a two's complement signed integer? ",,,,-2,,0,,1,,2,,,,,,,,,,,,,,,,,,,,,,,,2
+12,What is the first step to writing an optimized C program?,,,,Don't optimize it!,,Break all abstraction barriers.,,Move all code to the <code>main()</code> function.,,"Find instruction ""hot spots"" using a profiler.",,,,,,,,,,,,,,,,,,,,,,,,1
+13,Consider the following snippet of UMASM code. Which labels are functions?,,".section text
+    L2:
+    push r1 on stack r2
+    push r3 on stack r2
+    push r4 on stack r2
+
+    r3 := m[r0][r2 + 3]
+    if (r3 <=s 1) goto L3 using r5
+
+    r4 := r3 - 1
+    push r4 on stack r2
+    goto L2 linking r1
+    pop stack r2
+    r4 := r1
+
+    r3 := r3 - 2
+    push r3 on stack r2
+    goto L2 linking r1
+    pop stack r2
+    r1 := r4 + r1
+    goto L4
+
+    L3:
+    r1 := 1
+       
+    L4:
+    pop r4 off stack r2
+    pop r3 off stack r2
+    pop r5 off stack r2
+    goto r5",,<code>L2</code> only,,<code>L2</code> and <code>L3</code> only,,<code>L2</code> and <code>L4</code> only,,<code>L3</code> and <code>L4</code> only,,,,,,,,,,,,,,,,,,,,,,,,1
+14,"In Fall 2023, each TA was expected to grade either _____ of the five design documents or S&O for _____ of the eight assignments.",,,,"three, four",,"three, five",,"four, four",,"five, eight",,,,,,,,,,,,,,,,,,,,,,,,3
+15,"When grading a design document or structure & organization, an Excellent should be awarded...",,,,only for submissions that show true distinction.,,only for submissions that show A-quality work.,,for submissions that meet all criteria outlined in the spec and coding standards.,,only on blank submissions.,,,,,,,,,,,,,,,,,,,,,,,,1
+16,"What is the correct answer to ""Is the secret phase of the bomb extra credit?""",,,,Yes,,No,,I don't know,,What secret phase?,,,,,,,,,,,,,,,,,,,,,,,,4
+17,"Which of the following is the best way to answer ""Should we use a UArray or a Sequence in this case?""",,,,You should use a UArray because you won't need to allocate heap memory beyond what's allocated for the array.,,You should use a Sequence because it has a flexible size.,,"The decision is up to you, and we will evaluate your decision.",,The decision is up to you; this won't affect your grade.,,,,,,,,,,,,,,,,,,,,,,,,3
+18,"In Fall 2023, each of the four teaching fellows had one major role. Which of the following was <strong>not</strong> one of those roles?",,,,Labs,,Scheduling,,Design Document Grading,,S&O Grading,,,,,,,,,,,,,,,,,,,,,,,,1
+19,"By convention, all autograder test files in the appropriate <code>testsets</code> directory designed to be inputted to a student's program as a command line argument ends in the _____ extension.",,,,<code>.0</code>,,<code>.1</code>,,<code>.in</code>,,<code>.stdin</code>,,,,,,,,,,,,,,,,,,,,,,,,1
+20,"Suppose that you are regrading functional correctness for John Doe's submission (UTLN is <code>jdoe01</code>) of the assignment <code>dummyassignment</code>. Assuming that you have already manually changed the requested lines, you have re-compiled his program, he has only made one submission, and <code>TS</code> and <code>TFB</code> are environment variables set to the appropriate <code>testsets</code> directory and the test framework bin, respectively, which of the following commands completes this regrade?",,,,<code>ls | parallel -j 4 $TFB/run_tests.py $TS/dummyassignment jdoe01.1</code>,,<code>$TFB/run_tests.py $TS/dummyassignment jdoe01.1</code>,,<code>ls | parallel -j 4 $TFB/report_results.py $TS/dummyassignment jdoe01.1 > fc.dummyassignment.grades</code>,,<code>$TFB/report_results.py $TS/dummyassignment jdoe01.1 > fc.dummyassignment.grades</code>,,,,,,,,,,,,,,,,,,,,,,,,2
