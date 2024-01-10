@@ -8,17 +8,20 @@ https://randys-review-questions.github.io/
 
 Currently, the website is composed of a bunch of static HTML pages, each containing
 the HTML for a practice quiz. Each of these pages corresponds to a directory 
-within the `pages` directory. Within that directory, there are at least three files:
- * `index.html`: HTML source for the page, generated from `gen_quiz_pgs.py` in the 
- `scripts` directory. Thus, it is not very readable to humans. You can copy and paste 
- the code into a beautifier or find a human-written example in 
- `pages/nonAc/pokegeo/example.html`
+within the `pages` directory. Within that directory, there are at least four files:
+ * `index.html`: HTML source for the quiz page in *learn mode*, generated from 
+ `gen_quiz_pgs.py` in the `scripts` directory. Thus, it is not very readable to humans. 
+ You can copy and paste the code into a beautifier or find a human-written example in 
+ `pages/nonAc/pokegeo/example.html`.
+ * `test.html`: HTML source for the quiz page in *test mode*, also generated from 
+ `gen_quiz_pgs.py`. A human-written example can be found in 
+ `pages/nonAc/pokegeo/example-test.html`.
  * `page_data.csv`: CSV containing metadata to be displayed on the page. A blank 
  template can be found in the `templates` directory.
  * `questions.csv`: CSV database of questions and answer options for the quiz. A blank 
  template can be found in the `templates` directory.
- * Optionally, any images that are displayed as part of a question and/or answer 
- option(s).
+ * Optionally, any images or helper documents that are displayed as part of a question 
+ and/or answer option(s).
 
 The pages are dependent on JavaScript for answer checking functionality, and MathJax for
 rendering equations from a TeX source. 
