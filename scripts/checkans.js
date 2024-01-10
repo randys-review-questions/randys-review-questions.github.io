@@ -13,7 +13,7 @@ function checkans(answerKey) {
     document.querySelector("#score").style.display = "block";
 }
 
-function checksingleans(number, answerKey, reveal) {
+function checksingleans(number, answerKey) {
     // Extract options that the user selected 
     selected = document.querySelectorAll("input[name=q" + (number + 1) + "]:checked");
     values = [];
@@ -26,18 +26,10 @@ function checksingleans(number, answerKey, reveal) {
     if (correct) {
         document.querySelector("#q" + (number + 1) + "correct").style.display = "block";
         document.querySelector("#q" + (number + 1) + "incorrect").style.display = "none";
-        document.querySelector("#q" + (number + 1) + "incorrectreveal").style.display = "none";
-    } else if (reveal) {
-        document.querySelector("#q" + (number + 1) + "incorrectreveal").style.display = "block";
-        document.querySelector("#q" + (number + 1) + "correct").style.display = "none";
-        document.querySelector("#q" + (number + 1) + "incorrect").style.display = "none";
     } else {
         document.querySelector("#q" + (number + 1) + "incorrect").style.display = "block";
         document.querySelector("#q" + (number + 1) + "correct").style.display = "none";
-        document.querySelector("#q" + (number + 1) + "incorrectreveal").style.display = "none";
     }
-
-    document.querySelector("#gapbeforescore").style.display = "inline";
-    document.querySelector("#score").style.display = "none";
+    
     return correct;
 }

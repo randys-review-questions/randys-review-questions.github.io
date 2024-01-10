@@ -15,6 +15,12 @@
             Based on the geography of the regions in Pokemon games. This quiz 
             only covers games from generations 1-6.
         </p>
+        <p>
+            You are currently in learn mode. 
+            <a href="example-test.html">
+                To switch to test mode, click here.
+            </a>
+        </p>
 
         <hr />
 
@@ -43,10 +49,6 @@
             <span style="color:purple;">Incorrect.</span>
             Try again.
         </p>
-        <p id="q1incorrectreveal" style="display:none;">
-            <span style="color:purple;">Incorrect.</span>
-            The correct answer was: Virbank City
-        </p>
 
         <p class="question">
             2. Which of the following are true?
@@ -71,10 +73,6 @@
             <span style="color:purple;">Incorrect.</span>
             Try again.
         </p>
-        <p id="q2incorrectreveal" style="display:none;">
-            <span style="color:purple;">Incorrect.</span>
-            The correct answer(s) were: True, True
-        </p>
 
         <p class="question">
             3. Which evaluates to $0$?
@@ -98,30 +96,17 @@
             <span style="color:purple;">Incorrect.</span>
             Try again.
         </p>
-        <p id="q3incorrectreveal" style="display:none;">
-            <span style="color:purple;">Incorrect.</span>
-            The correct answer was: $\int_0^1 0 dt$
-        </p>
 
-        <br id="gapbeforescore" />
-
-        <h3 id="score" style="color:blue;display:none;"></h3>
-
-        <input type="button" onclick="checkquizans()" id="full_quiz" class="mybutton" value="Check All Answers and Calculate Score" /> <br />
+        <br />
 
         <hr />
         <a href="../../../index.html">Return to Home</a>
 
         <script src="../../../scripts/checkans.js"></script>
         <script>
-            function checkquizans() {
-                answerKey = [["2"], ["1", "2"]]
-                checkans(answerKey)
-            }
-
             function checkquestionans(number) {
                 answerKey = [["2"], ["1", "2"]]
-                checksingleans(number, answerKey, false)
+                checksingleans(number, answerKey)
             }
         </script>
         <noscript>

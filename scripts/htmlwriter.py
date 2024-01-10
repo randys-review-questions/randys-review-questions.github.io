@@ -22,6 +22,10 @@ def single_tag(tag, pairs=dict()):
     result += f' />'
     return result 
 
+def comment(comment):
+    result = f'<!-- {comment} -->'
+    return result 
+
 if __name__ == '__main__':
     print('This file does not contain a main script.')
     exit()

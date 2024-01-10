@@ -33,7 +33,9 @@ def is_nonempty(elem):
         return not math.isnan(elem)
 
 # Programmatically write HTML quiz page based on questions and page data 
-def write_html(path):
+def write_html(path, target, test=False):
+    print('Generating HTML in:', f'{path}{target}')
+
     page_data = pd.read_csv(f'{path}/page_data.csv') 
     question_data = pd.read_csv(f'{path}/questions.csv')
     answerKey = []
@@ -49,6 +51,11 @@ def write_html(path):
     body = htmlwriter.double_tag('h1', 'Randy\'s Review Questions')
     body += htmlwriter.double_tag('h2', page_data['Title'][0])
     body += htmlwriter.double_tag('p', page_data['Description'][0])
+
+    # Generate HTML for mode switch 
+    switch = htmlwriter.double_tag('a', f'To switch to {"learn" if test else "test"} mode, click here.', {'href':'index.html' if test else 'test.html'})
+    body += htmlwriter.double_tag('p', f'You are currently in {"test" if test else "learn"} mode. {switch}')
+
     body += htmlwriter.single_tag('hr')
 
     # Append data for each quiz question 
@@ -87,9 +94,10 @@ def write_html(path):
                 answers += htmlwriter.single_tag('br')
         body += htmlwriter.double_tag('ul', answers)
 
-        # Add button for checking answer for this question
-        body += htmlwriter.single_tag('input', {'type':'button', 'onclick':f'checkquestionans({q_idx})', 'id':'single_question', 'class':'mybutton', 'value':'Check Answer'})
-        body += htmlwriter.single_tag('br')
+        # Add button for checking answer for this question if learn mode 
+        if not test:
+            body += htmlwriter.single_tag('input', {'type':'button', 'onclick':f'checkquestionans({q_idx})', 'id':'single_question', 'class':'mybutton', 'value':'Check Answer'})
+            body += htmlwriter.single_tag('br')
             
         # Extract correct answer(s)
         correct_answer = question_data['Correct Answer'][q_idx]
@@ -103,14 +111,17 @@ def write_html(path):
         # Add hidden 'Correct' and 'Incorrect' displays
         body += htmlwriter.double_tag('p', 'Correct!', {'id':f'q{q_idx+1}correct', 'style':'color:green;display:none;'})
         incorrect_text = htmlwriter.double_tag('span', 'Incorrect.', {'style':'color:purple;'})
-        body += htmlwriter.double_tag('p', f'{incorrect_text} Try again.', {'id':f'q{q_idx+1}incorrect', 'style':'display:none;'})
-        correct_reveal = 'answers were' if is_checkbox else 'answer was'
-        body += htmlwriter.double_tag('p', f'{incorrect_text} The correct {correct_reveal}: {correct_text}', {'id':f'q{q_idx+1}incorrectreveal', 'style':'display:none;'})
+        if test:
+            correct_reveal = 'answers were' if is_checkbox else 'answer was'
+            body += htmlwriter.double_tag('p', f'{incorrect_text} The correct {correct_reveal}: {correct_text}', {'id':f'q{q_idx+1}incorrect', 'style':'display:none;'})
+        else:
+            body += htmlwriter.double_tag('p', f'{incorrect_text} Try again.', {'id':f'q{q_idx+1}incorrect', 'style':'display:none;'})
     
-    # Add HTML related to checking all answers and calculating score 
-    body += htmlwriter.single_tag('br', {'id':'gapbeforescore'})
-    body += htmlwriter.double_tag('h3', '', {'id':'score', 'style':'color:blue;display:none;'})
-    body += htmlwriter.single_tag('input', {'type':'button', 'onclick':'checkquizans()', 'id':'full_quiz', 'class':'mybutton', 'value':'Check All Answers and Calculate Score'})
+    # Add HTML related to checking all answers and calculating score if in test mode 
+    if test:
+        body += htmlwriter.single_tag('br', {'id':'gapbeforescore'})
+        body += htmlwriter.double_tag('h3', '', {'id':'score', 'style':'color:blue;display:none;'})
+        body += htmlwriter.single_tag('input', {'type':'button', 'onclick':'checkquizans()', 'id':'full_quiz', 'class':'mybutton', 'value':'Check All Answers and Calculate Score'})
     body += htmlwriter.single_tag('br')
 
     # Page footer 
@@ -120,22 +131,27 @@ def write_html(path):
     # JS related to checking answers 
     body += htmlwriter.double_tag('script', '', {'src':'../../../scripts/checkans.js'})
     answerKey = str(answerKey).replace('\'', '"')
-    function1 = f'function checkquizans() {{ answerKey = {answerKey}; checkans(answerKey); }}'
-    function2 = f'function checkquestionans(number) {{ answerKey = {answerKey}; checksingleans(number, answerKey, false); }}'
-    body += htmlwriter.double_tag('script', function1 + ' ' + function2)
+    function = None
+    if test:
+        function = f'function checkquizans() {{ answerKey = {answerKey}; checkans(answerKey); }}'
+    else:
+        function = f'function checkquestionans(number) {{ answerKey = {answerKey}; checksingleans(number, answerKey, false); }}'
+    body += htmlwriter.double_tag('script', function)
     noscript_msg = htmlwriter.double_tag('p', 'Looks like JavaScript is disabled! The answer checker will not work without JavaScript enabled.')
     body += htmlwriter.double_tag('noscript', noscript_msg)
         
-    with open(f'{path}/index.html', 'w') as f:
+    with open(f'{path}/{target}', 'w') as f:
         f.write('<!DOCTYPE html>\n')
+        f.write(htmlwriter.comment(f'This HTML is pretty unreadable because it was generated. Either copy and paste this into a beautifier '
+                                   f'or see a human written example in /pages/nonAc/pokegeo/{"example-test.html" if test else "example.html"}.') + '\n')
         f.write(htmlwriter.double_tag('html', head + body))
         
 
 def main():
     paths = get_all_paths('questions.csv', 'page_data.csv')
     for path in paths:
-        print('Generating HTML in:', f'{path}index.html')
-        write_html(path)
+        write_html(path, 'index.html', test=False)
+        write_html(path, 'test.html', test=True)
 
 if __name__ == '__main__':
     main()
