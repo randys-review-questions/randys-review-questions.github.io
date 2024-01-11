@@ -56,6 +56,14 @@ def write_html(path, target, test=False):
     <body id="page">
         <script src="../../../scripts/quizgenerate.js"></script>
         <script>quizgenerate(test = {"true" if test else "false"}, shuffle = {"true" if shuffle else "false"});</script>
+        <noscript>
+            <h1>Randy's Review Questions</h1>
+            <p>
+                Looks like JavaScript is disabled! The quiz cannot be generated without JavaScript enabled.
+            </p>
+            <hr />
+            <a href="../../../index.html">Return to Home</a>
+        </noscript>
     </body>
 </html>"""
         
