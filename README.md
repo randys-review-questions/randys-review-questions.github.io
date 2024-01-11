@@ -14,7 +14,7 @@ there are at least four files:
  dynamically generated using `quizgenerate.js` in the `scripts` directory. An example 
  of a static version of such a page can be found in `pages/nonAc/pokegeo/example.html`.
  * `test.html`: HTML source for the quiz page in *test mode*, also mostly generated 
- using `quizgenerate.js`. A human-written example can be found in 
+ using `quizgenerate.js`. A static example can be found in 
  `pages/nonAc/pokegeo/example-test.html`.
  * `page_data.csv`: CSV containing metadata to be displayed on the page. A blank 
  template can be found in the `templates` directory.
