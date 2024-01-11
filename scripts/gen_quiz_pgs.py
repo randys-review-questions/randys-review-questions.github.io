@@ -17,6 +17,9 @@ import htmlwriter
 import numpy as np 
 import pandas as pd 
 
+# Specifies start of paths (starting after "pages/") to pages where questions should be shuffled 
+TO_SHUFFLE = ["f16", "f17", "f18", "f19", "f20", "s21", "f21", "s22", "su22", "f22", "s23", "f23", "s24"]
+
 # Get all paths to directories containing inputted filenames 
 def get_all_paths(filename1, filename2):
     result = list()
@@ -32,119 +35,32 @@ def is_nonempty(elem):
     else:
         return not math.isnan(elem)
 
-# Programmatically write HTML quiz page based on questions and page data 
+# Programmatically write HTML quiz page 
 def write_html(path, target, test=False):
     print('Generating HTML in:', f'{path}{target}')
+    path_suffix = path[path.find("pages") + len("pages/"):]
+    shuffle = any(map(lambda x : path_suffix.startswith(x + "/") or path_suffix.startswith(x + "\\"), TO_SHUFFLE))
 
-    page_data = pd.read_csv(f'{path}/page_data.csv') 
-    question_data = pd.read_csv(f'{path}/questions.csv')
-    answerKey = []
-
-    # Generate html for head 
-    head = htmlwriter.double_tag('title', 'Randy\'s Review Questions')
-    head += htmlwriter.single_tag('link', {'rel':'stylesheet', 'href':'../../../css/style.css', 'type':'text/css'})
-    head += htmlwriter.double_tag('script', '', {'src':'https://polyfill.io/v3/polyfill.min.js?features=es6'})
-    head += htmlwriter.double_tag('script', '', {'id':'MathJax-script', 'async':'', 'src':'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'})
-    head = htmlwriter.double_tag('head', head)
-
-    # Generate html for body of page 
-    body = htmlwriter.double_tag('h1', 'Randy\'s Review Questions')
-    body += htmlwriter.double_tag('h2', page_data['Title'][0])
-    body += htmlwriter.double_tag('p', page_data['Description'][0])
-
-    # Generate HTML for mode switch 
-    switch = htmlwriter.double_tag('a', f'To switch to {"learn" if test else "test"} mode, click here.', {'href':'index.html' if test else 'test.html'})
-    body += htmlwriter.double_tag('p', f'You are currently in {"test" if test else "learn"} mode. {switch}')
-
-    body += htmlwriter.single_tag('hr')
-
-    # Append data for each quiz question 
-    for q_idx in range(len(question_data)):
-        question = question_data['Question'][q_idx]
-        q_lines = question.split('\n')
-        first_line = True
-        for q_line in q_lines:
-            if not first_line:
-                body += htmlwriter.double_tag('p', f'{q_line}', {'class':'question'})
-            else:
-                body += htmlwriter.double_tag('p', f'{q_idx + 1}. {q_line}', {'class':'question'})
-            first_line = False
-        
-        # Add preformatted text (e.g. code sample) if provided 
-        pre_text = question_data['Preformatted'][q_idx] 
-        if is_nonempty(pre_text):
-            body += htmlwriter.double_tag('pre', pre_text)
-
-        img_src = question_data['Image'][q_idx] # Add image if a source image provided 
-        if is_nonempty(img_src):
-            body += htmlwriter.single_tag('img', {'src':img_src, 'alt':img_src})
-
-        # Append data for each answer option 
-        answers = ''
-        is_checkbox = question_data['Type'][q_idx] == 'Checkboxes'
-        button_type = 'checkbox' if is_checkbox else 'radio'
-        for a_idx in range(15): # Loop through the 15 answer options supported by the template
-            answer = question_data[f'Option {a_idx+1}'][q_idx]
-            answer_img = question_data[f'Image {a_idx+1}'][q_idx]
-            if is_nonempty(answer):
-                answers += htmlwriter.single_tag('input', {'type':button_type, 'name':f'q{q_idx+1}', 'value':f'{a_idx+1}'})
-                answers += str(answer) 
-                if is_nonempty(answer_img):
-                    answers += htmlwriter.single_tag('img', {'src':answer_img, 'alt':answer_img})
-                answers += htmlwriter.single_tag('br')
-        body += htmlwriter.double_tag('ul', answers)
-
-        # Add button for checking answer for this question if learn mode 
-        if not test:
-            body += htmlwriter.single_tag('input', {'type':'button', 'onclick':f'checkquestionans({q_idx})', 'id':'single_question', 'class':'mybutton', 'value':'Check Answer'})
-            body += htmlwriter.single_tag('br')
-            
-        # Extract correct answer(s)
-        correct_answer = question_data['Correct Answer'][q_idx]
-        correct_answer = str(correct_answer).split(',')
-        answerKey.append(correct_answer)
-        correct_text = list()
-        for opt_num in correct_answer:
-            correct_text.append(str(question_data[f'Option {opt_num}'][q_idx]))
-        correct_text = ', '.join(correct_text)
-
-        # Add hidden 'Correct' and 'Incorrect' displays
-        body += htmlwriter.double_tag('p', 'Correct!', {'id':f'q{q_idx+1}correct', 'style':'color:green;display:none;'})
-        incorrect_text = htmlwriter.double_tag('span', 'Incorrect.', {'style':'color:purple;'})
-        if test:
-            correct_reveal = 'answers were' if is_checkbox else 'answer was'
-            body += htmlwriter.double_tag('p', f'{incorrect_text} The correct {correct_reveal}: {correct_text}', {'id':f'q{q_idx+1}incorrect', 'style':'display:none;'})
-        else:
-            body += htmlwriter.double_tag('p', f'{incorrect_text} Try again.', {'id':f'q{q_idx+1}incorrect', 'style':'display:none;'})
-    
-    # Add HTML related to checking all answers and calculating score if in test mode 
-    if test:
-        body += htmlwriter.single_tag('br', {'id':'gapbeforescore'})
-        body += htmlwriter.double_tag('h3', '', {'id':'score', 'style':'color:blue;display:none;'})
-        body += htmlwriter.single_tag('input', {'type':'button', 'onclick':'checkquizans()', 'id':'full_quiz', 'class':'mybutton', 'value':'Check All Answers and Calculate Score'})
-    body += htmlwriter.single_tag('br')
-
-    # Page footer 
-    body += htmlwriter.single_tag('hr')
-    body += htmlwriter.double_tag('a', 'Return to Home', {'href':'../../../index.html'})
-
-    # JS related to checking answers 
-    body += htmlwriter.double_tag('script', '', {'src':'../../../scripts/checkans.js'})
-    answerKey = str(answerKey).replace('\'', '"')
-    function = None
-    if test:
-        function = f'function checkquizans() {{ answerKey = {answerKey}; checkans(answerKey); }}'
-    else:
-        function = f'function checkquestionans(number) {{ answerKey = {answerKey}; checksingleans(number, answerKey, false); }}'
-    body += htmlwriter.double_tag('script', function)
-    noscript_msg = htmlwriter.double_tag('p', 'Looks like JavaScript is disabled! The answer checker will not work without JavaScript enabled.')
-    body += htmlwriter.double_tag('noscript', noscript_msg)
+    html = f"""<!DOCTYPE html>
+<html>
+    <head>
+        <title>Randy's Review Questions</title>
+        <link rel="stylesheet" href="../../../css/style.css" type="text/css" />
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script src="http://code.jquery.com/jquery-3.3.1.slim.js" integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA=" crossorigin="anonymous"></script>
+        <script src="https://evanplaice.github.io/jquery-csv/src/jquery.csv.js"></script>
+        <script id="MathJax-script" async=""
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        </script>
+    </head>
+    <body id="page">
+        <script src="../../../scripts/quizgenerate.js"></script>
+        <script>quizgenerate(test = {"true" if test else "false"}, shuffle = {"true" if shuffle else "false"});</script>
+    </body>
+</html>"""
         
     with open(f'{path}/{target}', 'w') as f:
-        f.write('<!DOCTYPE html>\n')
-        f.write(htmlwriter.comment(f'This HTML is pretty unreadable because it was generated. Either copy and paste this into a beautifier '
-                                   f'or see a human written example in /pages/nonAc/pokegeo/{"example-test.html" if test else "example.html"}.') + '\n')
-        f.write(htmlwriter.double_tag('html', head + body))
+        f.write(html)
         
 
 def main():
