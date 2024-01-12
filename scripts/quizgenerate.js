@@ -1,19 +1,15 @@
 async function quizgenerate(test = false, shuffle = false) {
     var node;
 
-    var MAX_NUM_OPTIONS = 15; // max number of answer options supported by template 
-
     //// Generate header 
-
-    appendtopage(doubletag("h1", "Randy's Review Questions"));
 
     // Parse metadata
     await fetch("page_data.csv")
         .then(response => response.text())
         .then(response_text => {
             var page_data = $.csv.toObjects(response_text)[0];
-            appendtopage(doubletag("h2", page_data["Title"]));
-            appendtopage(doubletag("p", page_data["Description"]));
+            document.getElementById("title").innerHTML = page_data["Title"];
+            document.getElementById("description").innerHTML = page_data["Description"];
         });
     
     // Generate learn/test mode switch 
@@ -22,12 +18,11 @@ async function quizgenerate(test = false, shuffle = false) {
         doubletag("a", "To switch to " + (test ? "learn" : "test") + " mode, click here.",
             {"href":(test ? "index.html" : "test.html")})
     );
-    appendtopage(node);
-
-    appendtopage(singletag("hr"));
+    document.getElementById("modeswitch").innerHTML = node.innerHTML;
 
     //// Generate quiz body 
 
+    clear();
     var answerKey = []
     await fetch("questions.csv")
         .then(response => response.text())
@@ -41,99 +36,15 @@ async function quizgenerate(test = false, shuffle = false) {
                 // Generate question 
                 q_idx = parseInt(q_idx);
                 var question = questions[q_idx];
-                var question_text = question["Question"];
-                var q_lines = question_text.split("\n");
-                var first_line = true;
-                for (var q_line of q_lines) {
-                    if (!first_line) {
-                        appendtopage(doubletag("p", q_line, {"class":"question"}));
-                    } else {
-                        appendtopage(doubletag("p", (q_idx + 1) + ". " + q_line, {"class":"question"}));
-                    }
-                    first_line = false;
-                }
-
-                // Add preformatted text if provided 
-                var pre_text = question["Preformatted"];
-                if (pre_text != "") {
-                    appendtopage(doubletag("pre", pre_text));
-                }
-
-                // Add image if source provided 
-                var img_src = question["Image"];
-                if (img_src != "") {
-                    appendtopage(singletag("img", {"src":img_src, "alt":img_src}))
-                }
-
-                // Generate answer options 
-                var answers = doubletag("ul", "", {"class":"answers"});
-                var is_checkbox = question["Type"] == "Checkboxes";
-                var button_type = is_checkbox ? "checkbox" : "radio";
-                for (var a_idx = 0; a_idx < MAX_NUM_OPTIONS; a_idx++) {
-                    a_idx = parseInt(a_idx);
-                    var answer = question["Option " + (a_idx + 1)];
-                    var answer_img = question["Image " + (a_idx + 1)];
-                    if (answer != "") {
-                        answers.appendChild(singletag("input", 
-                            {"type":button_type, "name":("q"+(q_idx+1)), "value":(a_idx+1)}
-                        ));
-                        answers.innerHTML += answer;
-                        if (answer_img != "") {
-                            answers.appendChild(singletag("img",
-                                {"src":answer_img, "alt":answer_img}
-                            ));
-                        }
-                        answers.appendChild(singletag("br"));
-                    }
-                }
-                appendtopage(answers);
-
-                // Add button for checking answer for this question if in learn mode 
-                if (!test) {
-                    appendtopage(singletag("input", {
-                        "type":"button", 
-                        "onclick":("checkquestionans(" + q_idx + ")"),
-                        "id":"single_question",
-                        "class":"mybutton",
-                        "value":"Check Answer"
-                    }));
-                    appendtopage(singletag("br"));
-                }
-
-                // Extract correct answer(s)
-                var correct_answer = question["Correct Answer"].split(",");
-                answerKey.push(correct_answer);
-                var correct_text = [];
-                for (var opt_num of correct_answer) {
-                    correct_text.push(question["Option " + opt_num]);
-                }
-                correct_text = correct_text.join(", ");
-
-                // Add hidden 'Correct' and 'Incorrect' displays 
-                appendtopage(doubletag("p", "Correct!", {
-                    "id":("q"+(q_idx+1)+"correct"), 
-                    "style":"color:green;display:none;"
-                }));
-                var incorrect_text = doubletag("span", "Incorrect.", {"style":"color:purple;"});
-                incorrect_text = doubletag("p", incorrect_text, {
-                    "id":("q"+(q_idx+1)+"incorrect"),
-                    "style":"display:none;"
-                });
-                if (test) {
-                    var correct_reveal = is_checkbox ? "answers were" : "answer was";
-                    incorrect_text.innerHTML += " The correct " + correct_reveal + ": " + correct_text;
-                } else {
-                    incorrect_text.innerHTML += " Try again.";
-                }
-                appendtopage(incorrect_text);
+                questiongenerate(question, q_idx, answerKey, test);
             }
         });
 
         // If in test mode, add button for checking all answers and calculating score 
         if (test) {
-            appendtopage(singletag("br", {"id":"gapbeforescore"}));
-            appendtopage(doubletag("h3", "", {"id":"score", "style":"color:blue;display:none;"}));
-            appendtopage(singletag("input", {
+            append(singletag("br", {"id":"gapbeforescore"}));
+            append(doubletag("h3", "", {"id":"score", "style":"color:blue;display:none;"}));
+            append(singletag("input", {
                 "type":"button",
                 "onclick":"checkquizans()",
                 "id":"full_quiz",
@@ -141,16 +52,10 @@ async function quizgenerate(test = false, shuffle = false) {
                 "value":"Check Answers"
             }))
         }
-        appendtopage(singletag("br"));
-
-        //// Generate page footer 
-
-        appendtopage(singletag("hr"));
-        appendtopage(doubletag("a", "Return to Home", {"href":"../../../index.html"}));
+        append(singletag("br"));
 
         //// Generate answer checker scripts 
 
-        appendtopage(doubletag("script", "", {"src":"../../../scripts/checkans.js"}));
         answerKey = JSON.stringify(answerKey);
         var func = null;
         if (test) {
@@ -158,13 +63,107 @@ async function quizgenerate(test = false, shuffle = false) {
         } else {
             func = "function checkquestionans(number) { answerKey = " + answerKey + "; checksingleans(number, answerKey); }";
         }
-        appendtopage(doubletag("script", func));
+        document.getElementById("answerchecker").innerHTML = func;
 
         MathJax.typeset()
 }
 
-function appendtopage(element) {
-    document.getElementById("page").appendChild(element)
+function questiongenerate(question, q_idx, answerKey, test = false) {
+    var MAX_NUM_OPTIONS = 15; // max number of answer options supported by template 
+
+    var question_text = question["Question"];
+    var q_lines = question_text.split("\n");
+    var first_line = true;
+    for (var q_line of q_lines) {
+        if (!first_line) {
+            append(doubletag("p", q_line, {"class":"question"}));
+        } else {
+            append(doubletag("p", (q_idx + 1) + ". " + q_line, {"class":"question"}));
+        }
+        first_line = false;
+    }
+
+    // Add preformatted text if provided 
+    var pre_text = question["Preformatted"];
+    if (pre_text != "") {
+        append(doubletag("pre", pre_text));
+    }
+
+    // Add image if source provided 
+    var img_src = question["Image"];
+    if (img_src != "") {
+        append(singletag("img", {"src":img_src, "alt":img_src}))
+    }
+
+    // Generate answer options 
+    var answers = doubletag("ul", "", {"class":"answers"});
+    var is_checkbox = question["Type"] == "Checkboxes";
+    var button_type = is_checkbox ? "checkbox" : "radio";
+    for (var a_idx = 0; a_idx < MAX_NUM_OPTIONS; a_idx++) {
+        a_idx = parseInt(a_idx);
+        var answer = question["Option " + (a_idx + 1)];
+        var answer_img = question["Image " + (a_idx + 1)];
+        if (answer != "") {
+            answers.appendChild(singletag("input", 
+                {"type":button_type, "name":("q"+(q_idx+1)), "value":(a_idx+1)}
+            ));
+            answers.innerHTML += answer;
+            if (answer_img != "") {
+                answers.appendChild(singletag("img",
+                    {"src":answer_img, "alt":answer_img}
+                ));
+            }
+            answers.appendChild(singletag("br"));
+        }
+    }
+    append(answers);
+
+    // Add button for checking answer for this question if in learn mode 
+    if (!test) {
+        append(singletag("input", {
+            "type":"button", 
+            "onclick":("checkquestionans(" + q_idx + ")"),
+            "id":"single_question",
+            "class":"mybutton",
+            "value":"Check Answer"
+        }));
+        append(singletag("br"));
+    }
+
+    // Extract correct answer(s)
+    var correct_answer = question["Correct Answer"].split(",");
+    answerKey.push(correct_answer);
+    var correct_text = [];
+    for (var opt_num of correct_answer) {
+        correct_text.push(question["Option " + opt_num]);
+    }
+    correct_text = correct_text.join(", ");
+
+    // Add hidden 'Correct' and 'Incorrect' displays 
+    append(doubletag("p", "Correct!", {
+        "id":("q"+(q_idx+1)+"correct"), 
+        "style":"color:green;display:none;"
+    }));
+    var incorrect_text = doubletag("span", "Incorrect.", {"style":"color:purple;"});
+    incorrect_text = doubletag("p", incorrect_text, {
+        "id":("q"+(q_idx+1)+"incorrect"),
+        "style":"display:none;"
+    });
+    if (test) {
+        var correct_reveal = is_checkbox ? "answers were" : "answer was";
+        incorrect_text.innerHTML += " The correct " + correct_reveal + ": " + correct_text;
+    } else {
+        incorrect_text.innerHTML += " Try again.";
+    }
+    append(incorrect_text);
+}
+
+function append(element) {
+    document.getElementById("quizbody").appendChild(element);
+}
+
+function clear() {
+    document.getElementById("quizbody").innerHTML = "";
 }
 
 function doubletag(tag, content, attributes = null) {
@@ -183,10 +182,9 @@ function singletag(tag, attributes = null) {
 
     // Set attributes 
     if (attributes != null) {
-        Object.entries(attributes).forEach(kvPair => {
-            var [key, value]  = kvPair;
-            node.setAttribute(key, value);
-        })
+        for (var key in attributes) {
+            node.setAttribute(key, attributes[key]);
+        }
     }
 
     return node 
