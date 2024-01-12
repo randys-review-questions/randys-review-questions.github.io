@@ -10,12 +10,12 @@
     </head>
     <body>
         <h1>Randy's Review Questions</h1>
-        <h2>Pokemon Geography</h2>
-        <p>
+        <h2 id="title">Pokemon Geography</h2>
+        <p id="description">
             Based on the geography of the regions in Pokemon games. This quiz 
             only covers games from generations 1-6.
         </p>
-        <p>
+        <p id="modeswitch">
             You are currently in test mode. 
             <a href="example.html">
                 To switch to learn mode, click here.
@@ -24,87 +24,89 @@
 
         <hr />
 
-        <p class="question">
-            1. Which of the following cities are in the Unova region?
-        </p>
-        <ul class="answers">
-            <input type="radio" name="q1" value="1" />
-                Celadon City
-            <br />
-            <input type="radio" name="q1" value="2" />
-                Virbank City
-            <br />
-            <input type="radio" name="q1" value="3" />
-                Cyllage City
-            <br />
-            <input type="radio" name="q1" value="4" />
-                Goldenrod City
-            <br />
-        </ul>
-        <p id="q1correct" style="color:green;display:none;">
-            Correct!
-        </p>
-        <p id="q1incorrect" style="display:none;">
-            <span style="color:purple;">Incorrect.</span>
-            The correct answer was: Virbank City
-        </p>
-
-        <p class="question">
-            2. Which of the following are true?
-        </p>
-        <img src="reborn_thumbnail.png" alt="reborn_thumbnail.png" />
-        <ul class="answers">
-            <input type="checkbox" name="q2" value="1" />
-                True 
-            <br />
-            <input type="checkbox" name="q2" value="2" />
-                True 
-            <br />
-            <input type="checkbox" name="q2" value="3" />
-                False <img src="reborn_thumbnail.png" alt="reborn_thumbnail.png" />
-            <br />
-        </ul>
-        <p id="q2correct" style="color:green;display:none;">
-            Correct!
-        </p>
-        <p id="q2incorrect" style="display:none;">
-            <span style="color:purple;">Incorrect.</span>
-            The correct answer(s) were: True, True
-        </p>
-
-        <p class="question">
-            3. Which evaluates to $0$?
-        </p>
-        <ul class="answers">
-            <input type="radio" name="q3" value="1" />
-                \(\frac{2}{3}\)
-            <br />
-            <input type="radio" name="q3" value="2" />
-                \(e^0\)
-            <br />
-            <input type="radio" name="q3" value="3" />
-                \(\int_0^1 0 dt\)
-            <br />
-        </ul>
-        <p id="q3correct" style="color:green;display:none;">
-            Correct!
-        </p>
-        <p id="q3incorrect" style="display:none;">
-            <span style="color:purple;">Incorrect.</span>
-            The correct answer was: $\int_0^1 0 dt$
-        </p>
-
-        <br id="gapbeforescore" />
-
-        <h3 id="score" style="color:blue;display:none;"></h3>
-
-        <input type="button" onclick="checkquizans()" id="full_quiz" class="mybutton" value="Check All Answers and Calculate Score" /> <br />
+        <span id="quizbody">
+            <p class="question">
+                1. Which of the following cities are in the Unova region?
+            </p>
+            <ul class="answers">
+                <input type="radio" name="q1" value="1" />
+                    Celadon City
+                <br />
+                <input type="radio" name="q1" value="2" />
+                    Virbank City
+                <br />
+                <input type="radio" name="q1" value="3" />
+                    Cyllage City
+                <br />
+                <input type="radio" name="q1" value="4" />
+                    Goldenrod City
+                <br />
+            </ul>
+            <p id="q1correct" style="color:green;display:none;">
+                Correct!
+            </p>
+            <p id="q1incorrect" style="display:none;">
+                <span style="color:purple;">Incorrect.</span>
+                The correct answer was: Virbank City
+            </p>
+    
+            <p class="question">
+                2. Which of the following are true?
+            </p>
+            <img src="reborn_thumbnail.png" alt="reborn_thumbnail.png" />
+            <ul class="answers">
+                <input type="checkbox" name="q2" value="1" />
+                    True 
+                <br />
+                <input type="checkbox" name="q2" value="2" />
+                    True 
+                <br />
+                <input type="checkbox" name="q2" value="3" />
+                    False <img src="reborn_thumbnail.png" alt="reborn_thumbnail.png" />
+                <br />
+            </ul>
+            <p id="q2correct" style="color:green;display:none;">
+                Correct!
+            </p>
+            <p id="q2incorrect" style="display:none;">
+                <span style="color:purple;">Incorrect.</span>
+                The correct answer(s) were: True, True
+            </p>
+    
+            <p class="question">
+                3. Which evaluates to $0$?
+            </p>
+            <ul class="answers">
+                <input type="radio" name="q3" value="1" />
+                    \(\frac{2}{3}\)
+                <br />
+                <input type="radio" name="q3" value="2" />
+                    \(e^0\)
+                <br />
+                <input type="radio" name="q3" value="3" />
+                    \(\int_0^1 0 dt\)
+                <br />
+            </ul>
+            <p id="q3correct" style="color:green;display:none;">
+                Correct!
+            </p>
+            <p id="q3incorrect" style="display:none;">
+                <span style="color:purple;">Incorrect.</span>
+                The correct answer was: $\int_0^1 0 dt$
+            </p>
+    
+            <br id="gapbeforescore" />
+    
+            <h3 id="score" style="color:blue;display:none;"></h3>
+    
+            <input type="button" onclick="checkquizans()" id="full_quiz" class="mybutton" value="Check All Answers and Calculate Score" /> <br />
+        </span>
 
         <hr />
         <a href="../../../index.html">Return to Home</a>
 
         <script src="../../../scripts/checkans.js"></script>
-        <script>
+        <script id="answerchecker">
             function checkquizans() {
                 answerKey = [["2"], ["1", "2"]]
                 checkans(answerKey)

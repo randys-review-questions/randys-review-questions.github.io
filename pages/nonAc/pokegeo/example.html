@@ -10,12 +10,12 @@
     </head>
     <body>
         <h1>Randy's Review Questions</h1>
-        <h2>Pokemon Geography</h2>
-        <p>
+        <h2 id="title">Pokemon Geography</h2>
+        <p id="description">
             Based on the geography of the regions in Pokemon games. This quiz 
             only covers games from generations 1-6.
         </p>
-        <p>
+        <p id="modeswitch">
             You are currently in learn mode. 
             <a href="example-test.html">
                 To switch to test mode, click here.
@@ -24,86 +24,88 @@
 
         <hr />
 
-        <p class="question">
-            1. Which of the following cities are in the Unova region?
-        </p>
-        <ul class="answers">
-            <input type="radio" name="q1" value="1" />
-                Celadon City
+        <span id="quizbody">
+            <p class="question">
+                1. Which of the following cities are in the Unova region?
+            </p>
+            <ul class="answers">
+                <input type="radio" name="q1" value="1" />
+                    Celadon City
+                <br />
+                <input type="radio" name="q1" value="2" />
+                    Virbank City
+                <br />
+                <input type="radio" name="q1" value="3" />
+                    Cyllage City
+                <br />
+                <input type="radio" name="q1" value="4" />
+                    Goldenrod City
+                <br />
+            </ul>
+            <input type="button" onclick="checkquestionans(0)" id="single_question" class="mybutton" value="Check Answer" /> <br />
+            <p id="q1correct" style="color:green;display:none;">
+                Correct!
+            </p>
+            <p id="q1incorrect" style="display:none;">
+                <span style="color:purple;">Incorrect.</span>
+                Try again.
+            </p>
+    
+            <p class="question">
+                2. Which of the following are true?
+            </p>
+            <img src="reborn_thumbnail.png" alt="reborn_thumbnail.png" />
+            <ul class="answers">
+                <input type="checkbox" name="q2" value="1" />
+                    True 
+                <br />
+                <input type="checkbox" name="q2" value="2" />
+                    True 
+                <br />
+                <input type="checkbox" name="q2" value="3" />
+                    False <img src="reborn_thumbnail.png" alt="reborn_thumbnail.png" />
+                <br />
+            </ul>
+            <input type="button" onclick="checkquestionans(1)" id="single_question" class="mybutton" value="Check Answer" /> <br />
+            <p id="q2correct" style="color:green;display:none;">
+                Correct!
+            </p>
+            <p id="q2incorrect" style="display:none;">
+                <span style="color:purple;">Incorrect.</span>
+                Try again.
+            </p>
+    
+            <p class="question">
+                3. Which evaluates to $0$?
+            </p>
+            <ul class="answers">
+                <input type="radio" name="q3" value="1" />
+                    \(\frac{2}{3}\)
+                <br />
+                <input type="radio" name="q3" value="2" />
+                    \(e^0\)
+                <br />
+                <input type="radio" name="q3" value="3" />
+                    \(\int_0^1 0 dt\)
+                <br />
+            </ul>
+            <input type="button" onclick="checkquestionans(2)" id="single_question" class="mybutton" value="Check Answer" /> <br />
+            <p id="q3correct" style="color:green;display:none;">
+                Correct!
+            </p>
+            <p id="q3incorrect" style="display:none;">
+                <span style="color:purple;">Incorrect.</span>
+                Try again.
+            </p>
+    
             <br />
-            <input type="radio" name="q1" value="2" />
-                Virbank City
-            <br />
-            <input type="radio" name="q1" value="3" />
-                Cyllage City
-            <br />
-            <input type="radio" name="q1" value="4" />
-                Goldenrod City
-            <br />
-        </ul>
-        <input type="button" onclick="checkquestionans(0)" id="single_question" class="mybutton" value="Check Answer" /> <br />
-        <p id="q1correct" style="color:green;display:none;">
-            Correct!
-        </p>
-        <p id="q1incorrect" style="display:none;">
-            <span style="color:purple;">Incorrect.</span>
-            Try again.
-        </p>
-
-        <p class="question">
-            2. Which of the following are true?
-        </p>
-        <img src="reborn_thumbnail.png" alt="reborn_thumbnail.png" />
-        <ul class="answers">
-            <input type="checkbox" name="q2" value="1" />
-                True 
-            <br />
-            <input type="checkbox" name="q2" value="2" />
-                True 
-            <br />
-            <input type="checkbox" name="q2" value="3" />
-                False <img src="reborn_thumbnail.png" alt="reborn_thumbnail.png" />
-            <br />
-        </ul>
-        <input type="button" onclick="checkquestionans(1)" id="single_question" class="mybutton" value="Check Answer" /> <br />
-        <p id="q2correct" style="color:green;display:none;">
-            Correct!
-        </p>
-        <p id="q2incorrect" style="display:none;">
-            <span style="color:purple;">Incorrect.</span>
-            Try again.
-        </p>
-
-        <p class="question">
-            3. Which evaluates to $0$?
-        </p>
-        <ul class="answers">
-            <input type="radio" name="q3" value="1" />
-                \(\frac{2}{3}\)
-            <br />
-            <input type="radio" name="q3" value="2" />
-                \(e^0\)
-            <br />
-            <input type="radio" name="q3" value="3" />
-                \(\int_0^1 0 dt\)
-            <br />
-        </ul>
-        <input type="button" onclick="checkquestionans(2)" id="single_question" class="mybutton" value="Check Answer" /> <br />
-        <p id="q3correct" style="color:green;display:none;">
-            Correct!
-        </p>
-        <p id="q3incorrect" style="display:none;">
-            <span style="color:purple;">Incorrect.</span>
-            Try again.
-        </p>
-
-        <br />
-
-        <hr />
-        <a href="../../../index.html">Return to Home</a>
+    
+            <hr />
+            <a href="../../../index.html">Return to Home</a>
+        </span>
 
         <script src="../../../scripts/checkans.js"></script>
-        <script>
+        <script id="answerchecker">
             function checkquestionans(number) {
                 answerKey = [["2"], ["1", "2"]]
                 checksingleans(number, answerKey)
