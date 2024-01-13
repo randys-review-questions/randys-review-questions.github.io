@@ -17,6 +17,14 @@ table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
 }
+div {
+    border: 2px solid black;
+    text-align: left;
+}
+u.hover {
+    border-bottom: 1.5px dashed black;
+    text-decoration: none;
+}
 input[type='radio'] {
     transform: scale(1.25)
 }
@@ -33,4 +41,13 @@ input[type='checkbox'] {
 #full_quiz {
     height: 30px;
     width: 300px;
+}
+div#progressbar {
+    height: 10px;
+    width: 200px;
+}
+div#progressbarinner {
+    height: 6px;
+    width: 0px;
+    background-color: black;
 }

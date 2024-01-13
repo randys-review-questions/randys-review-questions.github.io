@@ -6,8 +6,8 @@ and college, as well as a few other miscellaneous topics. The website is live
 and can be found here:
 https://randys-review-questions.github.io/
 
-Currently, the website is composed of a bunch of HTML pages, each containing
-JavaScript that dynamically generates the HTML for a practice quiz. Each of these 
+Currently, the website is composed of a bunch of HTML pages, each including a
+JavaScript script that dynamically generates the HTML for a practice quiz. Each of these 
 pages corresponds to a directory within the `pages` directory. Within that directory, 
 there are at least four files:
  * `index.html`: HTML source for the quiz page in *learn mode*, most of which is 
@@ -28,6 +28,12 @@ functionality, MathJax for rendering equations from a TeX source, and JQuery-CSV
 parsing `.csv` files. 
 
 The `scripts` directory contains scripts that are useful for this project:
+ * `applet_db.js` contains functions that return JSON objects containing data that are 
+ useful in the implementation of the Custom Quiz Generator.
+ * `applet.js` contains functionality used by the applet (i.e. the Custom Quiz Generator),
+ which treats the quiz questions on this site as a "bank" to pull a customized set of 
+ questions from. This file contains the functionality to generate the HTML for custom 
+ quizzes.
  * `checkans.js` contains an answer checker function, written in JavaScript, that is run 
  every time a user wishes to check their answers for a quiz. 
  * `gen_quiz_pgs.py` iterates through all page directories and creates `index.html` and 
@@ -47,7 +53,7 @@ The `css` directory contains `.css` code related to the styling of this site.
 The `templates` directory contains blank templates for the `.csv` databases: `page_data.csv`
 and `questions.csv`.
 
-Future goal: I'd like to add a page where a user could press a button to dynamically generate 
-a quiz composed of questions from other quizzes (preselected by the user) that exist on this 
-page, with the ability to control how long such a generated quiz is.
+Future goal: The use of `test.html` and `index.html` to separate test mode from learn mode is 
+a bit gnarly; I'd like to combine them to a single page where a user would select a radio 
+button to select the quiz mode (like how it is set up in the applet).
 

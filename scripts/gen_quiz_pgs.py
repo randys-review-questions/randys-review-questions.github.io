@@ -59,9 +59,8 @@ def write_html(path, target, test=False):
         <p id="description"></p>
         <p id="modeswitch"></p>
         <hr />
-        <span id="quizbody"></span>
+        <span id="quizbody"><script id="answerchecker"></script></span>
         <script src="../../../scripts/checkans.js"></script>
-        <script id="answerchecker"></script>
         <script src="../../../scripts/quizgenerate.js"></script>
         <script>quizgenerate(test = {"true" if test else "false"}, shuffle = {"true" if shuffle else "false"});</script>
         <noscript>

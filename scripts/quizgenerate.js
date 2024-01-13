@@ -40,35 +40,13 @@ async function quizgenerate(test = false, shuffle = false) {
             }
         });
 
-        // If in test mode, add button for checking all answers and calculating score 
-        if (test) {
-            append(singletag("br", {"id":"gapbeforescore"}));
-            append(doubletag("h3", "", {"id":"score", "style":"color:blue;display:none;"}));
-            append(singletag("input", {
-                "type":"button",
-                "onclick":"checkquizans()",
-                "id":"full_quiz",
-                "class":"mybutton",
-                "value":"Check Answers"
-            }))
-        }
-        append(singletag("br"));
+    //// Generate answer checking functionality
+    checkansgenerate(answerKey, test);
 
-        //// Generate answer checker scripts 
-
-        answerKey = JSON.stringify(answerKey);
-        var func = null;
-        if (test) {
-            func = "function checkquizans() { answerKey = " + answerKey + "; checkans(answerKey); }";
-        } else {
-            func = "function checkquestionans(number) { answerKey = " + answerKey + "; checksingleans(number, answerKey); }";
-        }
-        document.getElementById("answerchecker").innerHTML = func;
-
-        MathJax.typeset()
+    MathJax.typeset();
 }
 
-function questiongenerate(question, q_idx, answerKey, test = false) {
+function questiongenerate(question, q_idx, answerKey, test = false, incl_path = "") {
     var MAX_NUM_OPTIONS = 15; // max number of answer options supported by template 
 
     var question_text = question["Question"];
@@ -92,6 +70,7 @@ function questiongenerate(question, q_idx, answerKey, test = false) {
     // Add image if source provided 
     var img_src = question["Image"];
     if (img_src != "") {
+        img_src = incl_path + img_src;
         append(singletag("img", {"src":img_src, "alt":img_src}))
     }
 
@@ -109,6 +88,7 @@ function questiongenerate(question, q_idx, answerKey, test = false) {
             ));
             answers.innerHTML += answer;
             if (answer_img != "") {
+                answer_img = incl_path + answer_img
                 answers.appendChild(singletag("img",
                     {"src":answer_img, "alt":answer_img}
                 ));
@@ -156,6 +136,33 @@ function questiongenerate(question, q_idx, answerKey, test = false) {
         incorrect_text.innerHTML += " Try again.";
     }
     append(incorrect_text);
+}
+
+function checkansgenerate(answerKey, test = false) {
+    // If in test mode, add button for checking all answers and calculating score 
+    if (test) {
+        append(singletag("br", {"id":"gapbeforescore"}));
+        append(doubletag("h3", "", {"id":"score", "style":"color:blue;display:none;"}));
+        append(singletag("input", {
+            "type":"button",
+            "onclick":"checkquizans()",
+            "id":"full_quiz",
+            "class":"mybutton",
+            "value":"Check Answers"
+        }));
+    }
+    append(singletag("br"));
+
+    // Generate answer checker scripts 
+
+    answerKey = JSON.stringify(answerKey);
+    var func = null;
+    if (test) {
+        func = "function checkquizans() { answerKey = " + answerKey + "; checkans(answerKey); }";
+    } else {
+        func = "function checkquestionans(number) { answerKey = " + answerKey + "; checksingleans(number, answerKey); }";
+    }
+    append(doubletag("script", func, {"id":"answerchecker"}));
 }
 
 function append(element) {
