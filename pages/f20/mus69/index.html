@@ -23,12 +23,28 @@
         <h1>Randy's Review Questions</h1>
         <h2 id="title"></h2>
         <p id="description"></p>
-        <p id="modeswitch"></p>
+        <div id="configure">
+            <strong>Configuration Settings:</strong>
+            <br /> <br />
+            <em>Mode: </em>
+            <br />
+            <input type="radio" name="mode" value="learn" checked> Learn 
+            <input type="radio" name="mode" value="test"> Test 
+            <br /> <br />
+            <em>Shuffle Question Order:</em>
+            <br />
+            <input type="radio" name="shuffle" value="yes" checked> Yes 
+            <input type="radio" name="shuffle" value="no"> No 
+            <br /> <br />
+            <input type="button" value="Regenerate Quiz" onclick="quizgenerate()">
+            <br />
+            <p></p>
+        </div>
         <hr />
         <span id="quizbody"><script id="answerchecker"></script></span>
         <script src="../../../scripts/checkans.js"></script>
         <script src="../../../scripts/quizgenerate.js"></script>
-        <script>quizgenerate(test = false, shuffle = true);</script>
+        <script>quizgenerate();</script>
         <noscript>
             <p>
                 Looks like JavaScript is disabled! The quiz cannot be generated without JavaScript enabled.

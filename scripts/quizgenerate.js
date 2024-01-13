@@ -1,5 +1,8 @@
-async function quizgenerate(test = false, shuffle = false) {
-    var node;
+async function quizgenerate() {
+    var test = document.querySelector("input[name=mode]:checked");
+    test = test != null && test.value == "test";
+    var shuffle = document.querySelector("input[name=shuffle]:checked");
+    shuffle = shuffle != null && shuffle.value == "yes";
 
     //// Generate header 
 
@@ -11,14 +14,6 @@ async function quizgenerate(test = false, shuffle = false) {
             document.getElementById("title").innerHTML = page_data["Title"];
             document.getElementById("description").innerHTML = page_data["Description"];
         });
-    
-    // Generate learn/test mode switch 
-    node = doubletag("p", "You are currently in " + (test ? "test" : "learn") + " mode. ");
-    node.appendChild(
-        doubletag("a", "To switch to " + (test ? "learn" : "test") + " mode, click here.",
-            {"href":(test ? "index.html" : "test.html")})
-    );
-    document.getElementById("modeswitch").innerHTML = node.innerHTML;
 
     //// Generate quiz body 
 

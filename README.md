@@ -9,13 +9,11 @@ https://randys-review-questions.github.io/
 Currently, the website is composed of a bunch of HTML pages, each including a
 JavaScript script that dynamically generates the HTML for a practice quiz. Each of these 
 pages corresponds to a directory within the `pages` directory. Within that directory, 
-there are at least four files:
- * `index.html`: HTML source for the quiz page in *learn mode*, most of which is 
- dynamically generated using `quizgenerate.js` in the `scripts` directory. An example 
- of a static version of such a page can be found in `pages/nonAc/pokegeo/example.html`.
- * `test.html`: HTML source for the quiz page in *test mode*, also mostly generated 
- using `quizgenerate.js`. A static example can be found in 
- `pages/nonAc/pokegeo/example-test.html`.
+there are at least three files:
+ * `index.html`: HTML source for the quiz page, most of which is dynamically generated 
+ using `quizgenerate.js` in the `scripts` directory. An example of a static version of 
+ such a page in *learn mode* can be found in `pages/nonAc/pokegeo/example.html`, and 
+ a *test mode* example can be found in `pages/nonAc/pokegeo/example-test.html`.
  * `page_data.csv`: CSV containing metadata to be displayed on the page. A blank 
  template can be found in the `templates` directory.
  * `questions.csv`: CSV database of questions and answer options for the quiz. A blank 
@@ -52,8 +50,4 @@ The `css` directory contains `.css` code related to the styling of this site.
 
 The `templates` directory contains blank templates for the `.csv` databases: `page_data.csv`
 and `questions.csv`.
-
-Future goal: The use of `test.html` and `index.html` to separate test mode from learn mode is 
-a bit gnarly; I'd like to combine them to a single page where a user would select a radio 
-button to select the quiz mode (like how it is set up in the applet).
 

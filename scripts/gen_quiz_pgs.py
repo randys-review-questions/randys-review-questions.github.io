@@ -18,7 +18,8 @@ import numpy as np
 import pandas as pd 
 
 # Specifies start of paths (starting after "pages/") to pages where questions should be shuffled 
-TO_SHUFFLE = ["f16", "f17", "f18", "f19", "f20", "s21", "f21", "s22", "su22", "f22", "s23", "f23", "s24"]
+ALLOW_SHUFFLE = ["f16", "f17", "f18", "f19", "f20", "s21", "f21", "s22", "su22", "f22", "s23", "f23", "s24", \
+                 "nonAc/pokegeo", "nonAc/ra"]
 
 # Get all paths to directories containing inputted filenames 
 def get_all_paths(filename1, filename2):
@@ -36,10 +37,10 @@ def is_nonempty(elem):
         return not math.isnan(elem)
 
 # Programmatically write HTML quiz page 
-def write_html(path, target, test=False):
+def write_html(path, target):
     print('Generating HTML in:', f'{path}{target}')
     path_suffix = path[path.find("pages") + len("pages/"):]
-    shuffle = any(map(lambda x : path_suffix.startswith(x + "/") or path_suffix.startswith(x + "\\"), TO_SHUFFLE))
+    allow_shuffle = any(map(lambda x : path_suffix.replace("\\", "/").startswith(x + "/"), ALLOW_SHUFFLE))
 
     html = f"""<!DOCTYPE html>
 <html>
@@ -66,12 +67,28 @@ def write_html(path, target, test=False):
         <h1>Randy's Review Questions</h1>
         <h2 id="title"></h2>
         <p id="description"></p>
-        <p id="modeswitch"></p>
+        <div id="configure">
+            <strong>Configuration Settings:</strong>
+            <br /> <br />
+            <em>Mode: </em>
+            <br />
+            <input type="radio" name="mode" value="learn" checked> Learn 
+            <input type="radio" name="mode" value="test"> Test 
+            <br /> <br />
+            {'''<em>Shuffle Question Order:</em>
+            <br />
+            <input type="radio" name="shuffle" value="yes" checked> Yes 
+            <input type="radio" name="shuffle" value="no"> No 
+            <br /> <br />''' if allow_shuffle else ''}
+            <input type="button" value="Regenerate Quiz" onclick="quizgenerate()">
+            <br />
+            <p></p>
+        </div>
         <hr />
         <span id="quizbody"><script id="answerchecker"></script></span>
         <script src="../../../scripts/checkans.js"></script>
         <script src="../../../scripts/quizgenerate.js"></script>
-        <script>quizgenerate(test = {"true" if test else "false"}, shuffle = {"true" if shuffle else "false"});</script>
+        <script>quizgenerate();</script>
         <noscript>
             <p>
                 Looks like JavaScript is disabled! The quiz cannot be generated without JavaScript enabled.
@@ -89,8 +106,7 @@ def write_html(path, target, test=False):
 def main():
     paths = get_all_paths('questions.csv', 'page_data.csv')
     for path in paths:
-        write_html(path, 'index.html', test=False)
-        write_html(path, 'test.html', test=True)
+        write_html(path, 'index.html')
 
 if __name__ == '__main__':
     main()
