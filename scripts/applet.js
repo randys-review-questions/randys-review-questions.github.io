@@ -77,7 +77,7 @@ function update_children(id) {
 }
 
 function update_maxnumquestions() {
-    var selected = document.querySelectorAll("input[name=quizconfigure]:checked");
+    var selected = get_selected_quizzes();
     var max_numquestions = 0;
     var quiz_lengths = get_quiz_lengths();
     for (var currSelected of selected) {
@@ -95,12 +95,7 @@ function showfinalconfigs() {
 
 ////// Quiz generation functionality 
 
-var quizgenerate_called = false;
 async function appletquizgenerate() {
-    if (quizgenerate_called) { // do nothing if another call to this function is currently executing 
-        return;
-    }
-
     var num_questions = document.getElementById("numquestions").value; 
     var max_numquestions = parseInt(document.getElementById("max_numquestions").innerHTML);
     
@@ -119,20 +114,24 @@ async function appletquizgenerate() {
         return;
     }
 
-    quizgenerate_called = true;
     clear();
     document.getElementById("quizbody").style.display = "none"; // hide quiz until finished generating
+    document.getElementById("full_quiz").style.display = "none"; // hide generation button until finished generating 
     document.getElementById("progress").style.display = "block"; // show progress bar
 
     var test_mode = document.querySelector("input[name=mode]:checked").value == "test";
+    var shuffle_qs = document.querySelector("input[name=shuffle]:checked").value == "yes";
 
     // Generate identifiers that each map to a question on the site 
     var candidate_q_ids = [...Array(max_numquestions).keys()];
     shuffle_arr(candidate_q_ids);
     var q_ids = candidate_q_ids.slice(0, num_questions);
+    if (!shuffle_qs) {
+        q_ids.sort((a, b) => parseInt(a) - parseInt(b));
+    }
 
     // Retrieve paths to all quizzes selected 
-    var selected = document.querySelectorAll("input[name=quizconfigure]:checked");
+    var selected = get_selected_quizzes();
     var question_paths = {};
     for (var currSelected of selected) {
         question_paths[currSelected.id] = "pages/" + currSelected.value + "/";
@@ -144,9 +143,21 @@ async function appletquizgenerate() {
     var PIXEL_WIDTH = 2;
     var progressbarwidth = progressbar.clientWidth - (2 * PIXEL_WIDTH);
     var answerKey = [];
+    var curr_path = null;
     for (var q_id of q_ids) {
         // Retrieve question 
         var [question, path] = await get_question(q_id, question_paths);
+
+        // Generate subheading if not shuffled and switching to a new course 
+        if (!shuffle_qs && curr_path != path) {
+            await fetch(path + "page_data.csv")
+                .then(response => response.text())
+                .then(response_text => {
+                    page_data = $.csv.toObjects(response_text)[0];
+                    append(doubletag("h3", page_data["Title"]));
+                });
+        }
+        curr_path = path;
 
         // Generate question
         questiongenerate(question, q_idx, answerKey, test_mode, path);
@@ -178,9 +189,17 @@ async function appletquizgenerate() {
     document.getElementById("progress").style.display = "none"; // hide progress bar when done 
     document.getElementById("progressbarinner").setAttribute("style", "width:0px;"); // reset progress bar 
     document.getElementById("progresspct").innerHTML = "0.00%";
+    document.getElementById("full_quiz").style.display = "block"; // make generation button visible
     document.getElementById("quizbody").style.display = "block"; // make quiz visible 
     MathJax.typeset();
-    quizgenerate_called = false;
+}
+
+function get_selected_quizzes() {
+    var selected = [];
+    for (var config_category of get_config_categories()) {
+        selected.push(...document.querySelectorAll("input[name=" + config_category + "]:checked"));
+    }
+    return selected;
 }
 
 async function get_question(q_id, question_paths) {

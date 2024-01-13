@@ -124,3 +124,9 @@ function get_quiz_lengths() {
     }
 }
 
+function get_config_categories() {
+    return ["f16configure", "f17configure", "f18configure", "f19configure", "f20configure", "s21configure",
+            "f21configure", "s22configure", "su22configure", "f22configure", "s23configure", "f23configure", 
+            "s24configure"];
+}
+
