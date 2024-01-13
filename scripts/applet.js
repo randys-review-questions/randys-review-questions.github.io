@@ -116,7 +116,7 @@ async function appletquizgenerate() {
 
     clear();
     document.getElementById("quizbody").style.display = "none"; // hide quiz until finished generating
-    document.getElementById("full_quiz").style.display = "none"; // hide generation button until finished generating 
+    document.querySelector("input[name=generate_quiz]").style.display = "none"; // hide generation button until finished generating 
     document.getElementById("progress").style.display = "block"; // show progress bar
 
     var test_mode = document.querySelector("input[name=mode]:checked").value == "test";
@@ -189,7 +189,7 @@ async function appletquizgenerate() {
     document.getElementById("progress").style.display = "none"; // hide progress bar when done 
     document.getElementById("progressbarinner").setAttribute("style", "width:0px;"); // reset progress bar 
     document.getElementById("progresspct").innerHTML = "0.00%";
-    document.getElementById("full_quiz").style.display = "block"; // make generation button visible
+    document.querySelector("input[name=generate_quiz]").style.display = "block"; // make generation button visible
     document.getElementById("quizbody").style.display = "block"; // make quiz visible 
     MathJax.typeset();
 }
