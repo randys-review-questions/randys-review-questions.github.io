@@ -14,8 +14,8 @@ there are at least three files:
  using `quizgenerate.js` in the `scripts` directory. An example of a static version of 
  such a page in *learn mode* can be found in `pages/nonAc/pokegeo/example.html`, and 
  a *test mode* example can be found in `pages/nonAc/pokegeo/example-test.html`.
- * `page_data.csv`: CSV containing metadata to be displayed on the page. A blank 
- template can be found in the `templates` directory.
+ * `page_data.csv`: CSV containing metadata to be displayed on the page and whether to 
+ allow question shuffling. A blank template can be found in the `templates` directory.
  * `questions.csv`: CSV database of questions and answer options for the quiz. A blank 
  template can be found in the `templates` directory.
  * Optionally, any images or helper documents that are displayed as part of a question 
@@ -35,9 +35,7 @@ The `scripts` directory contains scripts that are useful for this project:
  * `checkans.js` contains an answer checker function, written in JavaScript, that is run 
  every time a user wishes to check their answers for a quiz. 
  * `gen_quiz_pgs.py` iterates through all page directories and creates `index.html` 
- files containing the HTML necessary to generate each quiz. This script also contains 
- functionality that decides which quizzes can have questions shuffled (where users are 
- given the option to shuffle questions) and which quizzes cannot.
+ files containing the HTML necessary to generate each quiz.
  * `htmlwriter.py` is a helper module containing code for generating units of HTML code.
  This was useful in earlier versions of the site when the bulk of the HTML was generated 
  using Python instead of JavaScript but is now obsolete.

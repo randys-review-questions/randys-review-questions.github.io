@@ -17,10 +17,6 @@ import htmlwriter
 import numpy as np 
 import pandas as pd 
 
-# Specifies start of paths (starting after "pages/") to pages where questions should be shuffled 
-ALLOW_SHUFFLE = ["f16", "f17", "f18", "f19", "f20", "s21", "f21", "s22", "su22", "f22", "s23", "f23", "s24", \
-                 "nonAc/pokegeo", "nonAc/ra"]
-
 # Get all paths to directories containing inputted filenames 
 def get_all_paths(filename1, filename2):
     result = list()
@@ -39,8 +35,6 @@ def is_nonempty(elem):
 # Programmatically write HTML quiz page 
 def write_html(path, target):
     print('Generating HTML in:', f'{path}{target}')
-    path_suffix = path[path.find("pages") + len("pages/"):]
-    allow_shuffle = any(map(lambda x : path_suffix.replace("\\", "/").startswith(x + "/"), ALLOW_SHUFFLE))
 
     html = f"""<!DOCTYPE html>
 <html>
@@ -75,11 +69,13 @@ def write_html(path, target):
             <input type="radio" name="mode" value="learn" checked> Learn 
             <input type="radio" name="mode" value="test"> Test 
             <br /> <br />
-            {'''<em>Shuffle Question Order:</em>
-            <br />
-            <input type="radio" name="shuffle" value="yes" checked> Yes 
-            <input type="radio" name="shuffle" value="no"> No 
-            <br /> <br />''' if allow_shuffle else ''}
+            <span id="shuffleconfig" style="display:none;">
+                <em>Shuffle Question Order:</em>
+                <br />
+                <input type="radio" name="shuffle" value="yes" checked> Yes 
+                <input type="radio" name="shuffle" value="no"> No 
+                <br /> <br />
+            </span>
             <input type="button" value="Regenerate Quiz" onclick="quizgenerate()">
             <br />
             <p></p>

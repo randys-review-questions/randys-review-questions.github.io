@@ -10,8 +10,13 @@ printf(""%ld\n"", sizeof(*seq));",,<code>8</code>,,<code>16</code>,,<code>80</co
         long num_flights;
 };",,24,,60,,64,,96,,,,,,,,,,,,,,,,,,,,,,,,3
 6,"Consider a direct-mapped cache with a 128-byte blocksize and 4 lines in the cache.
-What is the hit rate of the following access pattern? Assume that constants and loop iterators are stored in registers (so the cache is only used when accessing an element of the <code>airports</code> array).
-<i>Use your answer from the previous question.</i>",,"struct Airport_T airports[8];
+What is the hit rate of the following access pattern? Assume that constants and loop iterators are stored in registers (so the cache is only used when accessing an element of the <code>airports</code> array).",,"struct Airport_T {
+        char code[3];
+        int gates[12];
+        long num_flights;
+};
+
+struct Airport_T airports[8];
 
 for (int i = 0; i < 8; i++) {
         for (int j = 0; j < 3; j++) {

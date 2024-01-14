@@ -31,11 +31,13 @@
             <input type="radio" name="mode" value="learn" checked> Learn 
             <input type="radio" name="mode" value="test"> Test 
             <br /> <br />
-            <em>Shuffle Question Order:</em>
-            <br />
-            <input type="radio" name="shuffle" value="yes" checked> Yes 
-            <input type="radio" name="shuffle" value="no"> No 
-            <br /> <br />
+            <span id="shuffleconfig" style="display:none;">
+                <em>Shuffle Question Order:</em>
+                <br />
+                <input type="radio" name="shuffle" value="yes" checked> Yes 
+                <input type="radio" name="shuffle" value="no"> No 
+                <br /> <br />
+            </span>
             <input type="button" value="Regenerate Quiz" onclick="quizgenerate()">
             <br />
             <p></p>

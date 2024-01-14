@@ -1,9 +1,4 @@
 async function quizgenerate() {
-    var test = document.querySelector("input[name=mode]:checked");
-    test = test != null && test.value == "test";
-    var shuffle = document.querySelector("input[name=shuffle]:checked");
-    shuffle = shuffle != null && shuffle.value == "yes";
-
     //// Generate header 
 
     // Parse metadata
@@ -13,7 +8,18 @@ async function quizgenerate() {
             var page_data = $.csv.toObjects(response_text)[0];
             document.getElementById("title").innerHTML = page_data["Title"];
             document.getElementById("description").innerHTML = page_data["Description"];
+
+            // give ability to configure shuffling if allowed 
+            if (page_data["Allow Shuffling"] == "TRUE") {
+                document.getElementById("shuffleconfig").style.display = "block";
+            }
         });
+    
+    var test = document.querySelector("input[name=mode]:checked");
+    test = test != null && test.value == "test";
+    var shuffle = document.querySelector("input[name=shuffle]:checked");
+    var shuffle_displayed = document.getElementById("shuffleconfig").style.display != "none";
+    shuffle = shuffle_displayed && shuffle != null && shuffle.value == "yes";
 
     //// Generate quiz body 
 
