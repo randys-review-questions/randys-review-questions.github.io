@@ -303,6 +303,20 @@
                 <u class="hover" title="Marching Band (CHSMRB Instructors)">M. Band</u>
             <br />
             <hr />
+            <em>Other:</em>
+            <br />
+            <input type="checkbox" id="otherall" onclick="update_checkboxes(id)"> 
+                <strong>Select/Deselect All</strong>
+            <input type="checkbox" id="ra" onclick="update_checkboxes(id)" name="otherconfigure" value="nonAc/ra">
+                <u class="hover" title="Resident Assistant (Fall 2021 - Spring 2022, ORLL Training)">RA</u>
+            <input type="checkbox" id="ta15" onclick="update_checkboxes(id)" name="otherconfigure" value="ex/ta15">
+                <u class="hover" title="TAing CS 15: Data Structures (Fall 2021, Milod Kazerounian)">TA15</u>
+            <input type="checkbox" id="ta40" onclick="update_checkboxes(id)" name="otherconfigure" value="ex/ta40">
+                <u class="hover" title="TAing CS 40: Machine Structure & Assembly Language Programming (Fall 2023, Mark Sheldon)">TA40</u>
+            <input type="checkbox" id="pokegeo" onclick="update_checkboxes(id)" name="otherconfigure" value="nonAc/pokegeo">
+                <u class="hover" title="Pokemon Geography (generations 1-6)">PokeGeo</u>
+            <br />
+            <hr />
             <span id="finalconfigsgenerate">
                 <input type="button" class="mybutton" value="I'm satisfied with my selections." id="full_quiz" onclick="showfinalconfigs()">
                 <br />

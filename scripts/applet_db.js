@@ -34,7 +34,8 @@ function get_checkbox_tree() {
         "f22all" : ["ed11", "bme10", "cs97", "cs121", "cs135", "cs170"],
         "s23all" : ["psy11", "bme100", "cs98", "cs111", "cs115", "math51"],
         "f23all" : ["cs107", "cs117", "cs138", "cs169"],
-        "s24all" : []
+        "s24all" : [],
+        "otherall" : ["ra", "ta15", "ta40", "pokegeo"]
     }
 }
 
@@ -120,13 +121,17 @@ function get_quiz_lengths() {
         "cs107" : 15,
         "cs117" : 15,
         "cs138" : 15,
-        "cs169" : 15
+        "cs169" : 15,
+        "ra" : 14,
+        "ta15" : 10,
+        "ta40" : 20,
+        "pokegeo" : 30
     }
 }
 
 function get_config_categories() {
     return ["f16configure", "f17configure", "f18configure", "f19configure", "f20configure", "s21configure",
             "f21configure", "s22configure", "su22configure", "f22configure", "s23configure", "f23configure", 
-            "s24configure"];
+            "s24configure", "otherconfigure"];
 }
 
