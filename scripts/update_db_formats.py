@@ -33,6 +33,14 @@ def populate_dict(keys):
         result[key] = None
     return result
 
+def process_column(col):
+    def process_item(it):
+        if isinstance(it, bool):
+            return "TRUE" if it else "FALSE"
+        return it 
+
+    return map(process_item, col)
+
 def main():
     dbName = sys.argv[1]
     columns = pd.read_csv(f'../templates/{dbName}').columns 
@@ -44,7 +52,7 @@ def main():
 
         for column in new_data:
             if column in data.columns:
-                new_data[column] = data[column]
+                new_data[column] = process_column(data[column])
             else:
                 new_data[column] = [''] * len(data[data.columns[0]])
         pd.DataFrame(new_data).to_csv(path, index=False)
