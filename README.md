@@ -34,10 +34,10 @@ The `scripts` directory contains scripts that are useful for this project:
  quizzes.
  * `checkans.js` contains an answer checker function, written in JavaScript, that is run 
  every time a user wishes to check their answers for a quiz. 
- * `gen_quiz_pgs.py` iterates through all page directories and creates `index.html` and 
- `test.html` files containing the HTML necessary to generate each quiz in learn mode and 
- test mode, respectively. This script also contains functionality that decides which 
- quizzes have questions shuffled and which quizzes do not.
+ * `gen_quiz_pgs.py` iterates through all page directories and creates `index.html` 
+ files containing the HTML necessary to generate each quiz. This script also contains 
+ functionality that decides which quizzes can have questions shuffled (where users are 
+ given the option to shuffle questions) and which quizzes cannot.
  * `htmlwriter.py` is a helper module containing code for generating units of HTML code.
  This was useful in earlier versions of the site when the bulk of the HTML was generated 
  using Python instead of JavaScript but is now obsolete.
