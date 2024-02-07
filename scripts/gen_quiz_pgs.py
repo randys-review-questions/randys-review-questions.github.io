@@ -56,6 +56,7 @@ def write_html(path, target):
         <script id="MathJax-script" async=""
             src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
         </script>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
     </head>
     <body id="page">
         <h1>Randy's Review Questions</h1>
@@ -66,14 +67,14 @@ def write_html(path, target):
             <br /> <br />
             <em>Mode: </em>
             <br />
-            <input type="radio" name="mode" value="learn" checked> Learn 
-            <input type="radio" name="mode" value="test"> Test 
+            <input type="radio" name="mode" value="learn" id="modeswitch_learn" checked> <label for="modeswitch_learn">Learn</label> 
+            <input type="radio" name="mode" value="test" id="modeswitch_test"> <label for="modeswitch_test">Test</label> 
             <br /> <br />
             <span id="shuffleconfig" style="display:none;">
                 <em>Shuffle Question Order:</em>
                 <br />
-                <input type="radio" name="shuffle" value="yes" checked> Yes 
-                <input type="radio" name="shuffle" value="no"> No 
+                <input type="radio" name="shuffle" value="yes" id="shuffleswitch_yes" checked> <label for="shuffleswitch_yes">Yes</label> 
+                <input type="radio" name="shuffle" value="no" id="shuffleswitch_no"> <label for="shuffleswitch_no">No</label> 
                 <br /> <br />
             </span>
             <input type="button" value="Regenerate Quiz" onclick="quizgenerate()">

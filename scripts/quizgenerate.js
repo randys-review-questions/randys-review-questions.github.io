@@ -84,16 +84,19 @@ function questiongenerate(question, q_idx, answerKey, test = false, incl_path = 
         var answer = question["Option " + (a_idx + 1)];
         var answer_img = question["Image " + (a_idx + 1)];
         if (answer != "") {
+            var answer_id = "q"+(q_idx+1)+"-"+(a_idx+1);
             answers.appendChild(singletag("input", 
-                {"type":button_type, "name":("q"+(q_idx+1)), "value":(a_idx+1)}
+                {"type":button_type, "name":("q"+(q_idx+1)), "value":(a_idx+1),
+                 "id":answer_id}
             ));
-            answers.innerHTML += answer;
+            var answer_node = doubletag("label", answer, {"for":answer_id});
             if (answer_img != "") {
                 answer_img = incl_path + answer_img
-                answers.appendChild(singletag("img",
+                answer_node.appendChild(singletag("img",
                     {"src":answer_img, "alt":answer_img}
                 ));
             }
+            answers.appendChild(answer_node);
             answers.appendChild(singletag("br"));
         }
     }

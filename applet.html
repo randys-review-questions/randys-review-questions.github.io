@@ -18,6 +18,7 @@
         <script id="MathJax-script" async=""
             src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
         </script>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
     </head>
     <body id="page">
         <h1>Randy's Review Questions</h1>
@@ -34,287 +35,287 @@
             <em>Tufts University Global Switches (select by category):</em>
             <br />
             <input type="checkbox" id="tuftsall" onclick="update_checkboxes(id)"> 
-                <strong>Select/Deselect All</strong>
+                <label for="tuftsall"><strong>Select/Deselect All</strong></label>
             <input type="checkbox" id="tuftscscore" onclick="update_checkboxes(id)"> 
-                <u class="hover" title="Computer Science">CS</u> core
+                <label for="tuftscscore"><u class="hover" title="Computer Science">CS</u> core</label>
             <input type="checkbox" id="tuftscselectives" onclick="update_checkboxes(id)"> 
-                <u class="hover" title="Computer Science">CS</u> electives
+                <label for="tuftscselectives"><u class="hover" title="Computer Science">CS</u> electives</label>
             <input type="checkbox" id="tuftsbme" onclick="update_checkboxes(id)"> 
-                <u class="hover" title="Biomedical Engineering">BME</u>
+                <label for="tuftsbme"><u class="hover" title="Biomedical Engineering">BME</u></label>
             <input type="checkbox" id="tuftsmath" onclick="update_checkboxes(id)"> 
-                Math 
+                <label for="tuftsmath">Math</label>
             <input type="checkbox" id="tuftshass" onclick="update_checkboxes(id)"> 
-                <u class="hover" title="Humanities, Arts, and Social Sciences">HASS</u>
+                <label for="tuftshass"><u class="hover" title="Humanities, Arts, and Social Sciences">HASS</u></label>
             <br />
             <hr />
             <em>Fall 2023:</em>
             <br />
             <input type="checkbox" id="f23all" onclick="update_checkboxes(id)"> 
-                <strong>Select/Deselect All</strong>
+                <label for="f23all"><strong>Select/Deselect All</strong></label>
             <input type="checkbox" id="cs107" onclick="update_checkboxes(id)" name="f23configure" value="f23/cs107">  
-                <u class="hover" title="Compilers (Richard Townsend)">CS 107</u>
+                <label for="cs107"><u class="hover" title="Compilers (Richard Townsend)">CS 107</u></label>
             <input type="checkbox" id="cs117" onclick="update_checkboxes(id)" name="f23configure" value="f23/cs117">  
-                <u class="hover" title="Internet-scale Distributed Systems (Noah Mendelsohn)">CS 117</u>
+                <label for="cs117"><u class="hover" title="Internet-scale Distributed Systems (Noah Mendelsohn)">CS 117</u></label>
             <input type="checkbox" id="cs138" onclick="update_checkboxes(id)" name="f23configure" value="f23/cs138">  
-                <u class="hover" title="Reinforcement Learning (Jivko Sinapov)">CS 138</u>
+                <label for="cs138"><u class="hover" title="Reinforcement Learning (Jivko Sinapov)">CS 138</u></label>
             <input type="checkbox" id="cs169" onclick="update_checkboxes(id)" name="f23configure" value="f23/cs169">  
-                <u class="hover" title="Statistical Bioinformatics (Donna Slonim)">CS 169</u>
+                <label for="cs169"><u class="hover" title="Statistical Bioinformatics (Donna Slonim)">CS 169</u></label>
             <br />
             <hr />
             <em>Spring 2023:</em>
             <br />
             <input type="checkbox" id="s23all" onclick="update_checkboxes(id)"> 
-                <strong>Select/Deselect All</strong>
+                <label for="s23all"><strong>Select/Deselect All</strong></label>
             <input type="checkbox" id="psy11" onclick="update_checkboxes(id)" name="s23configure" value="s23/psy11">  
-                <u class="hover" title="Developmental Psychology (Paul Muentener)">PSY 11</u> 
+                <label for="psy11"><u class="hover" title="Developmental Psychology (Paul Muentener)">PSY 11</u></label> 
             <input type="checkbox" id="bme100" onclick="update_checkboxes(id)" name="s23configure" value="s23/bme100">  
-                <u class="hover" title="Design of a Medical Instrument (Srivalleesha Mallidi)">BME 100</u>
+                <label for="bme100"><u class="hover" title="Design of a Medical Instrument (Srivalleesha Mallidi)">BME 100</u></label>
             <input type="checkbox" id="cs98" onclick="update_checkboxes(id)" name="s23configure" value="s23/cs98"> 
-                <u class="hover" title="Senior Capstone Project II (David Lillethun)">CS 98</u>
+                <label for="cs98"><u class="hover" title="Senior Capstone Project II (David Lillethun)">CS 98</u></label>
             <input type="checkbox" id="cs111" onclick="update_checkboxes(id)" name="s23configure" value="s23/cs111">  
-                <u class="hover" title="Operating Systems (David Lillethun)">CS 111</u>
+                <label for="cs111"><u class="hover" title="Operating Systems (David Lillethun)">CS 111</u></label>
             <input type="checkbox" id="cs115" onclick="update_checkboxes(id)" name="s23configure" value="s23/cs115">  
-                <u class="hover" title="Database Systems (Johes Bater)">CS 115</u>
+                <label for="cs115"><u class="hover" title="Database Systems (Johes Bater)">CS 115</u></label>
             <input type="checkbox" id="math51" onclick="update_checkboxes(id)" name="s23configure" value="s23/math51">  
-                <u class="hover" title="Differential Equations (Ian Manly)">MATH 51</u>
+                <label for="math51"><u class="hover" title="Differential Equations (Ian Manly)">MATH 51</u></label>
             <br />
             <hr />
             <em>Fall 2022:</em>
             <br />
             <input type="checkbox" id="f22all" onclick="update_checkboxes(id)">  
-                <strong>Select/Deselect All</strong>
+                <label for="f22all"><strong>Select/Deselect All</strong></label>
             <input type="checkbox" id="ed11" onclick="update_checkboxes(id)" name="f22configure" value="f22/ed11">  
-                <u class="hover" title="Observing (Education) Theory In Action (Steven Cohen)">ED 11</u>
+                <label for="ed11"><u class="hover" title="Observing (Education) Theory In Action (Steven Cohen)">ED 11</u></label>
             <input type="checkbox" id="bme10" onclick="update_checkboxes(id)" name="f22configure" value="f22/bme10">  
-                <u class="hover" title="Electric Circuits & Biomedical Applications (Sergio Fantini)">BME 10</u>
+                <label for="bme10"><u class="hover" title="Electric Circuits & Biomedical Applications (Sergio Fantini)">BME 10</u></label>
             <input type="checkbox" id="cs97" onclick="update_checkboxes(id)" name="f22configure" value="f22/cs97">  
-                <u class="hover" title="Senior Capstone Project I (Dave Lillethun)">CS 97</u>
+                <label for="cs97"><u class="hover" title="Senior Capstone Project I (Dave Lillethun)">CS 97</u></label>
             <input type="checkbox" id="cs121" onclick="update_checkboxes(id)" name="f22configure" value="f22/cs121">  
-                <u class="hover" title="Software Engineering (Jeffrey Foster)">CS 121</u>
+                <label for="cs121"><u class="hover" title="Software Engineering (Jeffrey Foster)">CS 121</u></label>
             <input type="checkbox" id="cs135" onclick="update_checkboxes(id)" name="f22configure" value="f22/cs135">  
-                <u class="hover" title="Intro to Machine Learning (Martin Allen)">CS 135</u>
+                <label for="cs135"><u class="hover" title="Intro to Machine Learning (Martin Allen)">CS 135</u></label>
             <input type="checkbox" id="cs170" onclick="update_checkboxes(id)" name="f22configure" value="f22/cs170">  
-                <u class="hover" title="Computation Theory (Megan Monroe)">CS 170</u>
+                <label for="cs170"><u class="hover" title="Computation Theory (Megan Monroe)">CS 170</u></label>
             <br />
             <hr />
             <em>Summer 2022:</em>
             <br />
             <input type="checkbox" id="su22all" onclick="update_checkboxes(id)">  
-                <strong>Select/Deselect All</strong>
+                <label for="su22all"><strong>Select/Deselect All</strong></label>
             <input type="checkbox" id="spn1" onclick="update_checkboxes(id)" name="su22configure" value="su22/spn1">  
-                <u class="hover" title="Elementary Spanish I (Marta Rosso-O'Laughlin)">SPN 1</u>
+                <label for="spn1"><u class="hover" title="Elementary Spanish I (Marta Rosso-O'Laughlin)">SPN 1</u></label>
             <br />
             <hr />
             <em>Spring 2022:</em>
             <br />
             <input type="checkbox" id="s22all" onclick="update_checkboxes(id)">  
-                <strong>Select/Deselect All</strong>
+                <label for="s22all"><strong>Select/Deselect All</strong></label>
             <input type="checkbox" id="bme162" onclick="update_checkboxes(id)" name="s22configure" value="s22/bme162"> 
-                <u class="hover" title="Molecular Biotechnology (Niall Lennon)">BME 162</u>
+                <label for="bme162"><u class="hover" title="Molecular Biotechnology (Niall Lennon)">BME 162</u></label>
             <input type="checkbox" id="cs167" onclick="update_checkboxes(id)" name="s22configure" value="s22/cs167">  
-                <u class="hover" title="Computational Biology (Donna Slonim)">CS 167</u>
+                <label for="cs167"><u class="hover" title="Computational Biology (Donna Slonim)">CS 167</u></label>
             <input type="checkbox" id="cs105" onclick="update_checkboxes(id)" name="s22configure" value="s22/cs105">  
-                <u class="hover" title="Programming Languages (Richard Townsend)">CS 105</u>
+                <label for="cs105"><u class="hover" title="Programming Languages (Richard Townsend)">CS 105</u></label>
             <input type="checkbox" id="cs116" onclick="update_checkboxes(id)" name="s22configure" value="s22/cs116">  
-                <u class="hover" title="Introduction to Security (Ming Chow)">CS 116</u>
+                <label for="cs116"><u class="hover" title="Introduction to Security (Ming Chow)">CS 116</u></label>
             <input type="checkbox" id="es2" onclick="update_checkboxes(id)" name="s22configure" value="s22/es2">  
-                <u class="hover" title="Intro to Computing in Engineering (Jennifer Cross)">ES 2</u>
+                <label for="es2"><u class="hover" title="Intro to Computing in Engineering (Jennifer Cross)">ES 2</u></label>
             <br />
             <hr />
             <em>Fall 2021:</em>
             <br />
             <input type="checkbox" id="f21all" onclick="update_checkboxes(id)">  
-                <strong>Select/Deselect All</strong>
+                <label for="f21all"><strong>Select/Deselect All</strong></label>
             <input type="checkbox" id="phy12" onclick="update_checkboxes(id)" name="f21configure" value="f21/phy12"> 
-                <u class="hover" title="General Physics II (Taritree Wongjirad)">PHY 12</u>
+                <label for="phy12"><u class="hover" title="General Physics II (Taritree Wongjirad)">PHY 12</u></label>
             <input type="checkbox" id="cs40" onclick="update_checkboxes(id)" name="f21configure" value="f21/cs40"> 
-                <u class="hover" title="Machine Structure & Assembly Language Programming (Megan Monroe)">CS 40</u>
+                <label for="cs40"><u class="hover" title="Machine Structure & Assembly Language Programming (Megan Monroe)">CS 40</u></label>
             <input type="checkbox" id="cs160" onclick="update_checkboxes(id)" name="f21configure" value="f21/cs160">  
-                <u class="hover" title="Algorithms (Diane Souvaine and Karen Edwards)">CS 160</u>
+                <label for="cs160"><u class="hover" title="Algorithms (Diane Souvaine and Karen Edwards)">CS 160</u></label>
             <input type="checkbox" id="es56" onclick="update_checkboxes(id)" name="f21configure" value="f21/es56">  
-                <u class="hover" title="Probability and Statistics (Anne Marie Desmarais)">ES 56</u>
+                <label for="es56"><u class="hover" title="Probability and Statistics (Anne Marie Desmarais)">ES 56</u></label>
             <input type="checkbox" id="cs4" onclick="update_checkboxes(id)" name="f21configure" value="f21/cs4">  
-                <u class="hover" title="Teaching Computer Science (Sam Berman and Megan Monroe)">CS 4</u>
+                <label for="cs4"><u class="hover" title="Teaching Computer Science (Sam Berman and Megan Monroe)">CS 4</u></label>
             <br />
             <hr />
             <em>Spring 2021:</em>
             <br/>
             <input type="checkbox" id="s21all" onclick="update_checkboxes(id)">  
-                <strong>Select/Deselect All</strong>
+                <label for="s21all"><strong>Select/Deselect All</strong></label>
             <input type="checkbox" id="phil24" onclick="update_checkboxes(id)" name="s21configure" value="s21/phil24">  
-                <u class="hover" title="Intro to Ethics (Monica Kim)">PHIL 24</u>
+                <label for="phil24"><u class="hover" title="Intro to Ethics (Monica Kim)">PHIL 24</u></label>
             <input type="checkbox" id="bme12" onclick="update_checkboxes(id)" name="s21configure" value="s21/bme12">  
-                <u class="hover" title="Biothermodynamics (Xiaocheng Jiang, Qiaobing Xu, and Huan-Hsuan Hsu)">BME 12</u>
+                <label for="bme12"><u class="hover" title="Biothermodynamics (Xiaocheng Jiang, Qiaobing Xu, and Huan-Hsuan Hsu)">BME 12</u></label>
             <input type="checkbox" id="bme131" onclick="update_checkboxes(id)" name="s21configure" value="s21/bme131">  
-                <u class="hover" title="Principles of Medical Imaging (Sergio Fantini)">BME 131</u>
+                <label for="bme131"><u class="hover" title="Principles of Medical Imaging (Sergio Fantini)">BME 131</u></label>
             <input type="checkbox" id="comp15" onclick="update_checkboxes(id)" name="s21configure" value="s21/comp15">  
-                <u class="hover" title="Data Structures (Mark Sheldon)">COMP 15</u>
+                <label for="comp15"><u class="hover" title="Data Structures (Mark Sheldon)">COMP 15</u></label>
             <input type="checkbox" id="comp61" onclick="update_checkboxes(id)" name="s21configure" value="s21/comp61">  
-                <u class="hover" title="Discrete Mathematics (Karen Edwards)">COMP 61</u>
+                <label for="comp61"><u class="hover" title="Discrete Mathematics (Karen Edwards)">COMP 61</u></label>
             <input type="checkbox" id="math70" onclick="update_checkboxes(id)" name="s21configure" value="s21/math70"> 
-                <u class="hover" title="Linear Algebra (JinCheng Wang)">MATH 70</u>
+                <label for="math70"><u class="hover" title="Linear Algebra (JinCheng Wang)">MATH 70</u></label>
             <br />
             <hr />
             <em>Fall 2020:</em>
             <br />
             <input type="checkbox" id="f20all" onclick="update_checkboxes(id)"> 
-                <strong>Select/Deselect All</strong>
+                <label for="f20all"><strong>Select/Deselect All</strong></label>
             <input type="checkbox" id="bio13" onclick="update_checkboxes(id)" name="f20configure" value="f20/bio13"> 
-                <u class="hover" title="Cells & Organisms (Lauren Crowe and Ekaterina Mirkin)">BIO 13</u>
+                <label for="bio13"><u class="hover" title="Cells & Organisms (Lauren Crowe and Ekaterina Mirkin)">BIO 13</u></label>
             <input type="checkbox" id="psy13" onclick="update_checkboxes(id)" name="f20configure" value="f20/psy13"> 
-                <u class="hover" title="Social Psychology (Samuel Sommers)">PSY 13</u>
+                <label for="psy13"><u class="hover" title="Social Psychology (Samuel Sommers)">PSY 13</u></label>
             <input type="checkbox" id="math42" onclick="update_checkboxes(id)" name="f20configure" value="f20/math42"> 
-                <u class="hover" title="Calculus III (Fulton Gonzalez, Xiaozhe Hu, and Natasa Dragovic)">MATH 42</u>
+                <label for="math42"><u class="hover" title="Calculus III (Fulton Gonzalez, Xiaozhe Hu, and Natasa Dragovic)">MATH 42</u></label>
             <input type="checkbox" id="comp11" onclick="update_checkboxes(id)" name="f20configure" value="f20/comp11"> 
-                <u class="hover" title="Intro to Computer Science (Richard Townsend and Dave Lillethun)">COMP 11</u>
+                <label for="comp11"><u class="hover" title="Intro to Computer Science (Richard Townsend and Dave Lillethun)">COMP 11</u></label>
             <input type="checkbox" id="mus69" onclick="update_checkboxes(id)" name="f20configure" value="f20/mus69"> 
-                <u class="hover" title="Gospel Choir (David Coleman)">MUS 69</u>
+                <label for="mus69"><u class="hover" title="Gospel Choir (David Coleman)">MUS 69</u></label>
             <input type="checkbox" id="comp93" onclick="update_checkboxes(id)" name="f20configure" value="f20/comp93"> 
-                <u class="hover" title="Directed Study: Emerging Scholars Program (Kiara Rose)">COMP 93</u>
+                <label for="comp93"><u class="hover" title="Directed Study: Emerging Scholars Program (Kiara Rose)">COMP 93</u></label>
             <br />
             <hr />
             <em>Cheshire High School Global Switches (select by category):</em>
             <br />
             <input type="checkbox" id="chsall" onclick="update_checkboxes(id)"> 
-                <strong>Select/Deselect All</strong>
+                <label for="chsall"><strong>Select/Deselect All</strong></label>
             <input type="checkbox" id="chseng" onclick="update_checkboxes(id)"> 
-                English  
+                <label for="chseng">English</label>  
             <input type="checkbox" id="chsss" onclick="update_checkboxes(id)"> 
-                Social Science
+                <label for="chsss">Social Science</label>
             <input type="checkbox" id="chsns" onclick="update_checkboxes(id)"> 
-                Natural Science
+                <label for="chsns">Natural Science</label>
             <input type="checkbox" id="chsmath" onclick="update_checkboxes(id)"> 
-                Math
+                <label for="chsmath">Math</label>
             <input type="checkbox" id="chslat" onclick="update_checkboxes(id)">  
-                Latin
+                <label for="chslat">Latin</label>
             <input type="checkbox" id="chsmus" onclick="update_checkboxes(id)"> 
-                Music
+                <label for="chsmus">Music</label>
             <input type="checkbox" id="chspe" onclick="update_checkboxes(id)"> 
-                <u class="hover" title="Physical Education">PE</u>/Health
+                <label for="chspe"><u class="hover" title="Physical Education">PE</u>/Health</label>
             <input type="checkbox" id="chsmisc" onclick="update_checkboxes(id)">  
-                Remaining electives
+                <label for="chsmisc">Remaining electives</label>
             <br />
             <hr />
             <em>Year 2019-2020:</em>
             <br />
             <input type="checkbox" id="f19all" onclick="update_checkboxes(id)"> 
-                <strong>Select/Deselect All</strong>
+                <label for="f19all"><strong>Select/Deselect All</strong></label>
             <input type="checkbox" id="apcsa" onclick="update_checkboxes(id)" name="f19configure" value="f19/csa"> 
-                <u class="hover" title="AP Computer Science A (Kevin Faggella)">AP CSA</u>
+                <label for="apcsa"><u class="hover" title="AP Computer Science A (Kevin Faggella)">AP CSA</u></label>
             <input type="checkbox" id="vips" onclick="update_checkboxes(id)" name="f19configure" value="f19/vips"> 
-                <u class="hover" title="VIPs Choir (Gregory Bell)">VIPs Choir</u>
+                <label for="vips"><u class="hover" title="VIPs Choir (Gregory Bell)">VIPs Choir</u></label>
             <input type="checkbox" id="aplit" onclick="update_checkboxes(id)" name="f19configure" value="f19/lit"> 
-                <u class="hover" title="AP Literature and Composition (Taryn Chorney)">AP Lit</u>
+                <label for="aplit"><u class="hover" title="AP Literature and Composition (Taryn Chorney)">AP Lit</u></label>
             <input type="checkbox" id="apcalc" onclick="update_checkboxes(id)" name="f19configure" value="f19/calc"> 
-                <u class="hover" title="AP Calculus BC (Michael Lougee)">AP Calc</u>
+                <label for="apcalc"><u class="hover" title="AP Calculus BC (Michael Lougee)">AP Calc</u></label>
             <input type="checkbox" id="f19pe" onclick="update_checkboxes(id)" name="f19configure" value="f19/pe"> 
-                <u class="hover" title="Physical Education (Sarah Mik)">PE</u>
+                <label for="f19pe"><u class="hover" title="Physical Education (Sarah Mik)">PE</u></label>
             <input type="checkbox" id="apbio" onclick="update_checkboxes(id)" name="f19configure" value="f19/bio"> 
-                <u class="hover" title="AP Biology (Corinne Pelletier)">AP Bio</u>
+                <label for="apbio"><u class="hover" title="AP Biology (Corinne Pelletier)">AP Bio</u></label>
             <input type="checkbox" id="lat5" onclick="update_checkboxes(id)" name="f19configure" value="f19/lat5"> 
-                <u class="hover" title="Latin V (Kathryn Oparowski)">Lat. V</u>
+                <label for="lat5"><u class="hover" title="Latin V (Kathryn Oparowski)">Lat. V</u></label>
             <input type="checkbox" id="appsych" onclick="update_checkboxes(id)" name="f19configure" value="f19/psych"> 
-                <u class="hover" title="AP Psychology (Renee Shirk)">AP Psych</u>
+                <label for="appsych"><u class="hover" title="AP Psychology (Renee Shirk)">AP Psych</u></label>
             <input type="checkbox" id="f19mbnd" onclick="update_checkboxes(id)" name="f19configure" value="f19/mbnd"> 
-                <u class="hover" title="Marching Band (Drum Major Academy & CHSMRB Instructors)">M. Band</u>
+                <label for="f19mbnd"><u class="hover" title="Marching Band (Drum Major Academy & CHSMRB Instructors)">M. Band</u></label>
             <br />
             <hr />
             <em>Year 2018-2019:</em>
             <br />
             <input type="checkbox" id="f18all" onclick="update_checkboxes(id)">
-                <strong>Select/Deselect All</strong>
+                <label for="f18all"><strong>Select/Deselect All</strong></label>
             <input type="checkbox" id="apphys" onclick="update_checkboxes(id)" name="f18configure" value="f18/phys">
-                <u class="hover" title="AP Physics 1 (Julie Barker)">AP Phys.</u>
+                <label for="apphys"><u class="hover" title="AP Physics 1 (Julie Barker)">AP Phys.</u></label>
             <input type="checkbox" id="f18hlth" onclick="update_checkboxes(id)" name="f18configure" value="f18/hlth">
-                <u class="hover" title="Health (Joseph Krutz)">Health</u>
+                <label for="f18hlth"><u class="hover" title="Health (Joseph Krutz)">Health</u></label>
             <input type="checkbox" id="f18pe" onclick="update_checkboxes(id)" name="f18configure" value="f18/pe">
-                <u class="hover" title="Physical Education (Cathy Sullivan)">PE</u>
+                <label for="f18pe"><u class="hover" title="Physical Education (Cathy Sullivan)">PE</u></label>
             <input type="checkbox" id="apgov" onclick="update_checkboxes(id)" name="f18configure" value="f18/gov">
-                <u class="hover" title="AP US Government and Politics (Matt Swanson)">AP Gov</u>
+                <label for="apgov"><u class="hover" title="AP US Government and Politics (Matt Swanson)">AP Gov</u></label>
             <input type="checkbox" id="ma" onclick="update_checkboxes(id)" name="f18configure" value="f18/ma">
-                <u class="hover" title="Math Analysis (accelerated pre-calculus) (John Redford)">MA</u>
+                <label for="ma"><u class="hover" title="Math Analysis (accelerated pre-calculus) (John Redford)">MA</u></label>
             <input type="checkbox" id="aplat" onclick="update_checkboxes(id)" name="f18configure" value="f18/lat">
-                <u class="hover" title="AP Latin: Vergil and Caesar (Kathryn Oparowski)">AP Lat.</u>
+                <label for="aplat"><u class="hover" title="AP Latin: Vergil and Caesar (Kathryn Oparowski)">AP Lat.</u></label>
             <input type="checkbox" id="f18crus" onclick="update_checkboxes(id)" name="f18configure" value="f18/crus">
-                <u class="hover" title="Concert Choir (Beth Malvezzi)">C. Choir</u>
+                <label for="f18crus"><u class="hover" title="Concert Choir (Beth Malvezzi)">C. Choir</u></label>
             <input type="checkbox" id="f18wbnd" onclick="update_checkboxes(id)" name="f18configure" value="f18/wbnd">
-                <u class="hover" title="Wind Ensemble (John Kuhner)">W. Ens.</u>
+                <label for="f18wbnd"><u class="hover" title="Wind Ensemble (John Kuhner)">W. Ens.</u></label>
             <input type="checkbox" id="f18mbnd" onclick="update_checkboxes(id)" name="f18configure" value="f18/mbnd">
-                <u class="hover" title="Marching Band (CHSMRB Instructors)">M. Band</u>
+                <label for="f18mbnd"><u class="hover" title="Marching Band (CHSMRB Instructors)">M. Band</u></label>
             <input type="checkbox" id="apcsp" onclick="update_checkboxes(id)" name="f18configure" value="f18/csp">
-                <u class="hover" title="AP Computer Science Principles (John Redford)">AP CSP</u>
+                <label for="apcsp"><u class="hover" title="AP Computer Science Principles (John Redford)">AP CSP</u></label>
             <input type="checkbox" id="aplang" onclick="update_checkboxes(id)" name="f18configure" value="f18/lang">
-                <u class="hover" title="AP English Language and Composition (Megumi Yamamoto, Eileen Wildermann, and Christina Esposito)">AP Lang</u>
+                <label for="aplang"><u class="hover" title="AP English Language and Composition (Megumi Yamamoto, Eileen Wildermann, and Christina Esposito)">AP Lang</u></label>
             <input type="checkbox" id="apchem" onclick="update_checkboxes(id)" name="f18configure" value="f18/chem">
-                <u class="hover" title="AP Chemistry (Stephanie Bertenshaw)">AP Chem</u>
+                <label for="apchem"><u class="hover" title="AP Chemistry (Stephanie Bertenshaw)">AP Chem</u></label>
             <br />
             <hr />
             <em>Year 2017-2018:</em>
             <br />
             <input type="checkbox" id="f17all" onclick="update_checkboxes(id)"> 
-                <strong>Select/Deselect All</strong>
+                <label for="f17all"><strong>Select/Deselect All</strong></label>
             <input type="checkbox" id="f17pe" onclick="update_checkboxes(id)" name="f17configure" value="f17/pe"> 
-                <u class="hover" title="Physical Education (Sarah Mik and Dan Lee)">PE</u>
+                <label for="f17pe"><u class="hover" title="Physical Education (Sarah Mik and Dan Lee)">PE</u></label>
             <input type="checkbox" id="chem" onclick="update_checkboxes(id)" name="f17configure" value="f17/chem"> 
-                <u class="hover" title="Advanced Chemistry (Stephanie Bertenshaw)">Adv. Chem</u>
+                <label for="chem"><u class="hover" title="Advanced Chemistry (Stephanie Bertenshaw)">Adv. Chem</u></label>
             <input type="checkbox" id="alg2" onclick="update_checkboxes(id)" name="f17configure" value="f17/alg2"> 
-                <u class="hover" title="Algebra II (Michael Lougee)">Alg. II</u>
+                <label for="alg2"><u class="hover" title="Algebra II (Michael Lougee)">Alg. II</u></label>
             <input type="checkbox" id="apush" onclick="update_checkboxes(id)" name="f17configure" value="f17/apush"> 
-                <u class="hover" title="AP US History (Erin Griffiths)">APUSH</u>
+                <label for="apush"><u class="hover" title="AP US History (Erin Griffiths)">APUSH</u></label>
             <input type="checkbox" id="persf" onclick="update_checkboxes(id)" name="f17configure" value="f17/persf"> 
-                <u class="hover" title="Personal Finance (Brittany Micari)">Pers. Finance</u>
+                <label for="persf"><u class="hover" title="Personal Finance (Brittany Micari)">Pers. Finance</u></label>
             <input type="checkbox" id="gamed" onclick="update_checkboxes(id)" name="f17configure" value="f17/gamed"> 
-                <u class="hover" title="Game Design and Development (Dan Warburton)">Game Des.</u>
+                <label for="gamed"><u class="hover" title="Game Design and Development (Dan Warburton)">Game Des.</u></label>
             <input type="checkbox" id="f17crus" onclick="update_checkboxes(id)" name="f17configure" value="f17/crus"> 
-                <u class="hover" title="Concert Choir (Beth Malvezzi)">C. Choir</u>
+                <label for="f17crus"><u class="hover" title="Concert Choir (Beth Malvezzi)">C. Choir</u></label>
             <input type="checkbox" id="f17wbnd" onclick="update_checkboxes(id)" name="f17configure" value="f17/wbnd"> 
-                <u class="hover" title="Wind Ensemble (John Kuhner)">W. Ens.</u>
+                <label for="f17wbnd"><u class="hover" title="Wind Ensemble (John Kuhner)">W. Ens.</u></label>
             <input type="checkbox" id="f17mbnd" onclick="update_checkboxes(id)" name="f17configure" value="f17/mbnd"> 
-                <u class="hover" title="Marching Band (CHSMRB Instructors)">M. Band</u>
+                <label for="f17mbnd"><u class="hover" title="Marching Band (CHSMRB Instructors)">M. Band</u></label>
             <input type="checkbox" id="wl2" onclick="update_checkboxes(id)"name="f17configure" value="f17/wlii"> 
-                <u class="hover" title="World Literature II (Michelle Kochiss)">WLII</u>
+                <label for="wl2"><u class="hover" title="World Literature II (Michelle Kochiss)">WLII</u></label>
             <input type="checkbox" id="lat3" onclick="update_checkboxes(id)" name="f17configure" value="f17/lat3"> 
-                <u class="hover" title="Latin III (Kathryn Oparowski)">Lat. III</u>
+                <label for="lat3"><u class="hover" title="Latin III (Kathryn Oparowski)">Lat. III</u></label>
             <br />
             <hr />
             <em>Year 2016-2017:</em>
             <br />
             <input type="checkbox" id="f16all" onclick="update_checkboxes(id)"> 
-                <strong>Select/Deselect All</strong>
+                <label for="f16all"><strong>Select/Deselect All</strong></label>
             <input type="checkbox" id="mwh" onclick="update_checkboxes(id)" name="f16configure" value="f16/mwh"> 
-                <u class="hover" title="Modern World History (Maureen DiSorbo)">MWH</u>
+                <label for="mwh"><u class="hover" title="Modern World History (Maureen DiSorbo)">MWH</u></label>
             <input type="checkbox" id="geo" onclick="update_checkboxes(id)" name="f16configure" value="f16/geo"> 
-                <u class="hover" title="Geometry (Stephen DeFalco)">Geometry</u>
+                <label for="geo"><u class="hover" title="Geometry (Stephen DeFalco)">Geometry</u></label>
             <input type="checkbox" id="lat2" onclick="update_checkboxes(id)" name="f16configure" value="f16/lat"> 
-                <u class="hover" title="Latin II (Sarah Torrence)">Lat. II</u>
+                <label for="lat2"><u class="hover" title="Latin II (Sarah Torrence)">Lat. II</u></label>
             <input type="checkbox" id="wl1" onclick="update_checkboxes(id)" name="f16configure" value="f16/wli"> 
-                <u class="hover" title="World Literature I (Erin Gribben)">WLI</u>
+                <label for="wl1"><u class="hover" title="World Literature I (Erin Gribben)">WLI</u></label>
             <input type="checkbox" id="f16crus" onclick="update_checkboxes(id)" name="f16configure" value="f16/crus"> 
-                <u class="hover" title="Chorus (Beth Malvezzi)">Chorus</u>
+                <label for="f16crus"><u class="hover" title="Chorus (Beth Malvezzi)">Chorus</u></label>
             <input type="checkbox" id="cbnd" onclick="update_checkboxes(id)" name="f16configure" value="f16/cbnd"> 
-                <u class="hover" title="Concert Band (John Kuhner)">C. Band</u>
+                <label for="cbnd"><u class="hover" title="Concert Band (John Kuhner)">C. Band</u></label>
             <input type="checkbox" id="bio" onclick="update_checkboxes(id)" name="f16configure" value="f16/bio"> 
-                <u class="hover" title="Biology (Pam Missal)">Bio</u>
+                <label for="bio"><u class="hover" title="Biology (Pam Missal)">Bio</u></label>
             <input type="checkbox" id="f16pe" onclick="update_checkboxes(id)" name="f16configure" value="f16/pe"> 
-                <u class="hover" title="Physical Education (Rich Pulisciano)">PE</u>
+                <label for="f16pe"><u class="hover" title="Physical Education (Rich Pulisciano)">PE</u></label>
             <input type="checkbox" id="f16hlth" onclick="update_checkboxes(id)" name="f16configure" value="f16/hlth"> 
-                <u class="hover" title="Health (Matt Guida)">Health</u>
+                <label for="f16hlth"><u class="hover" title="Health (Matt Guida)">Health</u></label>
             <input type="checkbox" id="f16mbnd" onclick="update_checkboxes(id)" name="f16configure" value="f16/mbnd"> 
-                <u class="hover" title="Marching Band (CHSMRB Instructors)">M. Band</u>
+                <label for="f16mbnd"><u class="hover" title="Marching Band (CHSMRB Instructors)">M. Band</u></label>
             <br />
             <hr />
             <em>Other:</em>
             <br />
             <input type="checkbox" id="otherall" onclick="update_checkboxes(id)"> 
-                <strong>Select/Deselect All</strong>
+                <label for="otherall"><strong>Select/Deselect All</strong></label>
             <input type="checkbox" id="ra" onclick="update_checkboxes(id)" name="otherconfigure" value="nonAc/ra">
-                <u class="hover" title="Resident Assistant (Fall 2021 - Spring 2022, ORLL Training)">RA</u>
+                <label for="ra"><u class="hover" title="Resident Assistant (Fall 2021 - Spring 2022, ORLL Training)">RA</u></label>
             <input type="checkbox" id="ta15" onclick="update_checkboxes(id)" name="otherconfigure" value="ex/ta15">
-                <u class="hover" title="TAing CS 15: Data Structures (Fall 2021, Milod Kazerounian)">TA15</u>
+                <label for="ta15"><u class="hover" title="TAing CS 15: Data Structures (Fall 2021, Milod Kazerounian)">TA15</u></label>
             <input type="checkbox" id="ta40" onclick="update_checkboxes(id)" name="otherconfigure" value="ex/ta40">
-                <u class="hover" title="TAing CS 40: Machine Structure & Assembly Language Programming (Fall 2023, Mark Sheldon)">TA40</u>
+                <label for="ta40"><u class="hover" title="TAing CS 40: Machine Structure & Assembly Language Programming (Fall 2023, Mark Sheldon)">TA40</u></label>
             <input type="checkbox" id="pokegeo" onclick="update_checkboxes(id)" name="otherconfigure" value="nonAc/pokegeo">
-                <u class="hover" title="Pokemon Geography (generations 1-6)">PokeGeo</u>
+                <label for="pokegeo"><u class="hover" title="Pokemon Geography (generations 1-6)">PokeGeo</u></label>
             <br />
             <hr />
             <span id="finalconfigsgenerate">
@@ -325,13 +326,13 @@
             <span id="finalconfigs" style="display:none;">
                 <em>Mode:</em>
                 <br />
-                <input type="radio" name="mode" value="learn" checked> Learn 
-                <input type="radio" name="mode" value="test"> Test 
+                <input type="radio" name="mode" value="learn" id="modeswitch_learn" checked> <label for="modeswitch_learn">Learn</label> 
+                <input type="radio" name="mode" value="test" id="modeswitch_test"> <label for="modeswitch_test">Test</label> 
                 <br /> <br />
                 <em>Shuffle Question Order:</em>
                 <br />
-                <input type="radio" name="shuffle" value="yes" checked> Yes 
-                <input type="radio" name="shuffle" value="no"> No 
+                <input type="radio" name="shuffle" value="yes" id="shuffleswitch_yes" checked> <label for="shuffleswitch_yes">Yes</label> 
+                <input type="radio" name="shuffle" value="no" id="shuffleswitch_no"> <label for="shuffleswitch_no">No</label> 
                 <br /> <br />
                 <em>Number of questions (maximum of <span id="max_numquestions">0</span>):</em>
                 <br />
