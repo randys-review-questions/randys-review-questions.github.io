@@ -1,17 +1,19 @@
 body {
-    background-color: LightSalmon
+    background-color: LightSalmon;
+    max-width: 25cm;
+    margin: 10px auto;
 }
 h1 {
-    text-align: center
+    text-align: center;
 }
 h2 {
-    text-align: center
+    text-align: center;
 }
 h3 {
-    text-align: left
+    text-align: left;
 }
 p {
-    text-align: left
+    text-align: left;
 }
 table,th,td {
     border: 1px solid black;
@@ -20,6 +22,10 @@ table,th,td {
 div {
     border: 2px solid black;
     text-align: left;
+    padding: 10px;
+}
+span#progress div {
+    padding: 0px;
 }
 img {
     max-width: 100%;
@@ -29,10 +35,10 @@ u.hover {
     text-decoration: none;
 }
 input[type='radio'] {
-    transform: scale(1.25)
+    transform: scale(1.25);
 }
 input[type='checkbox'] {
-    transform: scale(1.25)
+    transform: scale(1.25);
 }
 .mybutton {
     
@@ -40,6 +46,7 @@ input[type='checkbox'] {
 #single_question {
     height: 20px;
     width: 100px;
+    margin: 0 40px;
 }
 #full_quiz {
     height: 30px;
