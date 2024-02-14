@@ -3,6 +3,7 @@ body {
     max-width: 25cm;
     margin: 10px auto;
     font-family: 'Inter', sans-serif;
+    margin: 5px;
 }
 h1 {
     text-align: center;
