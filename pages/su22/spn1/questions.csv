@@ -1,20 +1,20 @@
 Id,Question,Type,Preformatted,Image,Option 1,Image 1,Option 2,Image 2,Option 3,Image 3,Option 4,Image 4,Option 5,Image 5,Option 6,Image 6,Option 7,Image 7,Option 8,Image 8,Option 9,Image 9,Option 10,Image 10,Option 11,Image 11,Option 12,Image 12,Option 13,Image 13,Option 14,Image 14,Option 15,Image 15,Correct Answer
-1,Cinco m&aacutes dos son...,MC,,,tres.,,seis.,,siete.,,diez.,,,,,,,,,,,,,,,,,,,,,,,,3
-2,"&iquestC&oacutemo se dice ""unos chicos"" en ingl&eacutes?",MC,,,a boy,,a kid,,some boys,,some kids,,,,,,,,,,,,,,,,,,,,,,,,4
-3,Son las cinco menos cuarto. &iquestQu&eacute hora es?,MC,,,4:45,,4:56,,5:04,,5:15,,,,,,,,,,,,,,,,,,,,,,,,1
-4,El l&aacutepiz _____ hombre.,MC,,,del,,de el,,dla,,de la,,,,,,,,,,,,,,,,,,,,,,,,1
+1,Cinco m&aacute;s dos son...,MC,,,tres.,,seis.,,siete.,,diez.,,,,,,,,,,,,,,,,,,,,,,,,3
+2,"&iquest;C&oacute;mo se dice ""unos chicos"" en ingl&eacute;s?",MC,,,a boy,,a kid,,some boys,,some kids,,,,,,,,,,,,,,,,,,,,,,,,4
+3,Son las cinco menos cuarto. &iquest;Qu&eacute; hora es?,MC,,,4:45,,4:56,,5:04,,5:15,,,,,,,,,,,,,,,,,,,,,,,,1
+4,El l&aacute;piz _____ hombre.,MC,,,del,,de el,,dla,,de la,,,,,,,,,,,,,,,,,,,,,,,,1
 5,Which sentence is grammatically correct?,MC,,,Me no gusta leer estos libros.,,Me no gustan leer estos libros.,,No me gusta leer estos libros.,,No me gustan leer estos libros.,,,,,,,,,,,,,,,,,,,,,,,,3
-6,"Ella es mi madre. Ella es tu madre tambi&eacuten. Ella es _____ madre.
+6,"Ella es mi madre. Ella es tu madre tambi&eacute;n. Ella es _____ madre.
 <i>Assume that the speaker is male.</i>",MC,,,nosotros,,nosotras,,nuestros,,nuestra,,,,,,,,,,,,,,,,,,,,,,,,4
-7,Yo _____ seis a&ntildeos.,MC,,,soy,,estoy,,tenoy,,tengo,,,,,,,,,,,,,,,,,,,,,,,,4
-8,"&iquestC&oacutemo se dice ""Let's go to the beach!"" en espa&ntildeol?",MC,,,&iexclVamos a la playa!,,&iexclIr a la playa!,,&iexclVamos ir a la playa!,,&iexclVamos a ir a la playa!,,,,,,,,,,,,,,,,,,,,,,,,1
-9,"Por la ma&ntildeana, Miguel sale _____ su casa.
+7,Yo _____ seis a&ntilde;os.,MC,,,soy,,estoy,,tenoy,,tengo,,,,,,,,,,,,,,,,,,,,,,,,4
+8,"&iquest;C&oacute;mo se dice ""Let's go to the beach!"" en espa&ntilde;ol?",MC,,,&iexcl;Vamos a la playa!,,&iexcl;Ir a la playa!,,&iexcl;Vamos ir a la playa!,,&iexcl;Vamos a ir a la playa!,,,,,,,,,,,,,,,,,,,,,,,,1
+9,"Por la ma&ntilde;ana, Miguel sale _____ su casa.
 <i>This is assuming that Miguel is inside his house at nighttime and spends his day outside the house.</i>",MC,,,de,,para,,con,,(nada),,,,,,,,,,,,,,,,,,,,,,,,1
-10,"&iquestC&oacutemo se dice ""He is sleeping"" en espa&ntildeol?",MC,,,&Eacutel es dormiendo.,,&Eacutel es durmiendo.,,&Eacutel est&aacute dormiendo.,,&Eacutel est&aacute durmiendo.,,,,,,,,,,,,,,,,,,,,,,,,4
+10,"&iquest;C&oacute;mo se dice ""He is sleeping"" en espa&ntilde;ol?",MC,,,&Eacute;l es dormiendo.,,&Eacute;l es durmiendo.,,&Eacute;l est&aacute; dormiendo.,,&Eacute;l est&aacute; durmiendo.,,,,,,,,,,,,,,,,,,,,,,,,4
 11,"Which of the following can have the form lo, la, los, or las?",MC,,,Definite Article,,Indefinite Article,,Direct Object Pronoun,,Indirect Object Pronoun,,,,,,,,,,,,,,,,,,,,,,,,3
 12,Which of the following sentences properly places the indirect object pronoun?,MC,,,Necesitas me dar regalos.,,Menecesitas dar regalos.,,All of the above,,None of the above,,,,,,,,,,,,,,,,,,,,,,,,4
 13,Which demonstrative adjective is used to point out things that are close to both the speaker and the listener?,MC,,,este/a/os/as,,ese/a/os/as,,aquel/ella/ellos/ellas,,esto/eso/aquello,,,,,,,,,,,,,,,,,,,,,,,,1
-14,"&iquestC&oacutemo se dice ""I brush my teeth"" en espa&ntildeol?",MC,,,Yo cepillo mi dientes.,,Yo cepillo mis dientes.,,Yo cepillarme los dientes.,,Yo cepillarse los dientes.,,,,,,,,,,,,,,,,,,,,,,,,3
+14,"&iquest;C&oacute;mo se dice ""I brush my teeth"" en espa&ntilde;ol?",MC,,,Yo cepillo mi dientes.,,Yo cepillo mis dientes.,,Yo cepillarme los dientes.,,Yo cepillarse los dientes.,,,,,,,,,,,,,,,,,,,,,,,,3
 15,"Consider the following sentence in Spanish:
 Es el peor restaurante en la ciudad.
 This sentence uses which of the following?",MC,,,A comparison of inequality,,A comparison of equality,,A superlative,,An absolute superlative,,,,,,,,,,,,,,,,,,,,,,,,3

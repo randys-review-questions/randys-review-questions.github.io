@@ -2,6 +2,7 @@ body {
     background-color: LightSalmon;
     max-width: 25cm;
     margin: 10px auto;
+    font-family: 'Inter', sans-serif;
 }
 h1 {
     text-align: center;

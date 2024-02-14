@@ -57,6 +57,8 @@ def write_html(path, target):
             src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
         </script>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!-- Import google "Inter" font -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
     </head>
     <body id="page">
         <h1>Randy's Review Questions</h1>
