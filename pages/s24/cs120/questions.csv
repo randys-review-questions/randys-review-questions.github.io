@@ -1,0 +1,41 @@
+Id,Question,Type,Preformatted,Image,Option 1,Image 1,Option 2,Image 2,Option 3,Image 3,Option 4,Image 4,Option 5,Image 5,Option 6,Image 6,Option 7,Image 7,Option 8,Image 8,Option 9,Image 9,Option 10,Image 10,Option 11,Image 11,Option 12,Image 12,Option 13,Image 13,Option 14,Image 14,Option 15,Image 15,Correct Answer
+1,Which of the following accurately describes client-side and server-side programming on the Web?,MC,,,The output of server-side programs may depend on which browser is used.,,Web apps implemented with server-side programming bypass any need for client-side execution.,,Server-side programs can access server-side resources that client-side programs cannot.,,Two of the above,,,,,,,,,,,,,,,,,,,,,,,,3
+2,"When placing an external link on a webpage, it is best practice to set which attribute in the anchor tag?",MC,,,"<code>target=""_self""</code>",,"<code>target=""_blank""</code>",,"<code>style=""display:block;""</code>",,"<code>style=""text-decoration:underline;""</code>",,,,,,,,,,,,,,,,,,,,,,,,2
+3,"Consider the following lines of HTML/CSS. Which of the following selectors would, when replacing the blank, cause the text within the <code>&lt;p></code> tag to render as red text?
+
+<i>Selectors:</i>
+
+I. <code>div,p</code> <br />II. <code>div p</code> <br />III. <code>div + p</code>
+
+<i>HTML/CSS:</i>",MC,"&lt;style type=""text/css"">
+    _____ {
+        color: red;
+    }
+&lt;/style>
+
+&lt;div>
+    &lt;p>This text is colored red.&lt;/p>
+&lt;/div>",,II only,,III only,,I and II only,,"I, II, and III",,,,,,,,,,,,,,,,,,,,,,,,3
+4,Which of the following CSS property-value pairs centers an element within a container?,MC,,,<code>margin: 0;</code>,,<code>margin: 0 auto;</code>,,<code>padding: 0;</code>,,<code>padding: 0 auto;</code>,,,,,,,,,,,,,,,,,,,,,,,,2
+5,Consider the following lines of client-side JavaScript code. Suppose the user inputted the number <code>3</code> when prompted. Which of the following values would get logged to the console?,MC,"if (true) {
+    var num = prompt(""Please enter a number to double:"");
+}
+console.log(num + num);",,<code>6</code>,,<code>33</code>,,<code>null</code>,,A <code>ReferenceError</code> would be thrown.,,,,,,,,,,,,,,,,,,,,,,,,2
+6,"Suppose that in JavaScript, <code>myArr</code> is storing the array <code>[1, 2, 3, 4, 5]</code>. Which of the following lines of JavaScript would store in <code>myDoubledArr</code> the array <code>[2, 4, 6, 8, 10]</code>?",MC,,,<code>myDoubledArr = myArr.map((x) => (x * 2))</code>,,<code>myDoubledArr = myArr.map((x) => {x * 2})</code>,,<code>myDoubledArr = myArr.forEach((x) => (x * 2))</code>,,<code>myDoubledArr = myArr.forEach((x) => {x * 2})</code>,,,,,,,,,,,,,,,,,,,,,,,,1
+7,We can determine that an HTTP request was successful by checking in the response that the ready state is 4 and that the status code is _____.,MC,,,0,,1,,200,,404,,,,,,,,,,,,,,,,,,,,,,,,3
+8,"Suppose that you are playing a game of Wordle where ""BREED"" is the correct word. Your first guess is ""GEESE"". What would the first row of the board look like after you make this guess?",MC,,,a,Q8-1.JPG,b,Q8-2.JPG,c,Q8-3.JPG,d,Q8-4.JPG,,,,,,,,,,,,,,,,,,,,,,,4
+9,Relational databases are incapable of storing which of the following relationships between entities?,MC,,,Relationships between individuals and their birth certificates.,,Relationships between countries and their citizens (assuming no dual citizenship).,,Relationships between professors and their students in a given semester.,,All of the above can be stored in a relational database if assignment tables are allowed.,,,,,,,,,,,,,,,,,,,,,,,,4
+10,"Suppose that you are implementing a scheduling app in PHP where <code>$events</code> is an array storing the events that the user has scheduled on a given day. Suppose the user just scheduled a new event on that day, with all necessary information stored in <code>$event</code>. Which of the following lines of PHP code would append <code>$event</code> to the end of <code>$events</code>?",MC,,,"<code>array_push($events, $event);</code>",,<code>$events = $events . $event;</code>,,<code>$events.push($event);</code>,,<code>$events->push($event);</code>,,,,,,,,,,,,,,,,,,,,,,,,1
+11,"Let's say that the user just submitted a form that contained the following HTML:
+
+<code>&lt;input type=""hidden"" id=""animal"" name=""pet"" value=""cat"" /></code>
+
+Further suppose that the form is configured in a way such that upon submission, all relevant info is sent in the query string of the URL. Which of the following PHP expressions would, on the page processing the submitted form, evaluate to <code>""cat""</code>?",MC,,,"<code>$_GET[""animal""]</code>",,"<code>$_GET[""pet""]</code>",,"<code>$_POST[""animal""]</code>",,"<code>$_POST[""pet""]</code>",,,,,,,,,,,,,,,,,,,,,,,,2
+12,"NoSQL databases are typically designed in a way that emphasizes efficient _____ much less than MySQL databases, as this is no longer as important as it was at the time that MySQL databases were developed. One example of such a database is MongoDB, where a table in a MySQL database is analogous to a(n) _____ in MongoDB.",MC,,,"query runtime, document",,"query runtime, collection",,"usage of space, document",,"usage of space, collection",,,,,,,,,,,,,,,,,,,,,,,,4
+13,"Consider the following lines of server-side JavaScript code (using NodeJS). Which of the following options, when filling in the blank, results in the user seeing the contents of ""index.html""?
+
+<i>Assume that all necessary modules have been included, and that <code>port</code> has been properly configured to get the response to the user. Apologies for the horrendous style in these answer options.</i>",MC,"http.createServer(async function(req, res) {
+    _____
+}).listen(port);",,"<code>fs.readFile(""index.html"", function(err, txt) { res.write(txt); res.end(); });</code>",,"<code>var txt = await fs.readFile(""index.html""); res.write(txt); res.end();</code>",,"<code>res.write(`&lt;script>window.location.assign(""index.html"")&lt;/script>`); </code>",,All of the above,,,,,,,,,,,,,,,,,,,,,,,,1
+14,"Suppose that you are writing server-side JavaScript code using NodeJS, and that <code>markets</code> is a handle to a MongoDB collection storing inventory information about different supermarkets. Further suppose that each document in <code>markets</code> contains a field called <code>fruits</code> that stores an array of the fruits that the supermarket has available. Which of the following lines of JavaScript would store in <code>markets_with_kiwis</code> an array of markets that sell kiwis, excluding document IDs?",MC,,,"<code>markets_with_kiwis = await markets.find({fruits: ""Kiwis""}, {projection : {_id : 0}}).toArray();</code>",,"<code>markets_with_kiwis = await markets.find({fruits: ""Kiwis""}, {projection : {_id : 1}}).toArray();</code>",,"<code>markets_with_kiwis = await markets.find({fruits: [""Kiwis""]}, {projection : {_id : 0}}).toArray();</code>",,"<code>markets_with_kiwis = await markets.find({fruits: [""Kiwis""]}, {projection : {_id : 1}}).toArray();</code>",,,,,,,,,,,,,,,,,,,,,,,,1
+15,"When using Heroku to deploy a Web application, the container that the application is run in is called a(n)...",MC,,,cluster.,,dyno.,,atlas.,,bucket.,,,,,,,,,,,,,,,,,,,,,,,,2
