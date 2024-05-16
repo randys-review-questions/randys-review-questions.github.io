@@ -1,0 +1,132 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{CS 151-02 Review Questions: LaTeX Helper Document}
+\author{Randy Dang}
+\date{May 15, 2024}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\usepackage{amsmath}
+\usepackage{fullpage}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linktoc=all, 
+    linkcolor=blue,
+    urlcolor=blue
+}
+
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{caption}
+\usepackage{steinmetz}
+\usepackage{mathtools}
+\usepackage{circuitikz}
+\usepackage{tikz}
+\usetikzlibrary{quantikz2}
+
+% Shortcuts (a "quantum standard library" that will be built over time)
+\newcommand{\sqrthalf}{\frac{1}{\sqrt{2}}}
+\newcommand{\half}{\frac{1}{2}}
+% Defined by quantikz
+% \newcommand{\ket}[1]{\lvert #1 \rangle}
+% \newcommand{\bra}[1]{\langle #1 \rvert}
+% \newcommand{\braket}[2]{\langle #1 | #2 \rangle}
+\newcommand{\twobytwomat}[4]{\begin{pmatrix}
+    #1 & #2 \\ 
+    #3 & #4
+\end{pmatrix}}
+\newcommand{\colvecttwo}[2]{\begin{pmatrix}
+    #1 \\ 
+    #2 
+\end{pmatrix}}
+\newcommand{\rowvecttwo}[2]{\begin{pmatrix}
+    #1 & #2 
+\end{pmatrix}}
+\newcommand{\colvectfour}[4]{\begin{pmatrix}
+    #1 \\ 
+    #2 \\
+    #3 \\
+    #4
+\end{pmatrix}}
+\newcommand{\rowvectfour}[4]{\begin{pmatrix}
+    #1 & #2 & #3 & #4 
+\end{pmatrix}}
+
+% Arguments for next two commands:
+% Argument 1: Dimension of vector (e.g. n)
+% Argument 2: everything before the subscript per cell 
+% Argument 3: everything after the subscript per cell
+\newcommand{\colvectn}[3]{\begin{pmatrix}
+    #2_1#3 \\ 
+    #2_2#3 \\ 
+    ... \\ 
+    #2_#1#3
+\end{pmatrix}}
+\newcommand{\rowvectn}[3]{\begin{pmatrix}
+    #2_1#3 & #2_2#3 & ... & #2_#1#3
+\end{pmatrix}}
+
+% Argument 1: Height of matrix (e.g. m)
+% Argument 2: Width of matrix (e.g. n)
+% Argument 3: everything before the subscript per cell
+% Argument 4: everything after the subscript per cell
+\newcommand{\matrixn}[4]{\begin{pmatrix}
+    #3_{11}#4 & #3_{12}#4 & ... & #3_{1#2}#4 \\ 
+    #3_{21}#4 & #3_{22}#4 & ... & #3_{2#2}#4 \\
+    ... & ... & ... & ... \\ 
+    #3_{#1 1}#4 & #3_{#1 2}#4 & ... & #3_{#1 #2}
+\end{pmatrix}}
+
+% Pauli Matrices 
+\newcommand{\PauliX}{\twobytwomat{0}{1}{1}{0}}
+\newcommand{\PauliY}{\twobytwomat{0}{-i}{i}{0}}
+\newcommand{\PauliZ}{\twobytwomat{1}{0}{0}{-1}}
+
+% Other matrices
+\newcommand{\Hadamard}{\sqrthalf \twobytwomat{1}{1}{1}{-1}}
+\newcommand{\QuantS}{\twobytwomat{1}{0}{0}{i}}
+\newcommand{\QuantT}{\twobytwomat{1}{0}{0}{e^{\frac{i\pi}{4}}}}
+    
+\begin{document}
+
+\maketitle 
+
+\section{Question 6}
+
+\begin{quantikz}
+    \ket{0} & \gate{H} & \ctrl{1} & \gate{H} & \gate{Z} & \meter{} \\ 
+    \ket{\psi} & & \gate{U} & & & \meter{}
+\end{quantikz}
+
+\section{Question 8}
+
+\subsection{Option 1}
+
+\begin{quantikz}
+    \ket{0} & \qwbundle{n} & \gate{H^{\otimes n}} & \gate[2]{I_f} & \gate{H^{\otimes n}} & \meter{} \\ 
+    \ket{0} & & & & & \meter{}
+\end{quantikz}
+
+\subsection{Option 2}
+
+\begin{quantikz}
+    \ket{0} & \qwbundle{n} & \gate{H^{\otimes n}} & \gate{P_f} & \gate{H^{\otimes n}} & \meter{} 
+\end{quantikz}
+
+\subsection{Option 3}
+
+\begin{quantikz}
+    \ket{0} & \qwbundle{n} & \gate{H^{\otimes n}} & \gate[2]{I_f} & \gate{D} & \meter{} \\ 
+    \ket{0} & & & & & \meter{}
+\end{quantikz}
+
+\subsection{Option 4}
+
+\begin{quantikz}
+    \ket{0} & \qwbundle{n} & \gate{H^{\otimes n}} & \gate{P_f} & \gate{D} & \meter{}
+\end{quantikz}
+
+\end{document}
