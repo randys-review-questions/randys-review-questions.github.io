@@ -7,7 +7,7 @@ function get_checkbox_tree() {
                     "f16all", "f17all", "f18all", "f19all"],
         "tuftscscore" : ["comp11", "comp15", "comp61", "cs40", "cs160", "cs105", "cs170", "cs97", "cs98"],
         "tuftscselectives" : ["comp93", "cs4", "cs167", "cs116", "es2", "cs121", "cs135", "cs111", "cs115",
-                                "cs107", "cs117", "cs138", "cs169"],
+                                "cs107", "cs117", "cs138", "cs169", "cs114", "cs120", "cs151-02", "cs151-03"],
         "tuftsbme" : ["bio13", "bme12", "bme131", "phy12", "bme162", "bme10", "bme100"],
         "tuftsmath" : ["math42", "math70", "es56", "math51"],
         "tuftshass" : ["psy13", "mus69", "phil24", "spn1", "ed11", "psy11"],
@@ -34,7 +34,7 @@ function get_checkbox_tree() {
         "f22all" : ["ed11", "bme10", "cs97", "cs121", "cs135", "cs170"],
         "s23all" : ["psy11", "bme100", "cs98", "cs111", "cs115", "math51"],
         "f23all" : ["cs107", "cs117", "cs138", "cs169"],
-        "s24all" : [],
+        "s24all" : ["cs114", "cs120", "cs151-02", "cs151-03"],
         "otherall" : ["ra", "ta15", "ta40", "pokegeo"]
     }
 }
@@ -122,6 +122,10 @@ function get_quiz_lengths() {
         "cs117" : 15,
         "cs138" : 15,
         "cs169" : 15,
+        "cs114" : 15,
+        "cs120" : 15,
+        "cs151-02" : 15,
+        "cs151-03" : 15,
         "ra" : 14,
         "ta15" : 10,
         "ta40" : 20,
