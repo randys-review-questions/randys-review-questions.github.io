@@ -39,6 +39,8 @@ The `scripts` directory contains scripts that are useful for this project:
  * `htmlwriter.py` is a helper module containing code for generating units of HTML code.
  This was useful in earlier versions of the site when the bulk of the HTML was generated 
  using Python instead of JavaScript but is now obsolete.
+ * `jquery-csv.js` is the implementation of version 0.71 of jQuery-csv, written by Evan
+ Plaice. This is useful for parsing `.csv` files.
  * `quizgenerate.js` contains the functionality to generate the HTML for a quiz page based 
  on information in the associated `page_data.csv` and `questions.csv` files.
  * `update_db_formats.py` updates the format of each `.csv` file in the page directories
